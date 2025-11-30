@@ -1,0 +1,61 @@
+/* ========= Page Qui sommes-nous ========= */
+
+.about-page {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.about-title {
+  text-align: center;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0593ff; /* bleu dans l'esprit du modèle, adapte si tu veux */
+  margin-bottom: 2.5rem;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.about-hero-image img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.about-hero-text p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin: 0 0 1rem;
+}
+
+.about-hero-text p strong {
+  font-weight: 700;
+}
+
+.about-body {
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.about-body p {
+  margin: 0 0 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+}
