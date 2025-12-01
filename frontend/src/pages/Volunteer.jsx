@@ -12,6 +12,15 @@ function Volunteer() {
     consent: false,
   });
 
+  const [status, setStatus] = useState({
+    loading: false,
+    success: null,
+    error: null,
+  });
+
+  // 🔥 Pour l'instant on force l'URL du backend en dur pour être sûrs
+  const API_BASE_URL = "http://localhost:4000";
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -20,26 +29,70 @@ function Volunteer() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
+    console.log("📤 Soumission du formulaire avec :", formData);
+
     if (!formData.consent) {
-      alert("Merci de cocher la case d'autorisation de contact.");
+      setStatus({
+        loading: false,
+        success: null,
+        error:
+          "Merci de cocher la case d'autorisation de contact avant d'envoyer.",
+      });
       return;
     }
 
-    alert(
-      "Merci pour votre engagement ! L'équipe des Colis du Cœur vous contactera prochainement."
-    );
+    setStatus({ loading: true, success: null, error: null });
 
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      availability: "",
-      message: "",
-      consent: false,
-    });
+    try {
+      const url = `${API_BASE_URL}/api/volunteer`;
+      console.log("➡️ Envoi de la requête vers :", url);
+
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log("📥 Réponse brute du backend :", res);
+
+      const data = await res.json();
+      console.log("📥 Body JSON du backend :", data);
+
+      if (!res.ok) {
+        throw new Error(data.error || "Erreur lors de l'envoi du formulaire.");
+      }
+
+      setStatus({
+        loading: false,
+        success:
+          "Merci pour votre engagement ! Nous vous contacterons prochainement.",
+        error: null,
+      });
+
+      // Reset du formulaire
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        availability: "",
+        message: "",
+        consent: false,
+      });
+    } catch (err) {
+      console.error("❌ Erreur côté front lors de l'envoi :", err);
+      setStatus({
+        loading: false,
+        success: null,
+        error:
+          err.message ||
+          "Une erreur est survenue. Merci de réessayer dans quelques instants.",
+      });
+    }
   };
 
   return (
@@ -50,26 +103,28 @@ function Volunteer() {
         <div className="about-body">
           <p>
             Chaque semaine, des familles, des étudiants, des personnes isolées
-            viennent chercher un soutien auprès des <strong>Colis du Cœur</strong>.
-            Derrière chaque colis distribué, il y a des bénévoles qui donnent un
-            peu de leur temps pour offrir beaucoup d&apos;espoir.
+            viennent chercher un soutien auprès des{" "}
+            <strong>Colis du Cœur</strong>. Derrière chaque colis distribué, il
+            y a des bénévoles qui donnent un peu de leur temps pour offrir
+            beaucoup d&apos;espoir.
           </p>
 
           <p>
-            Que vous ayez une heure de temps en temps ou plusieurs demi-journées
-            par mois, votre présence peut faire la différence&nbsp;: préparer et
-            distribuer les colis, accueillir les personnes, aider à la
-            logistique, participer à la communication ou à l&apos;organisation
-            d&apos;évènements solidaires… Il y a une mission adaptée à chacun.
+            Que vous ayez une heure de temps en temps ou plusieurs
+            demi-journées par mois, votre présence peut faire la
+            différence&nbsp;: préparer et distribuer les colis, accueillir les
+            personnes, aider à la logistique, participer à la communication ou à
+            l&apos;organisation d&apos;évènements solidaires… Il y a une mission
+            adaptée à chacun.
           </p>
 
           <p>
             Rejoindre l&apos;équipe, c&apos;est faire partie d&apos;une aventure
             humaine, chaleureuse et concrète, au plus près du terrain. Ensemble,
-            nous luttons contre la précarité et l&apos;isolement, avec bienveillance
-            et dignité. Si vous avez envie d&apos;agir et de vous sentir utile,
-            remplissez le formulaire ci-dessous&nbsp;: nous serons ravis
-            d&apos;échanger avec vous.
+            nous luttons contre la précarité et l&apos;isolement, avec
+            bienveillance et dignité. Si vous avez envie d&apos;agir et de vous
+            sentir utile, remplissez le formulaire ci-dessous&nbsp;: nous serons
+            ravis d&apos;échanger avec vous.
           </p>
         </div>
 
@@ -169,9 +224,26 @@ function Volunteer() {
               </label>
             </div>
 
-            <button type="submit" className="volunteer-submit">
-              Envoyer ma demande
+            <button
+              type="submit"
+              className="volunteer-submit"
+              disabled={status.loading}
+            >
+              {status.loading
+                ? "Envoi en cours..."
+                : "Envoyer ma demande"}
             </button>
+
+            {status.error && (
+              <p style={{ color: "red", marginTop: "0.5rem" }}>
+                {status.error}
+              </p>
+            )}
+            {status.success && (
+              <p style={{ color: "green", marginTop: "0.5rem" }}>
+                {status.success}
+              </p>
+            )}
           </form>
         </section>
       </div>
