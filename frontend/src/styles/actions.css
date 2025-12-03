@@ -155,7 +155,7 @@
 
 .actions-grid {
   display: flex;
-  flex-wrap: column;
+  flex-direction: column;
   gap: 1.5rem;
 }
 
