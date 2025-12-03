@@ -12,6 +12,7 @@ import Volunteer from "./pages/Volunteer";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
+import Bangladesh from "./pages/Bangladesh"; // 👈 renommé ici
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/qui-sommes-nous" element={<About />} />
             <Route path="/nos-actions" element={<Actions />} />
+            {/* 👇 orthographe corrigée + même que dans le post-it */}
+            <Route path="/actions/bangladesh" element={<Bangladesh />} />
             <Route path="/faire-un-don" element={<Donate />} />
             <Route path="/devenir-benevole" element={<Volunteer />} />
             <Route path="/contact" element={<Contact />} />
@@ -37,4 +40,3 @@ function App() {
 }
 
 export default App;
-
