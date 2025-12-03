@@ -18,8 +18,11 @@ function Volunteer() {
     error: null,
   });
 
-  // 🔥 Pour l'instant on force l'URL du backend en dur pour être sûrs
-  const API_BASE_URL = "http://localhost:4000";
+  // ✅ URL du backend :
+  // - en local : REACT_APP_API_URL=http://localhost:4000
+  // - en prod : REACT_APP_API_URL=https://ton-backend-render.onrender.com
+  const API_BASE_URL =
+    process.env.REACT_APP_API_URL || "http://localhost:4000";
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -229,9 +232,7 @@ function Volunteer() {
               className="volunteer-submit"
               disabled={status.loading}
             >
-              {status.loading
-                ? "Envoi en cours..."
-                : "Envoyer ma demande"}
+              {status.loading ? "Envoi en cours..." : "Envoyer ma demande"}
             </button>
 
             {status.error && (
