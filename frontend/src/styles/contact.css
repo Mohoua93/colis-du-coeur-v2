@@ -66,6 +66,7 @@
 }
 
 .form-group label {
+  color: #c6362c;
   display: block;
   font-weight: 600;
   margin-bottom: 0.35rem;
