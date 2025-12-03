@@ -3,6 +3,7 @@
 }
 
 .actions-title {
+  color: #c6362c;
   font-size: 2.4rem;
   margin-bottom: 1rem;
 }
@@ -167,6 +168,7 @@
 }
 
 .action-card h3 {
+  color: #c6362c;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }

@@ -68,7 +68,7 @@ const locations = [
     flag: "🇩🇿",
     top: "54%",
     left: "41%",
-    actions: ["Projets solidaires en préparation"],
+    actions: ["Back to School - Distribution de fournitures scolaires"],
     link: "/actions/algerie",
   },
 ];
@@ -108,9 +108,9 @@ function Actions() {
                     loc.id === activeLocationId ? "active" : ""
                   }`}
                   style={{ top: loc.top, left: loc.left }}
+                  // 👉 le drapeau sert de "point" cliquable
                   onClick={() => setActiveLocationId(loc.id)}
                 >
-                  <span className="pin-dot" />
                   <span
                     className="pin-label"
                     aria-label={loc.country}
@@ -165,7 +165,7 @@ function Actions() {
           </article>
 
           <article className="action-card">
-            <h3>Colis spéciaux Ramadan &amp; Aïd</h3>
+            <h3>Colis alimentaires spéciaial Ramadan &amp; Aïd</h3>
             <p>
               Pendant le mois de Ramadan et à l&apos;occasion de l&apos;Aïd,
               nous renforçons les distributions avec des colis adaptés pour
@@ -192,7 +192,7 @@ function Actions() {
           </article>
 
           <article className="action-card">
-            <h3>Distribution de Corans</h3>
+            <h3>Distribution de Coran</h3>
             <p>
               Au Cameroun et au Sénégal, nous offrons des exemplaires du Coran
               aux mosquées, écoles et familles, dans le respect des demandes
