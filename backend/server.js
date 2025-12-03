@@ -6,28 +6,42 @@ const nodemailer = require("nodemailer");
 
 const app = express();
 
+/* ===================== CORS ===================== */
+
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://cdc-frontend-v2-c3sy.vercel.app",
+  "https://www.colisducoeur.fr",
+  "https://colisducoeur.fr",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://cdc-frontend-v2-c3sy.vercel.app"
-    ]
+    origin(origin, callback) {
+      // origin peut être undefined (ex : Postman, curl, etc.)
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      console.log("❌ CORS bloqué pour l'origine :", origin);
+      return callback(new Error("Not allowed by CORS"));
+    },
   })
 );
 
 app.use(express.json());
 
-// === CONFIG SMTP IONOS ===
+/* ===================== CONFIG SMTP IONOS ===================== */
+
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,                  // smtp.ionos.fr
-  port: Number(process.env.SMTP_PORT),          // 587
+  host: process.env.SMTP_HOST, // smtp.ionos.fr
+  port: Number(process.env.SMTP_PORT), // 587
   secure: Number(process.env.SMTP_PORT) === 465, // false pour 587
   auth: {
-    user: process.env.SMTP_USER,                // contact@colisducoeur.fr
-    pass: process.env.SMTP_PASS                 // mot de passe de la boîte IONOS
+    user: process.env.SMTP_USER, // contact@colisducoeur.fr
+    pass: process.env.SMTP_PASS, // mot de passe de la boîte IONOS
   },
   logger: true,
-  debug: true
+  debug: true,
 });
 
 console.log("SMTP config utilisée :", {
@@ -47,6 +61,12 @@ transporter.verify((error, success) => {
 const RECEIVER_EMAIL =
   process.env.VOLUNTEER_RECEIVER_EMAIL || process.env.SMTP_USER;
 
+/* ===================== ROUTE HEALTHCHECK ===================== */
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", message: "API Colis du Cœur opérationnelle" });
+});
+
 /* ===================== ROUTE FORMULAIRE BÉNÉVOLE ===================== */
 
 app.post("/api/volunteer", async (req, res) => {
@@ -58,20 +78,20 @@ app.post("/api/volunteer", async (req, res) => {
     phone,
     availability,
     consent,
-    messagePreview: message?.slice(0, 80) || ""
+    messagePreview: message?.slice(0, 80) || "",
   });
 
   if (!fullName || !email) {
     console.warn("⚠️ Requête bénévole invalide : nom ou email manquant");
     return res.status(400).json({
-      error: "Nom et e-mail sont obligatoires."
+      error: "Nom et e-mail sont obligatoires.",
     });
   }
 
   if (!consent) {
     console.warn("⚠️ Requête bénévole sans consentement");
     return res.status(400).json({
-      error: "Le consentement est obligatoire."
+      error: "Le consentement est obligatoire.",
     });
   }
 
@@ -93,21 +113,21 @@ app.post("/api/volunteer", async (req, res) => {
       to: RECEIVER_EMAIL,
       replyTo: email,
       subject: `Nouvelle demande de bénévole - ${fullName}`,
-      html: htmlBody
+      html: htmlBody,
     });
 
     console.log("✅ Résultat envoi bénévole :", {
       messageId: info.messageId,
       accepted: info.accepted,
       rejected: info.rejected,
-      response: info.response
+      response: info.response,
     });
 
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error("❌ Erreur lors de l'envoi du mail bénévole:", err);
     return res.status(500).json({
-      error: "Erreur lors de l'envoi du mail, veuillez réessayer plus tard."
+      error: "Erreur lors de l'envoi du mail, veuillez réessayer plus tard.",
     });
   }
 });
@@ -122,20 +142,20 @@ app.post("/api/contact", async (req, res) => {
     email,
     subject,
     consent,
-    messagePreview: message?.slice(0, 80) || ""
+    messagePreview: message?.slice(0, 80) || "",
   });
 
   if (!fullName || !email || !subject) {
     console.warn("⚠️ Requête contact invalide : champ requis manquant");
     return res.status(400).json({
-      error: "Nom, e-mail et sujet sont obligatoires."
+      error: "Nom, e-mail et sujet sont obligatoires.",
     });
   }
 
   if (!consent) {
     console.warn("⚠️ Requête contact sans consentement");
     return res.status(400).json({
-      error: "Le consentement est obligatoire."
+      error: "Le consentement est obligatoire.",
     });
   }
 
@@ -156,21 +176,22 @@ app.post("/api/contact", async (req, res) => {
       to: RECEIVER_EMAIL,
       replyTo: email,
       subject: `[Contact site] ${subject}`,
-      html: htmlBody
+      html: htmlBody,
     });
 
     console.log("✅ Résultat envoi contact :", {
       messageId: info.messageId,
       accepted: info.accepted,
       rejected: info.rejected,
-      response: info.response
+      response: info.response,
     });
 
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error("❌ Erreur lors de l'envoi du mail contact:", err);
     return res.status(500).json({
-      error: "Erreur lors de l'envoi du message, veuillez réessayer plus tard."
+      error:
+        "Erreur lors de l'envoi du message, veuillez réessayer plus tard.",
     });
   }
 });
@@ -181,5 +202,6 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`API bénévole démarrée sur http://localhost:${PORT}`);
 });
+
 
 
