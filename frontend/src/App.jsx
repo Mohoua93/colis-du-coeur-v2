@@ -13,6 +13,7 @@ import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
 import Bangladesh from "./pages/Bangladesh"; // 👈 renommé ici
+import Senegal from "./pages/Senegal";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path="/nos-actions" element={<Actions />} />
             {/* 👇 orthographe corrigée + même que dans le post-it */}
             <Route path="/actions/bangladesh" element={<Bangladesh />} />
+            <Route path="/actions/senegal" element={<Senegal />} />
             <Route path="/faire-un-don" element={<Donate />} />
             <Route path="/devenir-benevole" element={<Volunteer />} />
             <Route path="/contact" element={<Contact />} />

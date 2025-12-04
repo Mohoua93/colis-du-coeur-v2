@@ -3,8 +3,9 @@ import "../styles/bangladesh.css";
 import bangladeshHero from "../assets/images/bangladesh-hero.jpg";
 import bangladeshPuits from "../assets/images/bangladesh-puits.jpg";
 import bangladeshColisAlimentaires from "../assets/images/bangladesh-food.jpg";
-import bangladeshRamadan from "../assets/images/bangladesh-ramadan.jpg"; // 🕌 nouvelle image
-import bangladeshAid from "../assets/images/bangladesh-aid.jpg"; // 🎉 nouvelle image
+import bangladeshRamadan from "../assets/images/bangladesh-ramadan.jpg";
+import bangladeshAid from "../assets/images/bangladesh-aid.jpg";
+import bangladeshCoran from "../assets/images/bangladesh-coran.jpg"; // 📖 nouvelle image
 
 function Bangladesh() {
   return (
@@ -176,7 +177,36 @@ function Bangladesh() {
           <div className="country-hero-image">
             <img
               src={bangladeshAid}
-              alt="Familles célébrant l'Aïd au Bangladesh"
+              alt="Familles célébrant l&apos;Aïd au Bangladesh"
+            />
+          </div>
+        </section>
+
+        {/* 📖 Focus distribution de Corans */}
+        <section className="country-block">
+          <div className="country-block-text">
+            <h2 className="country-section-title">
+              Distribution de Corans
+            </h2>
+            <p>
+              Au Bangladesh, nous répondons également à des demandes
+              spirituelles locales en participant à la{" "}
+              <strong>distribution de Corans</strong>, en priorité dans les
+              mosquées, les écoles et auprès de familles qui n&apos;ont pas les
+              moyens d&apos;en acquérir.
+            </p>
+            <p>
+              Ces distributions se font toujours en lien avec des{" "}
+              <strong>partenaires de confiance sur place</strong>, afin de
+              respecter les besoins réels et de s&apos;assurer que chaque
+              exemplaire est remis dans un cadre approprié et bienveillant.
+            </p>
+          </div>
+
+          <div className="country-hero-image">
+            <img
+              src={bangladeshCoran}
+              alt="Distribution de Corans au Bangladesh"
             />
           </div>
         </section>
@@ -203,4 +233,3 @@ function Bangladesh() {
 }
 
 export default Bangladesh;
-
