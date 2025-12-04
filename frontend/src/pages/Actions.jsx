@@ -55,6 +55,7 @@ const locations = [
       "Construction de puits d'eau",
       "Colis alimentaires",
       "Colis spéciaux Ramadan & Aïd",
+      "Distribution de Corans",
     ],
     link: "/actions/bangladesh",
   },
