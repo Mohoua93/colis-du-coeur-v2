@@ -37,7 +37,12 @@ const locations = [
     flag: "🇺🇬",
     top: "58%",
     left: "49%",
-    actions: ["Colis alimentaires"],
+    actions: [
+      "Colis alimentaires",
+      "Distribution de Coran",
+      "Repas en Orphelinat",
+      "Repas spécial Ramadan & Aïd",
+      ],
     link: "/actions/ouganda",
   },
   {

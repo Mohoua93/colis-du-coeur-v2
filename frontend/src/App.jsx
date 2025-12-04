@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import Bangladesh from "./pages/Bangladesh"; // 👈 renommé ici
 import Senegal from "./pages/Senegal";
 import Cameroun from "./pages/Cameroun";
+import Ouganda from "./pages/Ouganda";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/actions/bangladesh" element={<Bangladesh />} />
             <Route path="/actions/senegal" element={<Senegal />} />
             <Route path="/actions/cameroun" element={<Cameroun />} />
+            <Route path="/actions/Ouganda" element={<Ouganda />} />
             <Route path="/faire-un-don" element={<Donate />} />
             <Route path="/devenir-benevole" element={<Volunteer />} />
             <Route path="/contact" element={<Contact />} />
