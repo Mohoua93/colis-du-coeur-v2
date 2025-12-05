@@ -33,7 +33,7 @@
   width: 100%;
   border-radius: 24px;
   overflow: hidden;
-  background: rgba(198, 54, 44, 0.08);
+  background: #0f172a;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.45);
 }
 
@@ -41,12 +41,12 @@
   display: block;
   width: 100%;
   height: 520px;
-  min-height: 260px; /* pour éviter l'effet "barre" si l'image charge mal */
+  min-height: 260px;
   object-fit: cover;
   opacity: 0.9;
 }
 
-/* Drapeaux positionnés sur la carte */
+/* Drapeaux positionnés sur la carte (desktop) */
 
 .map-pin {
   position: absolute;
@@ -57,52 +57,27 @@
   padding: 0;
 }
 
-/* ⚠️ on garde pin-dot au cas où (si tu le réutilises plus tard) */
-.pin-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  border: 2px solid #fff;
-  background: #ef4444;
-  display: block;
-  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.3);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-
-.map-pin.active .pin-dot,
-.map-pin:hover .pin-dot {
-  transform: scale(1.15);
-  box-shadow: 0 0 0 6px rgba(239, 68, 68, 0.4);
-}
-
-/* ✅ Label qui contient l'image du drapeau */
+/* Label drapeau (emoji) plus grand et voyant */
 .pin-label {
   position: absolute;
   top: -10px;
   left: 0;
   transform: translateX(-50%);
-  padding: 0.25rem 0.35rem;
+  font-size: 2.2rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.9);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.12s ease, background-color 0.12s ease;
+  background: rgba(15, 23, 42, 0.92);
+  color: #fff;
   white-space: nowrap;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
 }
 
 .map-pin:hover .pin-label,
 .map-pin.active .pin-label {
-  transform: translateX(-50%) scale(1.06);
+  transform: translateX(-50%) scale(1.08);
   background: rgba(15, 23, 42, 0.98);
-}
-
-.pin-flag-img {
-  width: 28px;
-  height: 20px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.32);
 }
 
 /* 📝 Petit post-it sur la carte */
@@ -143,7 +118,7 @@
   margin-bottom: 0.3rem;
 }
 
-/* ✅ Titre avec drapeau dans le post-it */
+/* Titre post-it avec drapeau emoji */
 .map-postit-title {
   display: flex;
   align-items: center;
@@ -153,12 +128,12 @@
   color: #78350f;
 }
 
-.postit-flag img {
-  width: 22px;
-  height: 16px;
-  object-fit: cover;
-  border-radius: 3px;
-  display: block;
+/* drapeau dans le post-it plus visible */
+.postit-flag {
+  font-size: 1.6rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 .map-postit-list {
@@ -183,37 +158,53 @@
   border-bottom-color: transparent;
 }
 
+/* ✅ Animation pop du post-it */
+.map-postit-pop {
+  animation: postitPop 220ms ease;
+}
+
+@keyframes postitPop {
+  0% {
+    transform: rotate(-3deg) scale(0.96);
+    opacity: 0.6;
+  }
+  60% {
+    transform: rotate(-3deg) scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-3deg) scale(1);
+  }
+}
+
 /* ✅ Rangée de drapeaux sous la carte (mobile) */
 
 .map-flags-row {
   display: none; /* visible uniquement en mobile */
 }
 
+/* boutons drapeaux plus gros et voyants */
 .map-flag-btn {
-  background: transparent;
+  background: rgba(15, 23, 42, 0.06);
   border: 1px solid transparent;
-  padding: 0.25rem;
-  border-radius: 10px;
+  padding: 0.35rem 0.55rem;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.12s ease, background-color 0.12s ease, border-color 0.12s ease;
-}
-
-.map-flag-btn img {
-  width: 30px;
-  height: 22px;
-  object-fit: cover;
-  border-radius: 4px;
-  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  transition: transform 0.12s ease, background-color 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
 }
 
 .map-flag-btn:hover {
   background-color: rgba(198, 54, 44, 0.08);
   transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 .map-flag-btn.active {
   border-color: rgba(198, 54, 44, 0.35);
-  background-color: rgba(198, 54, 44, 0.08);
+  background-color: rgba(198, 54, 44, 0.10);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.10);
 }
 
 /* Cartes texte en bas */
@@ -251,6 +242,25 @@
     margin: 0.75rem auto 1rem;
   }
 
+  /* Animation pop version mobile (sans rotation) */
+  .map-postit-pop {
+    animation: postitPopMobile 220ms ease;
+  }
+
+  @keyframes postitPopMobile {
+    0% {
+      transform: scale(0.96);
+      opacity: 0.6;
+    }
+    60% {
+      transform: scale(1.04);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
   .world-map {
     border-radius: 18px;
   }
@@ -260,7 +270,7 @@
   }
 }
 
-/* ✅ Mobile : on masque les drapeaux sur la carte
+/* Mobile : on masque les drapeaux sur la carte
    et on affiche la rangée sous la carte */
 @media (max-width: 768px) {
   .map-pin {
@@ -274,8 +284,6 @@
     gap: 0.6rem;
     margin-top: 0.8rem;
     padding: 0.4rem 0.2rem;
-
-    /* Une ligne propre */
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -285,13 +293,13 @@
     height: 6px;
   }
 
-  .map-flag-btn img {
-    width: 32px;
-    height: 24px;
+  .map-flag-btn {
+    font-size: 1.5rem;
   }
 
   .world-map img {
     height: 320px;
   }
 }
+
 

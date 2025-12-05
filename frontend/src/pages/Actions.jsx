@@ -81,7 +81,6 @@ const locations = [
 
 function Actions() {
   const [activeLocationId, setActiveLocationId] = useState("senegal");
-
   const activeLocation = locations.find((loc) => loc.id === activeLocationId);
 
   return (
@@ -104,7 +103,7 @@ function Actions() {
                 alt="Carte du monde des actions de l'association"
               />
 
-              {/* ✅ Drapeaux sur la carte (desktop) */}
+              {/* Drapeaux sur la carte (desktop) */}
               {locations.map((loc) => (
                 <button
                   key={loc.id}
@@ -125,9 +124,12 @@ function Actions() {
                 </button>
               ))}
 
-              {/* 📝 Post-it */}
+              {/* 📝 Post-it (animation pop) */}
               {activeLocation && (
-                <div className="map-postit">
+                <div
+                  key={activeLocation.id}
+                  className="map-postit map-postit-pop"
+                >
                   <p className="map-postit-eyebrow">Nos actions sur place</p>
 
                   <h2 className="map-postit-title">
@@ -141,7 +143,7 @@ function Actions() {
                     ))}
                   </ul>
 
-                  {/* ✅ Le seul lien vers la page pays */}
+                  {/* Le seul lien vers la page pays */}
                   <Link to={activeLocation.link} className="map-postit-link">
                     Découvrir les actions en détail →
                   </Link>
@@ -149,7 +151,7 @@ function Actions() {
               )}
             </div>
 
-            {/* ✅ Rangée mobile : met à jour le post-it (pas de navigation) */}
+            {/* Rangée mobile : met à jour le post-it (pas de navigation) */}
             <div className="map-flags-row">
               {locations.map((loc) => (
                 <button
@@ -231,3 +233,4 @@ function Actions() {
 }
 
 export default Actions;
+
