@@ -1,7 +1,8 @@
 // src/pages/Actions.js
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/actions.css";
-import worldMap from "../assets/images/world-map1.jpg"; // 👉 adapte le chemin si besoin
+import worldMap from "../assets/images/world-map1.jpg";
 
 const locations = [
   {
@@ -42,7 +43,7 @@ const locations = [
       "Distribution de Coran",
       "Repas en Orphelinat",
       "Repas spécial Ramadan & Aïd",
-      ],
+    ],
     link: "/actions/ouganda",
   },
   {
@@ -55,7 +56,6 @@ const locations = [
       "Construction de puits d'eau",
       "Colis alimentaires",
       "Colis spéciaux Ramadan & Aïd",
-      "Distribution de Corans",
     ],
     link: "/actions/bangladesh",
   },
@@ -82,9 +82,7 @@ const locations = [
 function Actions() {
   const [activeLocationId, setActiveLocationId] = useState("senegal");
 
-  const activeLocation = locations.find(
-    (loc) => loc.id === activeLocationId
-  );
+  const activeLocation = locations.find((loc) => loc.id === activeLocationId);
 
   return (
     <section className="actions-page">
@@ -106,6 +104,7 @@ function Actions() {
                 alt="Carte du monde des actions de l'association"
               />
 
+              {/* ✅ Drapeaux sur la carte (desktop) */}
               {locations.map((loc) => (
                 <button
                   key={loc.id}
@@ -114,7 +113,6 @@ function Actions() {
                     loc.id === activeLocationId ? "active" : ""
                   }`}
                   style={{ top: loc.top, left: loc.left }}
-                  // 👉 le drapeau sert de "point" cliquable
                   onClick={() => setActiveLocationId(loc.id)}
                 >
                   <span
@@ -127,11 +125,13 @@ function Actions() {
                 </button>
               ))}
 
-              {/* 📝 Petit post-it posé sur le globe */}
+              {/* 📝 Post-it */}
               {activeLocation && (
                 <div className="map-postit">
                   <p className="map-postit-eyebrow">Nos actions sur place</p>
+
                   <h2 className="map-postit-title">
+                    <span className="postit-flag">{activeLocation.flag}</span>
                     {activeLocation.country}
                   </h2>
 
@@ -141,11 +141,30 @@ function Actions() {
                     ))}
                   </ul>
 
-                  <a href={activeLocation.link} className="map-postit-link">
+                  {/* ✅ Le seul lien vers la page pays */}
+                  <Link to={activeLocation.link} className="map-postit-link">
                     Découvrir les actions en détail →
-                  </a>
+                  </Link>
                 </div>
               )}
+            </div>
+
+            {/* ✅ Rangée mobile : met à jour le post-it (pas de navigation) */}
+            <div className="map-flags-row">
+              {locations.map((loc) => (
+                <button
+                  key={`mobile-${loc.id}`}
+                  type="button"
+                  className={`map-flag-btn ${
+                    loc.id === activeLocationId ? "active" : ""
+                  }`}
+                  onClick={() => setActiveLocationId(loc.id)}
+                  aria-label={loc.country}
+                  title={loc.country}
+                >
+                  {loc.flag}
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -171,7 +190,7 @@ function Actions() {
           </article>
 
           <article className="action-card">
-            <h3>Colis alimentaires spéciaial Ramadan &amp; Aïd</h3>
+            <h3>Colis alimentaires spéciaux Ramadan &amp; Aïd</h3>
             <p>
               Pendant le mois de Ramadan et à l&apos;occasion de l&apos;Aïd,
               nous renforçons les distributions avec des colis adaptés pour
