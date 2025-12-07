@@ -111,7 +111,7 @@
 /* ========= Transparence & confiance ========= */
 
 .donate-trust {
-  margin: 0 auto 2.4rem auto;
+  margin: 0 auto 2.2rem auto;
   max-width: 980px;
 }
 
@@ -119,7 +119,7 @@
   background: #f7f7f7;
   border: 1px solid #e5e7eb;
   border-radius: 16px;
-  padding: 1.4rem 1.5rem;
+  padding: 1.35rem 1.5rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
   text-align: center;
 }
@@ -152,7 +152,7 @@
   margin: 0;
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 
@@ -172,24 +172,22 @@
   margin: 0 auto;
   background: #f7f7f7;
   border-radius: 12px;
-  padding: 0.8rem 0.9rem; /* ✅ réduit */
+  padding: 0.8rem 0.9rem; /* ✅ plus compact */
   border: 1px solid #e5e7eb;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
-
 
 /* ========= Bloc formulaire HelloAsso ========= */
 
 .donate-form-widget {
   max-width: 900px;
-  margin: 1.4rem auto 0 auto; /* ✅ un peu moins d'espace */
+  margin: 1.2rem auto 0 auto; /* ✅ espace réduit */
   background: #f9fafb;
   border-radius: 12px;
-  padding: 0.85rem; /* ✅ réduit */
+  padding: 0.6rem; /* ✅ plus compact */
   border: 1px solid #e5e7eb;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
-
 
 /* ========= Option alternative ========= */
 
@@ -242,7 +240,7 @@
   }
 
   .donate-trust-card {
-    padding: 1.2rem 1.1rem;
+    padding: 1.15rem 1.1rem;
   }
 
   .donate-trust-list {
@@ -250,11 +248,11 @@
   }
 
   .donate-button-widget {
-    padding: 1rem 0.85rem;
+    padding: 0.75rem 0.8rem;
   }
 
   .donate-form-widget {
-    padding: 0.85rem;
+    padding: 0.55rem;
   }
 }
 
@@ -275,4 +273,5 @@
     font-size: 0.82rem;
   }
 }
+
 
