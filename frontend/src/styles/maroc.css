@@ -1,0 +1,138 @@
+/* ========= Spécifique Maroc ========= */
+
+/* ✅ Section Flyer */
+
+.maroc-flyer-section {
+  margin: 2.5rem 0 3rem;
+}
+
+.maroc-flyer-card {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
+  gap: 1.8rem;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.4rem;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+}
+
+.maroc-flyer-image {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111827;
+}
+
+.maroc-flyer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.maroc-flyer-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.maroc-flyer-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 0.35rem;
+}
+
+.maroc-flyer-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+  color: #c6362c;
+}
+
+.maroc-flyer-text p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* ✅ Section texte */
+
+.maroc-text-section {
+  margin-bottom: 3rem;
+}
+
+.maroc-text-body p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #374151;
+  margin-bottom: 0.9rem;
+}
+
+/* ✅ 4 images en apesanteur */
+
+.maroc-floating-section {
+  margin-bottom: 3rem;
+}
+
+.maroc-floating-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.maroc-float-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111827;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
+  transform: translateZ(0);
+  animation: marocFloatSoft 6s ease-in-out infinite;
+}
+
+.maroc-float-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Variations pour un effet naturel */
+.float-1 { animation-delay: 0s; }
+.float-2 { animation-delay: 0.6s; }
+.float-3 { animation-delay: 1.2s; }
+.float-4 { animation-delay: 1.8s; }
+
+/* Animation d'apesanteur légère */
+@keyframes marocFloatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Petit effet hover */
+.maroc-float-card:hover {
+  transform: translateY(-4px);
+  transition: transform 0.15s ease;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .maroc-floating-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .maroc-flyer-card {
+    grid-template-columns: 1fr;
+  }
+
+  .maroc-floating-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .maroc-float-card img {
+    height: 240px;
+  }
+}
