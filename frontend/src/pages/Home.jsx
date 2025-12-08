@@ -5,37 +5,44 @@ import bgHome from "../assets/images/bg-home.jpg";
 function Home() {
   return (
     <>
-      {/* HERO plein écran comme Entraide & Solidarité */}
+      {/* HERO */}
       <section
         className="home-hero"
         style={{ backgroundImage: `url(${bgHome})` }}
       >
-        <div className="home-hero-overlay">
-          <div className="container home-hero-content">
-            <h1 className="home-hero-title">
-              Ensemble, nous agissons contre la précarité et la faim
-              <p>Partout dans le monde</p>
-            </h1>
-            <p className="home-hero-text">
-              Les Colis du Cœur est une association de solidarité qui distribue
-              des colis alimentaires et des produits de première nécessité aux
-              personnes et familles en difficulté. Chaque don, chaque bénévole
-              nous permet d&apos;aider davantage de personnes.
-            </p>
+        {/* Overlay séparé (plus propre) */}
+        <div className="home-hero-overlay" />
 
-            <div className="home-hero-actions">
-              <Link to="/faire-un-don" className="btn btn-primary">
-                Faire un don
-              </Link>
-              <Link to="/devenir-benevole" className="btn btn-outline-light">
-                Devenir bénévole
-              </Link>
-            </div>
+        <div className="container home-hero-content">
+          <h1 className="home-hero-title">
+            Ensemble, nous agissons contre la précarité et la faim
+          </h1>
+
+          <p className="home-hero-subtitle">Partout dans le monde</p>
+
+          <p className="home-hero-text">
+            Les Colis du Cœur est une association de solidarité qui distribue
+            des colis alimentaires et des produits de première nécessité aux
+            personnes et familles en difficulté. Chaque don, chaque bénévole
+            nous permet d&apos;aider davantage de personnes.
+          </p>
+
+          <div className="home-hero-actions">
+            <Link to="/faire-un-don" className="btn btn-primary">
+              Faire un don
+            </Link>
+
+            <Link
+              to="/devenir-benevole"
+              className="btn btn-outline-light home-volunteer-btn"
+            >
+              Devenir bénévole
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Bandeau de contenu sous le hero (style simple) */}
+      {/* Bandeau de contenu sous le hero */}
       <section className="home-intro-strip">
         <div className="container home-intro-grid">
           <div>
@@ -54,9 +61,9 @@ function Home() {
           <div>
             <h2>Nos actions</h2>
             <p>
-              Aide alimentaire (France, Afrique, Asie), soutien matériel, maraudes, campagnes
-              spécifiques (hiver, rentrée, fêtes)… Nos actions s&apos;adaptent
-              aux besoins du terrain.
+              Aide alimentaire (France, Afrique, Asie), soutien matériel,
+              maraudes, campagnes spécifiques (hiver, rentrée, fêtes)… Nos
+              actions s&apos;adaptent aux besoins du terrain.
             </p>
             <Link to="/nos-actions" className="text-link">
               Découvrir nos actions →
@@ -69,5 +76,6 @@ function Home() {
 }
 
 export default Home;
+
 
 
