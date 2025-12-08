@@ -20,10 +20,12 @@ function Maroc() {
             <p className="country-eyebrow">Nos actions à l&apos;international</p>
             <h1 className="country-title">Maroc</h1>
             <p className="country-intro">
-              Au Maroc, Les Colis du Cœur souhaitent développer des actions
-              solidaires au plus près des besoins locaux. Cette page te permet
-              de présenter tes projets actuels et à venir, avec un espace
-              dédié à ton flyer et à quelques images de terrain.
+              Du 25 avril au 2 mai 2016, nous avons choisi de poser nos pas au
+              Maroc, non pas en simples visiteurs, mais en porteurs d’espoir,
+              de soutien et d’écoute. Durant cette semaine intense et
+              inoubliable, nous avons eu le privilège d’offrir 200 cartables
+              scolaires complets à des enfants vivant dans des villages isolés,
+              près de Marrakech.
             </p>
             <a href="/nos-actions" className="country-back-link">
               ← Retour à la carte de nos actions
@@ -54,9 +56,10 @@ function Maroc() {
                 Projets solidaires au Maroc 🇲🇦
               </h2>
               <p>
-                Ici tu peux présenter ton flyer officiel lié au Maroc.
-                Tu peux remplacer ce texte par un descriptif plus précis
-                de l&apos;événement ou du projet dès que tu es prêt.
+                Ce flyer accompagne le souvenir d’une action menée auprès
+                d’enfants de villages isolés autour de Marrakech. Il illustre
+                notre volonté d’agir au plus près des besoins essentiels et de
+                créer des instants de partage durables.
               </p>
             </div>
           </div>
@@ -65,25 +68,73 @@ function Maroc() {
         {/* ✅ Section texte */}
         <section className="maroc-text-section">
           <h2 className="country-section-title">
-            Une présence solidaire en construction
+            Un voyage de cœur : offrir, partager, transmettre
           </h2>
 
           <div className="maroc-text-body">
             <p>
-              Le Maroc fait partie des zones que nous souhaitons accompagner
-              à travers des initiatives solidaires ciblées et durables. Notre
-              ambition est de construire des actions en lien avec des relais
-              locaux de confiance, afin de répondre efficacement aux besoins
-              identifiés sur le terrain.
+              Du 25 avril au 2 mai 2016, nous avons choisi de poser nos pas au
+              Maroc, non pas en simples visiteurs, mais en porteurs d’espoir, de
+              soutien et d’écoute. Durant cette semaine intense et inoubliable,
+              nous avons eu le privilège d’offrir 200 cartables scolaires
+              complets à des enfants vivant dans des villages isolés, loin des
+              routes touristiques, loin du bruit des grandes villes, mais tout
+              près de l’essentiel : la simplicité, la dignité, la beauté des
+              liens humains.
             </p>
+
             <p>
-              Cette page évoluera avec l&apos;avancement des projets : campagnes
-              de soutien, distributions ponctuelles, actions éducatives,
-              ou toute autre initiative à fort impact humain.
+              Nos rencontres nous ont menés à Douar Tagndouche, Douar Ait
+              Oumazir, Douar Anmiter et Douar Ighounane, dans les environs de
+              Marrakech. Ces villages, nichés entre montagnes et paysages
+              authentiques, nous ont accueillis avec une chaleur silencieuse,
+              celle qui se lit dans les regards, dans les gestes, dans les
+              sourires timides mais sincères des enfants.
             </p>
+
             <p>
-              Nous croyons à une solidarité concrète, respectueuse et
-              profondément ancrée dans les réalités locales.
+              Pour eux, nous avons voulu créer un moment à part. Un moment qui
+              resterait, même après notre départ. Un moment qui dise : « Vous
+              comptez. Votre avenir compte. »
+            </p>
+
+            <p>
+              Alors nous avons imaginé un véritable événement : une grande
+              structure d’accueil pour les réunir en toute sécurité, des
+              ateliers de peinture où les couleurs ont donné vie à leurs rêves,
+              des jeux où leurs rires résonnaient comme la plus belle des
+              musiques, et un immense goûter partagé, symbole de convivialité
+              et de joie simple.
+            </p>
+
+            <p>
+              Chaque cartable remis n’était pas un simple objet : il
+              représentait une porte ouverte vers la connaissance, un
+              encouragement à continuer l’école, un message de soutien venu de
+              loin. Et à chaque fois qu’une petite main se tendait pour attraper
+              son sac, nos cœurs se remplissaient un peu plus.
+            </p>
+
+            <p>
+              Mais la vérité, c’est que nous avons reçu autant – sinon plus –
+              que ce que nous avons donné. Ces journées nous ont appris la
+              modestie, la force des sourires silencieux, la valeur du partage,
+              et l’importance de tendre la main, même à ceux que l’on ne connaît
+              pas encore.
+            </p>
+
+            <p>
+              Ce voyage restera inscrit dans notre histoire comme un moment de
+              pure humanité. Parce qu’en offrant du matériel scolaire, c’est un
+              peu d’avenir que nous avons tenté d’éclairer. Et parce qu’en
+              retour, ce sont leurs regards – remplis de gratitude, de curiosité
+              et d’espoir – qui ont illuminé le nôtre.
+            </p>
+
+            <p>
+              Que ces souvenirs continuent de nous guider, et que chaque action
+              future porte en elle la même passion : celle d’aider, d’aimer, et
+              de croire en la force des enfants, partout dans le monde.
             </p>
           </div>
         </section>
@@ -117,8 +168,9 @@ function Maroc() {
         <section className="country-cta">
           <h2>Envie de soutenir nos actions au Maroc&nbsp;?</h2>
           <p>
-            Vos dons et partages nous aideront à structurer et développer
-            des actions solidaires durables sur place.
+            Vos dons et partages nous aideront à faire vivre des initiatives
+            éducatives et solidaires au plus près des enfants et des familles
+            qui en ont besoin.
           </p>
           <div className="country-cta-buttons">
             <a href="/contact" className="country-cta-btn primary">
