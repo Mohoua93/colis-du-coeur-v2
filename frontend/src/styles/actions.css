@@ -139,9 +139,8 @@
   }
 }
 
-/* ✅ BARRE DRAPEAUX SOUS LA CARTE (toutes tailles) */
+/* ✅ BARRE DRAPEAUX SOUS LA CARTE */
 .map-flags-overlay {
-  /* ✅ fond de fade adapté au fond de page */
   --flags-fade-color: #ffffff;
 
   position: static;
@@ -185,7 +184,7 @@
   height: 6px;
 }
 
-/* ✅ Fade scroll hint (gauche/droite) */
+/* ✅ Fade scroll hint */
 .map-flags-list-wrapper::before,
 .map-flags-list-wrapper::after {
   content: "";
@@ -195,6 +194,7 @@
   width: 28px;
   pointer-events: none;
   z-index: 2;
+  transition: opacity 0.15s ease;
 }
 
 .map-flags-list-wrapper::before {
@@ -213,6 +213,21 @@
     var(--flags-fade-color),
     rgba(255, 255, 255, 0)
   );
+}
+
+/* ✅ Disparition du fade au début/à la fin */
+.map-flags-list-wrapper.at-start::before {
+  opacity: 0;
+}
+
+.map-flags-list-wrapper.at-end::after {
+  opacity: 0;
+}
+
+/* ✅ Si pas de scroll possible, on masque les deux fades */
+.map-flags-list-wrapper.no-scroll::before,
+.map-flags-list-wrapper.no-scroll::after {
+  opacity: 0;
 }
 
 /* Liste interne centrée quand peu d'éléments */
@@ -312,7 +327,6 @@
     height: 420px;
   }
 
-  /* ✅ Label visible en mobile */
   .map-flags-label {
     display: block;
   }
@@ -331,6 +345,7 @@
     font-size: 1.4rem;
   }
 }
+
 
 
 

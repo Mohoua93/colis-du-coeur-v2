@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/actions.css";
 import worldMap from "../assets/images/world-map1.jpg";
@@ -91,6 +91,53 @@ function Actions() {
   const [activeLocationId, setActiveLocationId] = useState("senegal");
   const activeLocation = locations.find((loc) => loc.id === activeLocationId);
 
+  // ✅ gestion fade dynamique + détection overflow
+  const flagsScrollRef = useRef(null);
+  const [fadeState, setFadeState] = useState({
+    atStart: true,
+    atEnd: true,
+    hasOverflow: false,
+  });
+
+  useEffect(() => {
+    const el = flagsScrollRef.current;
+    if (!el) return;
+
+    const update = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = el;
+
+      const hasOverflow = scrollWidth > clientWidth + 2;
+
+      if (!hasOverflow) {
+        setFadeState({ atStart: true, atEnd: true, hasOverflow: false });
+        return;
+      }
+
+      const atStart = scrollLeft <= 1;
+      const atEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+
+      setFadeState({ atStart, atEnd, hasOverflow: true });
+    };
+
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+
+    return () => {
+      el.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, []);
+
+  const flagsWrapperClass = [
+    "map-flags-list-wrapper",
+    fadeState.atStart ? "at-start" : "",
+    fadeState.atEnd ? "at-end" : "",
+    !fadeState.hasOverflow ? "no-scroll" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <section className="actions-page">
       <div className="container">
@@ -141,7 +188,7 @@ function Actions() {
             <div className="map-flags-overlay">
               <p className="map-flags-label">Choisir un pays</p>
 
-              <div className="map-flags-list-wrapper">
+              <div ref={flagsScrollRef} className={flagsWrapperClass}>
                 <div className="map-flags-list">
                   {locations.map((loc) => (
                     <button
@@ -226,6 +273,8 @@ function Actions() {
 }
 
 export default Actions;
+
+
 
 
 
