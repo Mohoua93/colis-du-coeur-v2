@@ -18,6 +18,7 @@ import Cameroun from "./pages/Cameroun";
 import Ouganda from "./pages/Ouganda";
 import Algerie from "./pages/Algerie";
 import Maroc from "./pages/Maroc";
+import Togo from "./pages/Togo";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
             <Route path="/actions/Ouganda" element={<Ouganda />} />
             <Route path="/actions/algerie" element={<Algerie />} />
             <Route path="/actions/maroc" element={<Maroc />} />
+            <Route path="/actions/togo" element={<Togo />} />
             <Route path="/faire-un-don" element={<Donate />} />
             <Route path="/devenir-benevole" element={<Volunteer />} />
             <Route path="/contact" element={<Contact />} />

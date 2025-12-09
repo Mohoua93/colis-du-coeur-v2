@@ -1,0 +1,99 @@
+/* src/styles/togo.css */
+
+/* Page Togo : tu peux personnaliser sans casser la base country-* */
+.togo-page .country-title {
+  /* optionnel : petite identité visuelle */
+}
+
+/* Flyer */
+.togo-flyer-section {
+  margin-top: 2.5rem;
+}
+
+.togo-flyer-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 1.5rem;
+  background: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.togo-flyer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.togo-flyer-text {
+  padding: 1.5rem 1.5rem 1.8rem;
+}
+
+.togo-flyer-eyebrow {
+  color: var(--color-muted);
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem;
+}
+
+.togo-flyer-title {
+  margin: 0 0 0.75rem;
+}
+
+/* Texte */
+.togo-text-section {
+  margin-top: 3rem;
+}
+
+.togo-text-body p {
+  line-height: 1.6;
+  margin: 0 0 0.9rem;
+}
+
+/* Floating images */
+.togo-floating-section {
+  margin-top: 3rem;
+}
+
+.togo-floating-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.togo-float-card {
+  background: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.togo-float-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .togo-flyer-card {
+    grid-template-columns: 1fr;
+  }
+
+  .togo-floating-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .togo-floating-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .togo-float-card img {
+    height: 200px;
+  }
+}

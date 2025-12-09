@@ -46,40 +46,6 @@
   opacity: 0.9;
 }
 
-/* Drapeaux positionnés sur la carte (desktop) */
-
-.map-pin {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-/* Label drapeau (emoji) plus grand et voyant */
-.pin-label {
-  position: absolute;
-  top: -10px;
-  left: 0;
-  transform: translateX(-50%);
-  font-size: 2.2rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.92);
-  color: #fff;
-  white-space: nowrap;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
-  transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
-}
-
-.map-pin:hover .pin-label,
-.map-pin.active .pin-label {
-  transform: translateX(-50%) scale(1.08);
-  background: rgba(15, 23, 42, 0.98);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.32);
-}
-
 /* 📝 Petit post-it sur la carte */
 
 .map-postit {
@@ -95,6 +61,7 @@
     0 10px 25px rgba(0, 0, 0, 0.16),
     0 0 0 1px rgba(0, 0, 0, 0.04);
   transform: rotate(-3deg);
+  z-index: 3;
 }
 
 .map-postit::before {
@@ -177,34 +144,62 @@
   }
 }
 
-/* ✅ Rangée de drapeaux sous la carte (mobile) */
+/* ✅ Barre de drapeaux en bas de la carte */
 
-.map-flags-row {
-  display: none; /* visible uniquement en mobile */
+.map-flags-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+
+  padding: 0.7rem 0.9rem;
+
+  background: linear-gradient(
+    to top,
+    rgba(15, 23, 42, 0.95),
+    rgba(15, 23, 42, 0.7),
+    rgba(15, 23, 42, 0)
+  );
+
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  z-index: 4;
 }
 
-/* boutons drapeaux plus gros et voyants */
+.map-flags-overlay::-webkit-scrollbar {
+  height: 6px;
+}
+
+/* Boutons drapeaux */
 .map-flag-btn {
-  background: rgba(15, 23, 42, 0.06);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid transparent;
-  padding: 0.35rem 0.55rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 12px;
   cursor: pointer;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1;
-  transition: transform 0.12s ease, background-color 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease;
+  transition: transform 0.12s ease, background-color 0.12s ease,
+    border-color 0.12s ease, box-shadow 0.12s ease;
 }
 
 .map-flag-btn:hover {
-  background-color: rgba(198, 54, 44, 0.08);
+  background-color: rgba(255, 255, 255, 0.14);
   transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 .map-flag-btn.active {
-  border-color: rgba(198, 54, 44, 0.35);
-  background-color: rgba(198, 54, 44, 0.10);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.10);
+  border-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
 }
 
 /* Cartes texte en bas */
@@ -268,38 +263,18 @@
   .world-map img {
     height: 420px;
   }
-}
-
-/* Mobile : on masque les drapeaux sur la carte
-   et on affiche la rangée sous la carte */
-@media (max-width: 768px) {
-  .map-pin {
-    display: none;
-  }
-
-  .map-flags-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    margin-top: 0.8rem;
-    padding: 0.4rem 0.2rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .map-flags-row::-webkit-scrollbar {
-    height: 6px;
-  }
 
   .map-flag-btn {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
+}
 
+@media (max-width: 768px) {
   .world-map img {
     height: 320px;
   }
+
+  .map-flag-btn {
+    font-size: 1.4rem;
+  }
 }
-
-

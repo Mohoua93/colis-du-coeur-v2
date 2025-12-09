@@ -69,6 +69,15 @@ const locations = [
     link: "/actions/maroc",
   },
   {
+    id: "togo",
+    country: "Togo",
+    flag: "🇹🇬",
+    top: "60%",
+    left: "43%",
+    actions: ["Back To School"],
+    link: "/actions/togo",
+  },
+  {
     id: "algerie",
     country: "Algérie",
     flag: "🇩🇿",
@@ -103,27 +112,6 @@ function Actions() {
                 alt="Carte du monde des actions de l'association"
               />
 
-              {/* Drapeaux sur la carte (desktop) */}
-              {locations.map((loc) => (
-                <button
-                  key={loc.id}
-                  type="button"
-                  className={`map-pin ${
-                    loc.id === activeLocationId ? "active" : ""
-                  }`}
-                  style={{ top: loc.top, left: loc.left }}
-                  onClick={() => setActiveLocationId(loc.id)}
-                >
-                  <span
-                    className="pin-label"
-                    aria-label={loc.country}
-                    title={loc.country}
-                  >
-                    {loc.flag}
-                  </span>
-                </button>
-              ))}
-
               {/* 📝 Post-it (animation pop) */}
               {activeLocation && (
                 <div
@@ -143,30 +131,29 @@ function Actions() {
                     ))}
                   </ul>
 
-                  {/* Le seul lien vers la page pays */}
                   <Link to={activeLocation.link} className="map-postit-link">
                     Découvrir les actions en détail →
                   </Link>
                 </div>
               )}
-            </div>
 
-            {/* Rangée mobile : met à jour le post-it (pas de navigation) */}
-            <div className="map-flags-row">
-              {locations.map((loc) => (
-                <button
-                  key={`mobile-${loc.id}`}
-                  type="button"
-                  className={`map-flag-btn ${
-                    loc.id === activeLocationId ? "active" : ""
-                  }`}
-                  onClick={() => setActiveLocationId(loc.id)}
-                  aria-label={loc.country}
-                  title={loc.country}
-                >
-                  {loc.flag}
-                </button>
-              ))}
+              {/* ✅ Drapeaux alignés en bas de la carte */}
+              <div className="map-flags-overlay">
+                {locations.map((loc) => (
+                  <button
+                    key={`overlay-${loc.id}`}
+                    type="button"
+                    className={`map-flag-btn ${
+                      loc.id === activeLocationId ? "active" : ""
+                    }`}
+                    onClick={() => setActiveLocationId(loc.id)}
+                    aria-label={loc.country}
+                    title={loc.country}
+                  >
+                    {loc.flag}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -233,4 +220,3 @@ function Actions() {
 }
 
 export default Actions;
-
