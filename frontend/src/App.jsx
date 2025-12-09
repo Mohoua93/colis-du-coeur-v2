@@ -20,6 +20,7 @@ import Maroc from "./pages/Maroc";
 import Togo from "./pages/Togo";
 import Maraudes from "./pages/Maraudes";
 import RecolteAlimentaire from "./pages/RecolteAlimentaire";
+import DistribAlim from "./pages/DistribAlim";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
             <Route path="/actions/togo" element={<Togo />} />
             <Route path="/actions/maraudes" element={<Maraudes />} />
             <Route path="/actions/recolte-alimentaire" element={<RecolteAlimentaire />} />
+            <Route path="/actions/distribution-alimentaire" element={<DistribAlim />} />
             <Route path="/faire-un-don" element={<Donate />} />
             <Route path="/devenir-benevole" element={<Volunteer />} />
             <Route path="/contact" element={<Contact />} />

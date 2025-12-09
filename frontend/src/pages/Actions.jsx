@@ -212,87 +212,104 @@ function Actions() {
         </div>
 
         {/* Cartes texte en bas */}
-        <section className="actions-grid">
-          {/* 1) Maraudes */}
-          <article className="action-card">
-            <h3>Maraudes en région parisienne</h3>
-            <p>
-              En Île-de-France, nos bénévoles vont à la rencontre des personnes
-              sans-abri ou en grande précarité&nbsp;: distribution de repas,
-              boissons chaudes, kits d&apos;hygiène et écoute bienveillante.
-            </p>
+<section className="actions-grid">
+  {/* 1) Maraudes */}
+  <article className="action-card">
+    <h3>Maraudes en région parisienne</h3>
+    <p>
+      En Île-de-France, nos bénévoles vont à la rencontre des personnes
+      sans-abri ou en grande précarité&nbsp;: distribution de repas,
+      boissons chaudes, kits d&apos;hygiène et écoute bienveillante.
+    </p>
 
-            <Link to="/actions/maraudes" className="action-card-link">
-              Découvrir nos actions en détail →
-            </Link>
-          </article>
+    <Link to="/actions/maraudes" className="action-card-link">
+      Découvrir nos actions en détail →
+    </Link>
+  </article>
 
-          {/* 2) ✅ Récoltes alimentaires */}
-          <article className="action-card">
-            <h3>Récoltes alimentaires</h3>
-            <p>
-              Nous organisons des récoltes alimentaires pour collecter des
-              denrées essentielles destinées aux familles en difficulté. Ces
-              actions solidaires permettent de renforcer nos distributions et
-              de répondre aux besoins urgents sur le terrain.
-            </p>
+  {/* 2) Récoltes alimentaires */}
+  <article className="action-card">
+    <h3>Récoltes alimentaires</h3>
+    <p>
+      Nous organisons des récoltes alimentaires pour collecter des
+      denrées essentielles destinées aux familles en difficulté. Ces
+      actions solidaires permettent de renforcer nos distributions et
+      de répondre aux besoins urgents sur le terrain.
+    </p>
 
-            <Link
-              to="/actions/recolte-alimentaire"
-              className="action-card-link"
-            >
-              Découvrir nos actions en détail →
-            </Link>
-          </article>
+    <Link to="/actions/recolte-alimentaire" className="action-card-link">
+      Découvrir nos actions en détail →
+    </Link>
+  </article>
 
-          {/* 3) Colis alimentaires */}
-          <article className="action-card">
-            <h3>Colis alimentaires</h3>
-            <p>
-              Au Sénégal, au Cameroun, en Ouganda et au Bangladesh, nous
-              distribuons des colis alimentaires aux familles
-              vulnérables&nbsp;: riz, huile, denrées de base et produits
-              essentiels du quotidien.
-            </p>
-          </article>
+  {/* 3) ✅ Distribution alimentaire */}
+  <article className="action-card">
+    <h3>Distribution alimentaire</h3>
+    <p>
+      Grâce aux dons et aux récoltes, nous organisons des distributions
+      alimentaires régulières afin d’apporter une aide concrète aux
+      familles, étudiants et personnes isolées en situation de précarité.
+      Chaque distribution est un moment de solidarité, de respect et de
+      soutien humain.
+    </p>
 
-          <article className="action-card">
-            <h3>Colis alimentaires spéciaux Ramadan &amp; Aïd</h3>
-            <p>
-              Pendant le mois de Ramadan et à l&apos;occasion de
-              l&apos;Aïd, nous renforçons les distributions avec des colis
-              adaptés pour permettre aux familles de vivre ces moments dans la
-              dignité.
-            </p>
-          </article>
+    <Link
+      to="/actions/distribution-alimentaire"
+      className="action-card-link"
+    >
+      Découvrir nos actions en détail →
+    </Link>
+  </article>
 
-          <article className="action-card">
-            <h3>Construction de puits d&apos;eau</h3>
-            <p>
-              Au Sénégal et au Bangladesh, nous finançons la construction de
-              puits pour garantir un accès durable à une eau potable et sûre, à
-              proximité des villages.
-            </p>
-          </article>
+  {/* 4) Colis alimentaires */}
+  <article className="action-card">
+    <h3>Colis alimentaires</h3>
+    <p>
+      Au Sénégal, au Cameroun, en Ouganda et au Bangladesh, nous
+      distribuons des colis alimentaires aux familles
+      vulnérables&nbsp;: riz, huile, denrées de base et produits
+      essentiels du quotidien.
+    </p>
+  </article>
 
-          <article className="action-card">
-            <h3>Fournitures scolaires</h3>
-            <p>
-              En Afrique, nous distribuons des kits scolaires pour aider les
-              enfants à poursuivre leur scolarité dans de meilleures
-              conditions&nbsp;: cahiers, stylos, sacs et matériel de base.
-            </p>
-          </article>
+  <article className="action-card">
+    <h3>Colis alimentaires spéciaux Ramadan &amp; Aïd</h3>
+    <p>
+      Pendant le mois de Ramadan et à l&apos;occasion de
+      l&apos;Aïd, nous renforçons les distributions avec des colis
+      adaptés pour permettre aux familles de vivre ces moments dans la
+      dignité.
+    </p>
+  </article>
 
-          <article className="action-card">
-            <h3>Distribution de Coran</h3>
-            <p>
-              Au Cameroun et au Sénégal, nous offrons des exemplaires du Coran
-              aux mosquées, écoles et familles, dans le respect des demandes
-              locales et des besoins constatés sur le terrain.
-            </p>
-          </article>
-        </section>
+  <article className="action-card">
+    <h3>Construction de puits d&apos;eau</h3>
+    <p>
+      Au Sénégal et au Bangladesh, nous finançons la construction de
+      puits pour garantir un accès durable à une eau potable et sûre, à
+      proximité des villages.
+    </p>
+  </article>
+
+  <article className="action-card">
+    <h3>Fournitures scolaires</h3>
+    <p>
+      En Afrique, nous distribuons des kits scolaires pour aider les
+      enfants à poursuivre leur scolarité dans de meilleures
+      conditions&nbsp;: cahiers, stylos, sacs et matériel de base.
+    </p>
+  </article>
+
+  <article className="action-card">
+    <h3>Distribution de Coran</h3>
+    <p>
+      Au Cameroun et au Sénégal, nous offrons des exemplaires du Coran
+      aux mosquées, écoles et familles, dans le respect des demandes
+      locales et des besoins constatés sur le terrain.
+    </p>
+  </article>
+</section>
+
       </div>
     </section>
   );
