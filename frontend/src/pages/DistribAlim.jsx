@@ -9,9 +9,7 @@ import distribFloat2 from "../assets/images/distrib-float-2.jpeg";
 import distribFloat3 from "../assets/images/distrib-float-3.jpeg";
 import distribFloat4 from "../assets/images/distrib-float-4.jpeg";
 
-// ✅ Vidéo locale
-// ⚠️ Ajuste le chemin/nom si ton fichier est différent
-import distribVideo from "../assets/images/VideoSection.mp4";
+
 
 function DistribAlim() {
   return (
@@ -153,45 +151,7 @@ function DistribAlim() {
           </div>
         </section>
 
-        {/* ✅ Section vidéo locale + texte à côté */}
-        <section className="video-section">
-          <p className="video-eyebrow">Notre action en vidéo</p>
-          <h2 className="video-title">Distribution Alimentaire en vidéo</h2>
-          <p className="video-intro">
-            Un aperçu de nos distributions, de nos bénévoles et de l’impact
-            concret de votre solidarité.
-          </p>
-
-          <div className="video-split">
-            <div className="video-wrapper">
-              <video
-                src={distribVideo}
-                controls
-                playsInline
-                preload="metadata"
-                className="video-native"
-              />
-            </div>
-
-            <aside className="video-side-card">
-              <p className="video-side-eyebrow">Soutien</p>
-              <h3 className="video-side-title">
-                Mohammed Amoura 🇩🇿
-              </h3>
-              <p className="video-side-text">
-                Nous remercions chaleureusement le joueur de football,
-                international Algérien <strong>Mohammed Amoura</strong>,
-                pour son message de soutien et sa bienveillance envers
-                <strong> Les Colis du Cœur</strong>.
-              </p>
-              <p className="video-side-text">
-                Son encouragement renforce notre énergie collective et rappelle
-                que la solidarité peut rassembler bien au-delà des terrains.
-              </p>
-            </aside>
-          </div>
-        </section>
-
+        
         {/* ✅ 4 images en apesanteur */}
         <section className="distrib-floating-section">
           <h2 className="country-section-title">
