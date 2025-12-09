@@ -102,16 +102,16 @@ function Actions() {
           l&apos;accès limité à l&apos;eau.
         </p>
 
-        {/* Bloc carte + post-it dessus */}
         <div className="actions-layout">
           <div className="actions-map-wrapper">
+            {/* ✅ CARTE */}
             <div className="world-map">
               <img
                 src={worldMap}
                 alt="Carte du monde des actions de l'association"
               />
 
-              {/* 📝 Post-it (animation pop) */}
+              {/* 📝 Post-it */}
               {activeLocation && (
                 <div
                   key={activeLocation.id}
@@ -135,16 +135,17 @@ function Actions() {
                   </Link>
                 </div>
               )}
+            </div>
 
-              {/* ✅ Drapeaux alignés en bas (desktop)
-                  ✅ En mobile, ce bloc passera sous le post-it via CSS */}
-              <div className="map-flags-overlay">
-                <p className="map-flags-label">Choisir un pays</p>
+            {/* ✅ DRAPEAUX SOUS LA CARTE */}
+            <div className="map-flags-overlay">
+              <p className="map-flags-label">Choisir un pays</p>
 
+              <div className="map-flags-list-wrapper">
                 <div className="map-flags-list">
                   {locations.map((loc) => (
                     <button
-                      key={`overlay-${loc.id}`}
+                      key={`below-${loc.id}`}
                       type="button"
                       className={`map-flag-btn ${
                         loc.id === activeLocationId ? "active" : ""
@@ -159,10 +160,11 @@ function Actions() {
                 </div>
               </div>
             </div>
+            {/* fin drapeaux */}
           </div>
         </div>
 
-        {/* Cartes texte en bas */}
+        {/* Cartes texte */}
         <section className="actions-grid">
           <article className="action-card">
             <h3>Maraudes en région parisienne</h3>
@@ -224,4 +226,6 @@ function Actions() {
 }
 
 export default Actions;
+
+
 
