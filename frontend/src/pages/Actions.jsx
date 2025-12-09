@@ -1,4 +1,3 @@
-// src/pages/Actions.js
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/actions.css";
@@ -137,22 +136,27 @@ function Actions() {
                 </div>
               )}
 
-              {/* ✅ Drapeaux alignés en bas de la carte */}
+              {/* ✅ Drapeaux alignés en bas (desktop)
+                  ✅ En mobile, ce bloc passera sous le post-it via CSS */}
               <div className="map-flags-overlay">
-                {locations.map((loc) => (
-                  <button
-                    key={`overlay-${loc.id}`}
-                    type="button"
-                    className={`map-flag-btn ${
-                      loc.id === activeLocationId ? "active" : ""
-                    }`}
-                    onClick={() => setActiveLocationId(loc.id)}
-                    aria-label={loc.country}
-                    title={loc.country}
-                  >
-                    {loc.flag}
-                  </button>
-                ))}
+                <p className="map-flags-label">Choisir un pays</p>
+
+                <div className="map-flags-list">
+                  {locations.map((loc) => (
+                    <button
+                      key={`overlay-${loc.id}`}
+                      type="button"
+                      className={`map-flag-btn ${
+                        loc.id === activeLocationId ? "active" : ""
+                      }`}
+                      onClick={() => setActiveLocationId(loc.id)}
+                      aria-label={loc.country}
+                      title={loc.country}
+                    >
+                      {loc.flag}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -220,3 +224,4 @@ function Actions() {
 }
 
 export default Actions;
+
