@@ -211,7 +211,7 @@ function Actions() {
           </div>
         </div>
 
-        {/* Cartes texte */}
+        {/* Cartes texte en bas */}
         <section className="actions-grid">
           <article className="action-card">
             <h3>Maraudes en région parisienne</h3>
@@ -220,6 +220,11 @@ function Actions() {
               sans-abri ou en grande précarité&nbsp;: distribution de repas,
               boissons chaudes, kits d&apos;hygiène et écoute bienveillante.
             </p>
+
+            {/* ✅ Nouveau lien */}
+            <Link to="/actions/maraudes" className="action-card-link">
+              Découvrir nos actions en détail →
+            </Link>
           </article>
 
           <article className="action-card">
@@ -273,6 +278,7 @@ function Actions() {
 }
 
 export default Actions;
+
 
 
 
