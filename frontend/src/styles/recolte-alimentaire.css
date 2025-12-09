@@ -1,0 +1,200 @@
+/* styles spécifiques Récoltes Alimentaires */
+
+.recolte-page .country-title {
+  letter-spacing: 0.2px;
+}
+
+/* ✅ Section Flyer (style Maroc) */
+.recolte-flyer-section {
+  margin: 2.4rem 0 2.8rem;
+}
+
+.recolte-flyer-card {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 1.6rem;
+  background: #0f172a;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+
+  /* ✅ Centrage vertical global */
+  align-items: center;
+}
+
+/* ✅ Image flyer sans rognage + plus grande + centrée */
+.recolte-flyer-image {
+  height: 300px; /* ✅ plus grand */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  padding: 1rem;
+}
+
+.recolte-flyer-image img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* ✅ affiche tout le flyer */
+  display: block;
+}
+
+/* ✅ Texte flyer */
+.recolte-flyer-text {
+  padding: 2rem 2rem 1.8rem;
+  color: #f8fafc;
+
+  /* ✅ Centrage vertical du contenu texte */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recolte-flyer-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}
+
+.recolte-flyer-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.recolte-flyer-text p {
+  line-height: 1.65;
+  color: rgba(248, 250, 252, 0.88);
+}
+
+/* ✅ Section texte */
+.recolte-text-section {
+  margin: 2.2rem 0 2.8rem;
+}
+
+.recolte-text-body {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 1.6rem 1.7rem;
+}
+
+.recolte-text-body p {
+  line-height: 1.7;
+  color: #0f172a;
+  font-size: 0.98rem;
+}
+
+.recolte-text-body p + p {
+  margin-top: 1rem;
+}
+
+/* ✅ Sous-titres dans le texte */
+.recolte-subtitle {
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+/* ✅ Listes */
+.recolte-list {
+  margin: 0.6rem 0 1rem 1.1rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.recolte-list li {
+  margin-bottom: 0.35rem;
+  line-height: 1.55;
+  color: #0f172a;
+  font-size: 0.98rem;
+}
+
+/* ✅ Floating images */
+.recolte-floating-section {
+  margin: 2.4rem 0 3rem;
+}
+
+.recolte-floating-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.recolte-float-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.22);
+  transform: translateY(0);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.recolte-float-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.98;
+}
+
+.recolte-float-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.28);
+}
+
+/* Petits décalages subtils comme Maroc/Maraudes */
+.recolte-floating-grid .float-1 { transform: translateY(0px); }
+.recolte-floating-grid .float-2 { transform: translateY(10px); }
+.recolte-floating-grid .float-3 { transform: translateY(-6px); }
+.recolte-floating-grid .float-4 { transform: translateY(8px); }
+
+/* ✅ Responsive */
+@media (max-width: 980px) {
+  .recolte-flyer-card {
+    grid-template-columns: 1fr;
+  }
+
+  .recolte-flyer-image {
+    height: 260px;
+  }
+
+  .recolte-floating-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .recolte-float-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .recolte-flyer-text {
+    padding: 1.4rem 1.3rem 1.2rem;
+  }
+
+  .recolte-flyer-image {
+    height: 220px;
+  }
+
+  .recolte-floating-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recolte-float-card img {
+    height: 220px;
+  }
+
+  .recolte-text-body {
+    padding: 1.25rem 1.2rem;
+  }
+}
+
+
+

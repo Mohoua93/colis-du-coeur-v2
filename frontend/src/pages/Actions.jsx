@@ -213,6 +213,7 @@ function Actions() {
 
         {/* Cartes texte en bas */}
         <section className="actions-grid">
+          {/* 1) Maraudes */}
           <article className="action-card">
             <h3>Maraudes en région parisienne</h3>
             <p>
@@ -221,27 +222,47 @@ function Actions() {
               boissons chaudes, kits d&apos;hygiène et écoute bienveillante.
             </p>
 
-            {/* ✅ Nouveau lien */}
             <Link to="/actions/maraudes" className="action-card-link">
               Découvrir nos actions en détail →
             </Link>
           </article>
 
+          {/* 2) ✅ Récoltes alimentaires */}
+          <article className="action-card">
+            <h3>Récoltes alimentaires</h3>
+            <p>
+              Nous organisons des récoltes alimentaires pour collecter des
+              denrées essentielles destinées aux familles en difficulté. Ces
+              actions solidaires permettent de renforcer nos distributions et
+              de répondre aux besoins urgents sur le terrain.
+            </p>
+
+            <Link
+              to="/actions/recolte-alimentaire"
+              className="action-card-link"
+            >
+              Découvrir nos actions en détail →
+            </Link>
+          </article>
+
+          {/* 3) Colis alimentaires */}
           <article className="action-card">
             <h3>Colis alimentaires</h3>
             <p>
               Au Sénégal, au Cameroun, en Ouganda et au Bangladesh, nous
-              distribuons des colis alimentaires aux familles vulnérables&nbsp;:
-              riz, huile, denrées de base et produits essentiels du quotidien.
+              distribuons des colis alimentaires aux familles
+              vulnérables&nbsp;: riz, huile, denrées de base et produits
+              essentiels du quotidien.
             </p>
           </article>
 
           <article className="action-card">
             <h3>Colis alimentaires spéciaux Ramadan &amp; Aïd</h3>
             <p>
-              Pendant le mois de Ramadan et à l&apos;occasion de l&apos;Aïd,
-              nous renforçons les distributions avec des colis adaptés pour
-              permettre aux familles de vivre ces moments dans la dignité.
+              Pendant le mois de Ramadan et à l&apos;occasion de
+              l&apos;Aïd, nous renforçons les distributions avec des colis
+              adaptés pour permettre aux familles de vivre ces moments dans la
+              dignité.
             </p>
           </article>
 
@@ -278,6 +299,7 @@ function Actions() {
 }
 
 export default Actions;
+
 
 
 

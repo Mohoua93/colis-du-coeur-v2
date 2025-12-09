@@ -11,7 +11,6 @@ import Volunteer from "./pages/Volunteer";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
-
 import Bangladesh from "./pages/Bangladesh";
 import Senegal from "./pages/Senegal";
 import Cameroun from "./pages/Cameroun";
@@ -20,6 +19,7 @@ import Algerie from "./pages/Algerie";
 import Maroc from "./pages/Maroc";
 import Togo from "./pages/Togo";
 import Maraudes from "./pages/Maraudes";
+import RecolteAlimentaire from "./pages/RecolteAlimentaire";
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function App() {
             <Route path="/actions/maroc" element={<Maroc />} />
             <Route path="/actions/togo" element={<Togo />} />
             <Route path="/actions/maraudes" element={<Maraudes />} />
-
+            <Route path="/actions/recolte-alimentaire" element={<RecolteAlimentaire />} />
             <Route path="/faire-un-don" element={<Donate />} />
             <Route path="/devenir-benevole" element={<Volunteer />} />
             <Route path="/contact" element={<Contact />} />
