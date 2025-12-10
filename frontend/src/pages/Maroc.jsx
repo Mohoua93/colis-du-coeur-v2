@@ -1,6 +1,6 @@
-// src/pages/Maroc.js
+// src/pages/Maroc.jsx
 import "../styles/bangladesh.css"; // base country-*
-import "../styles/maroc.css";      // styles spécifiques Maroc
+import "../styles/maroc.css"; // styles spécifiques Maroc
 
 import marocHero from "../assets/images/maroc-hero.jpeg";
 import marocFlyer from "../assets/images/maroc-flyer.jpeg";
@@ -11,6 +11,8 @@ import marocFloat3 from "../assets/images/maroc-float-3.jpeg";
 import marocFloat4 from "../assets/images/maroc-float-4.jpeg";
 
 function Maroc() {
+  const videoId = "wUlqvvmTxBw";
+
   return (
     <section className="country-page maroc-page">
       <div className="container">
@@ -33,10 +35,7 @@ function Maroc() {
           </div>
 
           <div className="country-hero-image">
-            <img
-              src={marocHero}
-              alt="Paysage ou ville au Maroc"
-            />
+            <img src={marocHero} alt="Paysage ou ville au Maroc" />
           </div>
         </header>
 
@@ -44,10 +43,7 @@ function Maroc() {
         <section className="maroc-flyer-section">
           <div className="maroc-flyer-card">
             <div className="maroc-flyer-image">
-              <img
-                src={marocFlyer}
-                alt="Flyer de l'action au Maroc"
-              />
+              <img src={marocFlyer} alt="Flyer de l'action au Maroc" />
             </div>
 
             <div className="maroc-flyer-text">
@@ -164,6 +160,28 @@ function Maroc() {
           </div>
         </section>
 
+        {/* ✅ Section vidéo YouTube déplacée en bas */}
+        <section className="maroc-video-section">
+          <p className="maroc-video-eyebrow">Notre action vidéo</p>
+          <h2 className="maroc-video-title">Nos actions au Maroc en vidéo</h2>
+          <p className="maroc-video-intro">
+            Un aperçu de cette mission solidaire et des moments de partage vécus
+            auprès des enfants et des familles.
+          </p>
+
+          <div className="maroc-video-wrapper">
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+              title="Nos actions au Maroc en vidéo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="country-cta">
           <h2>Envie de soutenir nos actions au Maroc&nbsp;?</h2>
@@ -187,3 +205,5 @@ function Maroc() {
 }
 
 export default Maroc;
+
+

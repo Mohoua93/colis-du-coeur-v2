@@ -1,3 +1,4 @@
+/* src/styles/maroc.css */
 /* ========= Spécifique Maroc ========= */
 
 /* ✅ Section Flyer */
@@ -21,6 +22,9 @@
   border-radius: 12px;
   overflow: hidden;
   background: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .maroc-flyer-image img {
@@ -88,6 +92,7 @@
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
   transform: translateZ(0);
   animation: marocFloatSoft 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .maroc-float-card img {
@@ -115,6 +120,53 @@
   transition: transform 0.15s ease;
 }
 
+/* ✅ Section vidéo YouTube (placée avant le CTA) */
+
+.maroc-video-section {
+  margin: 2.4rem 0 3rem;
+}
+
+.maroc-video-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+  margin-bottom: 0.35rem;
+}
+
+.maroc-video-title {
+  font-size: 1.35rem;
+  margin-bottom: 0.6rem;
+  color: #c6362c;
+}
+
+.maroc-video-intro {
+  max-width: 760px;
+  line-height: 1.7;
+  color: #374151;
+  font-size: 0.98rem;
+  margin-bottom: 1.1rem;
+}
+
+/* Wrapper responsive 16:9 */
+.maroc-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111827;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.14);
+}
+
+.maroc-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* Responsive */
 
 @media (max-width: 1100px) {
@@ -136,3 +188,11 @@
     height: 240px;
   }
 }
+
+@media (max-width: 560px) {
+  .maroc-flyer-title,
+  .maroc-video-title {
+    font-size: 1.2rem;
+  }
+}
+
