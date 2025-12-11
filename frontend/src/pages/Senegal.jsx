@@ -69,12 +69,12 @@ function Senegal() {
 
             {/* ✅ Nouvelle card : construction de mosquées */}
             <article className="summary-card">
-              <h3>Construction et soutien de mosquées</h3>
+              <h3>Construction et soutien de madrassa</h3>
               <p>
                 Nous accompagnons des projets de{" "}
-                <strong>construction, rénovation ou aménagement de mosquées</strong>,
+                <strong>construction, rénovation ou aménagement de salles de classes</strong>,
                 en lien avec les communautés et les responsables locaux, afin de
-                soutenir des lieux de culte et de rassemblement au cœur des villages.
+                soutenir des lieux d'apprentissage et de rassemblement au cœur des villages.
               </p>
             </article>
           </div>
