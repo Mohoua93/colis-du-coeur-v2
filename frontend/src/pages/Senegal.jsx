@@ -4,7 +4,7 @@ import senegalHero from "../assets/images/Senegal-hero.jpg";
 import senegalPuits from "../assets/images/Senegal-puits.jpg";
 import senegalColis from "../assets/images/Senegal-food.jpg";
 import senegalCoran from "../assets/images/Senegal-coran.jpg";
-import senegalMosquee from "../assets/images/Senegal-mosquee.jpg";
+import senegalMadrasa from "../assets/images/Madrasa-Sen.jpg";
 
 function Senegal() {
   return (
@@ -19,10 +19,10 @@ function Senegal() {
               Au Sénégal, Les Colis du Cœur agissent aux côtés des familles en
               situation de précarité à travers des{" "}
               <strong>projets d&apos;accès à l&apos;eau</strong>, des{" "}
-              <strong>distributions de colis alimentaires</strong> et, lorsque
-              cela est demandé, des{" "}
+              <strong>distributions de colis alimentaires</strong>, des{" "}
               <strong>dons de Corans</strong> dans un cadre respectueux et
-              encadré.
+              encadré, ainsi que des{" "}
+              <strong>projets de construction et de soutien de mosquées</strong>.
             </p>
             <a href="/nos-actions" className="country-back-link">
               ← Retour à la carte de nos actions
@@ -30,10 +30,7 @@ function Senegal() {
           </div>
 
           <div className="country-hero-image">
-            <img
-              src={senegalHero}
-              alt="Paysage et village au Sénégal"
-            />
+            <img src={senegalHero} alt="Paysage et village au Sénégal" />
           </div>
         </header>
 
@@ -67,6 +64,17 @@ function Senegal() {
                 En lien avec les acteurs locaux, nous organisons des{" "}
                 <strong>dons de Corans</strong> pour les mosquées, les
                 écoles et certaines familles, lorsque le besoin est exprimé.
+              </p>
+            </article>
+
+            {/* ✅ Nouvelle card : construction de mosquées */}
+            <article className="summary-card">
+              <h3>Construction et soutien de mosquées</h3>
+              <p>
+                Nous accompagnons des projets de{" "}
+                <strong>construction, rénovation ou aménagement de mosquées</strong>,
+                en lien avec les communautés et les responsables locaux, afin de
+                soutenir des lieux de culte et de rassemblement au cœur des villages.
               </p>
             </article>
           </div>
@@ -130,33 +138,37 @@ function Senegal() {
         <section className="country-block">
           <div className="country-block-text">
             <h2 className="country-section-title">
-              Construction et soutien de mosquées
+              Construction de madrasa
             </h2>
             <p>
               Au-delà de l&apos;aide alimentaire et de l&apos;accès à l&apos;eau,
               nous accompagnons également des projets de{" "}
-              <strong>construction, rénovation ou aménagement de mosquées</strong>
-               dans certaines localités du Sénégal.
+              <strong>construction, rénovation ou aménagement de salle de classes</strong>
+              dans certaines localités du Sénégal.
             </p>
             <p>
-              Ces lieux de culte jouent un rôle central dans la vie communautaire&nbsp;:
+              Ces lieux d'enseignement et d'apprentissage jouent un rôle central dans la vie communautaire&nbsp;:
               ils sont des espaces de prière, mais aussi de rencontre, d&apos;enseignement
               et de cohésion sociale. En soutenant ces projets, nous contribuons à
-              renforcer le <strong>lien social et spirituel</strong> au cœur des
+              renforcer le <strong>lien socialo-éducatif</strong> au cœur des
               villages.
             </p>
             <p>
               Chaque projet est mené en lien étroit avec les habitants, les
               responsables locaux et nos partenaires sur place, afin de répondre
-              à des besoins réels et de garantir un <strong>impact durable et
-              respectueux</strong> des contextes culturels et religieux.
+              à des besoins réels et de garantir un{" "}
+              <strong>impact durable </strong> des contextes et besoins éducatifs. Nous pouvons également accompagner les donateurs dans la{" "}
+              <strong>réalisation de devis personnalisés</strong> pour la construction
+              ou la rénovation de madrasa, en fonction de leurs intentions et de
+              leur budget.
             </p>
           </div>
 
           <div className="country-hero-image">
             <img
-              src={senegalMosquee}
-              alt="Construction ou mosquée soutenue au Sénégal"
+              src={senegalMadrasa
+              }
+              alt="Construction de madrasa au Sénégal"
             />
           </div>
         </section>
@@ -211,4 +223,5 @@ function Senegal() {
 }
 
 export default Senegal;
+
 
