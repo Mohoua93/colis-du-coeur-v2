@@ -4,6 +4,7 @@ import senegalHero from "../assets/images/Senegal-hero.jpg";
 import senegalPuits from "../assets/images/Senegal-puits.jpg";
 import senegalColis from "../assets/images/Senegal-food.jpg";
 import senegalCoran from "../assets/images/Senegal-coran.jpg";
+import senegalMosquee from "../assets/images/Senegal-mosquee.jpg";
 
 function Senegal() {
   return (
@@ -93,7 +94,7 @@ function Senegal() {
           <div className="country-hero-image">
             <img
               src={senegalPuits}
-              alt="Puits d&apos;eau construit au Sénégal"
+              alt="Puits d'eau construit au Sénégal"
             />
           </div>
         </section>
@@ -111,9 +112,9 @@ function Senegal() {
             </p>
             <p>
               Ils sont remis à des familles repérées par nos relais locaux,
-              avec l&apos;objectif de <strong>réduire l&apos;insécurité
-              alimentaire</strong> et d&apos;apporter un soutien concret
-              dans les périodes difficiles.
+              avec l&apos;objectif de{" "}
+              <strong>réduire l&apos;insécurité alimentaire</strong> et
+              d&apos;apporter un soutien concret dans les périodes difficiles.
             </p>
           </div>
 
@@ -125,8 +126,43 @@ function Senegal() {
           </div>
         </section>
 
-        {/* Dons de Corans */}
+        {/* ✅ Construction de mosquées */}
         <section className="country-block">
+          <div className="country-block-text">
+            <h2 className="country-section-title">
+              Construction et soutien de mosquées
+            </h2>
+            <p>
+              Au-delà de l&apos;aide alimentaire et de l&apos;accès à l&apos;eau,
+              nous accompagnons également des projets de{" "}
+              <strong>construction, rénovation ou aménagement de mosquées</strong>
+               dans certaines localités du Sénégal.
+            </p>
+            <p>
+              Ces lieux de culte jouent un rôle central dans la vie communautaire&nbsp;:
+              ils sont des espaces de prière, mais aussi de rencontre, d&apos;enseignement
+              et de cohésion sociale. En soutenant ces projets, nous contribuons à
+              renforcer le <strong>lien social et spirituel</strong> au cœur des
+              villages.
+            </p>
+            <p>
+              Chaque projet est mené en lien étroit avec les habitants, les
+              responsables locaux et nos partenaires sur place, afin de répondre
+              à des besoins réels et de garantir un <strong>impact durable et
+              respectueux</strong> des contextes culturels et religieux.
+            </p>
+          </div>
+
+          <div className="country-hero-image">
+            <img
+              src={senegalMosquee}
+              alt="Construction ou mosquée soutenue au Sénégal"
+            />
+          </div>
+        </section>
+
+        {/* Dons de Corans */}
+        <section className="country-block country-block-reverse">
           <div className="country-block-text">
             <h2 className="country-section-title">
               Dons de Corans dans un cadre encadré
@@ -175,3 +211,4 @@ function Senegal() {
 }
 
 export default Senegal;
+
