@@ -9,7 +9,6 @@ import Actions from "./pages/Actions";
 import Donate from "./pages/Donate";
 import Volunteer from "./pages/Volunteer";
 import Contact from "./pages/Contact";
-import Legal from "./pages/Legal";
 import NotFound from "./pages/NotFound";
 import Bangladesh from "./pages/Bangladesh";
 import Senegal from "./pages/Senegal";
@@ -22,6 +21,7 @@ import Maraudes from "./pages/Maraudes";
 import RecolteAlimentaire from "./pages/RecolteAlimentaire";
 import DistribAlim from "./pages/DistribAlim";
 import Partenariat from "./pages/Partenariat";
+import MentionsLegales from "./pages/MentionsLegales";
 
 function App() {
   return (
@@ -48,7 +48,7 @@ function App() {
             <Route path="/devenir-benevole" element={<Volunteer />} />
             <Route path="/partenariat" element={<Partenariat />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/mentions-legales" element={<Legal />} />
+            <Route path="/mentionslegales" element={<MentionsLegales />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

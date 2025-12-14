@@ -10,7 +10,7 @@ function Footer() {
         <div>© {currentYear} Les Colis du Cœur. Tous droits réservés.</div>
         <div className="site-footer-links">
           <Link to="/contact">Contact</Link>
-          <Link to="/mentions-legales">Mentions légales</Link>
+          <Link to="/mentionslegales">Mentions légales</Link>
         </div>
       </div>
     </footer>
