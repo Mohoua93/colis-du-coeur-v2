@@ -50,6 +50,7 @@ function Header() {
           <Link to="/">Accueil</Link>
           <Link to="/qui-sommes-nous">Qui sommes-nous</Link>
           <Link to="/nos-actions">Nos actions</Link>
+          <Link to="/partenariat">Partenariat</Link>
           <Link to="/devenir-benevole">Devenir bénévole</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/faire-un-don" className="nav-donate">
@@ -91,11 +92,25 @@ function Header() {
         </div>
 
         <nav className="mobile-menu-nav">
-          <Link to="/" onClick={handleLinkClick}>Accueil</Link>
-          <Link to="/qui-sommes-nous" onClick={handleLinkClick}>Qui sommes-nous</Link>
-          <Link to="/nos-actions" onClick={handleLinkClick}>Nos actions</Link>
-          <Link to="/devenir-benevole" onClick={handleLinkClick}>Devenir bénévole</Link>
-          <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
+          <Link to="/" onClick={handleLinkClick}>
+            Accueil
+          </Link>
+          <Link to="/qui-sommes-nous" onClick={handleLinkClick}>
+            Qui sommes-nous
+          </Link>
+          <Link to="/nos-actions" onClick={handleLinkClick}>
+            Nos actions
+          </Link>
+          {/* ✅ Nouveau lien Partenariat (mobile) */}
+          <Link to="/partenariat" onClick={handleLinkClick}>
+            Partenariat
+          </Link>
+          <Link to="/devenir-benevole" onClick={handleLinkClick}>
+            Devenir bénévole
+          </Link>
+          <Link to="/contact" onClick={handleLinkClick}>
+            Contact
+          </Link>
           <Link
             to="/faire-un-don"
             className="nav-donate"
@@ -117,6 +132,7 @@ function Header() {
 }
 
 export default Header;
+
 
 
 

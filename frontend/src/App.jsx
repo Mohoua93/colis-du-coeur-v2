@@ -21,6 +21,7 @@ import Togo from "./pages/Togo";
 import Maraudes from "./pages/Maraudes";
 import RecolteAlimentaire from "./pages/RecolteAlimentaire";
 import DistribAlim from "./pages/DistribAlim";
+import Partenariat from "./pages/Partenariat";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path="/actions/distribution-alimentaire" element={<DistribAlim />} />
             <Route path="/faire-un-don" element={<Donate />} />
             <Route path="/devenir-benevole" element={<Volunteer />} />
+            <Route path="/partenariat" element={<Partenariat />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/mentions-legales" element={<Legal />} />
             <Route path="*" element={<NotFound />} />

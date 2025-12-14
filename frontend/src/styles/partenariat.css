@@ -1,0 +1,199 @@
+/* src/styles/partenariat.css */
+
+.partners-page {
+  padding: 4rem 0;
+}
+
+/* Hero */
+
+.partners-hero {
+  margin-bottom: 2.8rem;
+}
+
+.partners-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+  margin-bottom: 0.4rem;
+}
+
+.partners-title {
+  font-size: 2.2rem;
+  color: #c6362c;
+  margin-bottom: 0.8rem;
+}
+
+.partners-intro {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+/* Section grille */
+
+.partners-grid-section {
+  margin-bottom: 3rem;
+}
+
+.partners-section-title {
+  font-size: 1.3rem;
+  margin-bottom: 1.4rem;
+  color: #111827;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+
+.partner-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  padding: 1.2rem 1.3rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+}
+
+.partner-logo-wrapper {
+  width: 140px;
+  height: 80px;
+  border-radius: 12px;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.9rem;
+  overflow: hidden;
+}
+
+.partner-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.partner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.partner-name {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.2rem;
+}
+
+.partner-tag {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.4rem;
+}
+
+.partner-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #c6362c;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(198, 54, 44, 0.4);
+}
+
+.partner-link:hover {
+  border-bottom-color: transparent;
+}
+
+/* CTA Partenariat */
+
+.partners-cta {
+  margin-top: 1rem;
+  padding: 1.8rem 1.9rem;
+  border-radius: 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.partners-cta h2 {
+  font-size: 1.4rem;
+  color: #b91c1c;
+  margin-bottom: 0.6rem;
+}
+
+.partners-cta p {
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #7f1d1d;
+  margin-bottom: 1rem;
+}
+
+.partners-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.partners-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.partners-cta-btn.primary {
+  background: #c6362c;
+  color: #fff;
+  border-color: #b91c1c;
+}
+
+.partners-cta-btn.primary:hover {
+  filter: brightness(0.95);
+}
+
+.partners-cta-btn.ghost {
+  background: transparent;
+  color: #b91c1c;
+  border-color: rgba(185, 28, 28, 0.6);
+}
+
+.partners-cta-btn.ghost:hover {
+  background: rgba(254, 226, 226, 0.9);
+}
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .partners-page {
+    padding: 3rem 0;
+  }
+
+  .partners-title {
+    font-size: 1.8rem;
+  }
+}
