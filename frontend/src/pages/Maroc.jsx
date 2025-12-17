@@ -55,7 +55,7 @@ function Maroc() {
                 Ce flyer accompagne le souvenir d’une action menée auprès
                 d’enfants de villages isolés autour de Marrakech. Il illustre
                 notre volonté d’agir au plus près des besoins essentiels et de
-                créer des instants de partage durables.
+                créer des instants de partage durables. La distribution des colis alimetaires et des cartables scolaires symbolise notre engagement à offrir des opportunités concrètes pour un avenir meilleur.
               </p>
             </div>
           </div>
