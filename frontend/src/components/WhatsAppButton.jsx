@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/whatsappButton.css";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "33612345678";
+  const phoneNumber = "33777381185"; // Numéro de téléphone au format international sans le '+'
   const message = encodeURIComponent(
     "Bonjour, je vous contacte depuis le site Les Colis du Coeur."
   );
