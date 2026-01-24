@@ -3,7 +3,7 @@ import "../styles/bangladesh.css"; // base country-*
 import "../styles/recolte-alimentaire.css"; // styles spécifiques Récolte
 
 import recolteHero from "../assets/images/recolte-hero.jpeg";
-import recolteFlyer from "../assets/images/recolte-flyer.jpeg";
+import recolteFlyer from "../assets/images/flyer-recolte.jpeg";
 
 import recolteFloat1 from "../assets/images/recolte-float-1.jpeg";
 import recolteFloat2 from "../assets/images/recolte-float-2.jpeg";
