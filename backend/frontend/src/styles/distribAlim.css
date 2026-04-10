@@ -1,0 +1,227 @@
+/* src/styles/distribAlim.css */
+/* styles spécifiques Distribution Alimentaire (avec vidéo + texte à côté) */
+
+.distrib-page .country-title {
+  letter-spacing: 0.2px;
+}
+
+/* ✅ Section texte */
+.distrib-text-section {
+  margin: 2.2rem 0 2.8rem;
+}
+
+.distrib-text-body {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  padding: 1.6rem 1.7rem;
+}
+
+.distrib-text-body p {
+  line-height: 1.7;
+  color: #0f172a;
+  font-size: 0.98rem;
+}
+
+.distrib-text-body p + p {
+  margin-top: 1rem;
+}
+
+/* ✅ Sous-titres dans le texte */
+.distrib-subtitle {
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+/* ✅ Listes (si jamais tu en ajoutes) */
+.distrib-list {
+  margin: 0.6rem 0 1rem 1.1rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.distrib-list li {
+  margin-bottom: 0.35rem;
+  line-height: 1.55;
+  color: #0f172a;
+  font-size: 0.98rem;
+}
+
+/* =======================================================
+   ✅ SECTION VIDÉO
+   ======================================================= */
+
+.video-section {
+  margin: 2.4rem 0 3rem;
+}
+
+.video-eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #92400e;
+  margin-bottom: 0.35rem;
+  opacity: 0.85;
+}
+
+.video-title {
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: #0f172a;
+}
+
+.video-intro {
+  max-width: 760px;
+  line-height: 1.6;
+  color: #0f172a;
+  opacity: 0.9;
+  margin-bottom: 1.2rem;
+}
+
+/* ✅ Layout vidéo + texte à côté */
+.video-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+/* ✅ Player responsive */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+.video-native {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ✅ Carte texte à côté */
+.video-side-card {
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: 16px;
+  padding: 1.4rem 1.4rem 1.2rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-side-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.75;
+  margin-bottom: 0.5rem;
+}
+
+.video-side-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.video-side-text {
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.video-side-text + .video-side-text {
+  margin-top: 0.8rem;
+}
+
+/* =======================================================
+   ✅ FLOATING IMAGES
+   ======================================================= */
+
+.distrib-floating-section {
+  margin: 2.4rem 0 3rem;
+}
+
+.distrib-floating-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.distrib-float-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0f172a;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.22);
+  transform: translateY(0);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.distrib-float-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.98;
+}
+
+.distrib-float-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.28);
+}
+
+/* Petits décalages subtils */
+.distrib-floating-grid .float-1 { transform: translateY(0px); }
+.distrib-floating-grid .float-2 { transform: translateY(10px); }
+.distrib-floating-grid .float-3 { transform: translateY(-6px); }
+.distrib-floating-grid .float-4 { transform: translateY(8px); }
+
+/* =======================================================
+   ✅ RESPONSIVE
+   ======================================================= */
+
+@media (max-width: 980px) {
+  .video-split {
+    grid-template-columns: 1fr;
+  }
+
+  .distrib-floating-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .distrib-float-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 560px) {
+  .video-title {
+    font-size: 1.2rem;
+  }
+
+  .distrib-floating-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .distrib-float-card img {
+    height: 220px;
+  }
+
+  .distrib-text-body {
+    padding: 1.25rem 1.2rem;
+  }
+}
+
