@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import "../styles/volunteer.css";
 import volunteerImage from "../assets/images/flyerVolunteer.jpeg";
+=======
+// src/pages/Volunteer.js
+import { useState } from "react";
+import "../styles/volunteer.css";
+>>>>>>> f0dc4c9c671d1d144342d6adafc0cdf0ffbaaf90
 
 function Volunteer() {
   const [formData, setFormData] = useState({
@@ -18,6 +24,12 @@ function Volunteer() {
     error: null,
   });
 
+<<<<<<< HEAD
+=======
+  // ✅ URL du backend :
+  // - en local : REACT_APP_API_URL=http://localhost:4000
+  // - en prod : REACT_APP_API_URL=https://ton-backend-render.onrender.com
+>>>>>>> f0dc4c9c671d1d144342d6adafc0cdf0ffbaaf90
   const API_BASE_URL =
     process.env.REACT_APP_API_URL || "http://localhost:4000";
 
@@ -74,6 +86,10 @@ function Volunteer() {
         error: null,
       });
 
+<<<<<<< HEAD
+=======
+      // Reset du formulaire
+>>>>>>> f0dc4c9c671d1d144342d6adafc0cdf0ffbaaf90
       setFormData({
         fullName: "",
         email: "",
@@ -95,6 +111,7 @@ function Volunteer() {
   };
 
   return (
+<<<<<<< HEAD
     <section className="volunteer-page">
       <div className="container">
         <div className="volunteer-hero">
@@ -134,6 +151,38 @@ function Volunteer() {
               </p>
             </div>
           </div>
+=======
+    <section className="about-page">
+      <div className="container">
+        <h1 className="about-title">Devenez bénévole</h1>
+
+        <div className="about-body">
+          <p>
+            Chaque semaine, des familles, des étudiants, des personnes isolées
+            viennent chercher un soutien auprès des{" "}
+            <strong>Colis du Cœur</strong>. Derrière chaque colis distribué, il
+            y a des bénévoles qui donnent un peu de leur temps pour offrir
+            beaucoup d&apos;espoir.
+          </p>
+
+          <p>
+            Que vous ayez une heure de temps en temps ou plusieurs
+            demi-journées par mois, votre présence peut faire la
+            différence&nbsp;: préparer et distribuer les colis, accueillir les
+            personnes, aider à la logistique, participer à la communication ou à
+            l&apos;organisation d&apos;évènements solidaires… Il y a une mission
+            adaptée à chacun.
+          </p>
+
+          <p>
+            Rejoindre l&apos;équipe, c&apos;est faire partie d&apos;une aventure
+            humaine, chaleureuse et concrète, au plus près du terrain. Ensemble,
+            nous luttons contre la précarité et l&apos;isolement, avec
+            bienveillance et dignité. Si vous avez envie d&apos;agir et de vous
+            sentir utile, remplissez le formulaire ci-dessous&nbsp;: nous serons
+            ravis d&apos;échanger avec vous.
+          </p>
+>>>>>>> f0dc4c9c671d1d144342d6adafc0cdf0ffbaaf90
         </div>
 
         <section className="volunteer-section" id="devenir-benevole">
@@ -245,7 +294,10 @@ function Volunteer() {
                 {status.error}
               </p>
             )}
+<<<<<<< HEAD
 
+=======
+>>>>>>> f0dc4c9c671d1d144342d6adafc0cdf0ffbaaf90
             {status.success && (
               <p style={{ color: "green", marginTop: "0.5rem" }}>
                 {status.success}
@@ -258,4 +310,8 @@ function Volunteer() {
   );
 }
 
+<<<<<<< HEAD
 export default Volunteer;
+=======
+export default Volunteer;
+>>>>>>> f0dc4c9c671d1d144342d6adafc0cdf0ffbaaf90
