@@ -686,25 +686,46 @@
 
 @media (max-width: 620px) {
   .container {
-    width: min(100% - 28px, 1180px);
+    width: min(100% - 32px, 1180px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .actions-hero {
     padding: 64px 0 54px;
+    overflow: hidden;
+  }
+
+  .actions-hero-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .actions-hero-content {
+    width: 100%;
+    max-width: 100%;
   }
 
   .actions-hero-content h1 {
-    font-size: clamp(2.45rem, 12vw, 3.8rem);
+    max-width: 100%;
+    font-size: clamp(2.15rem, 10.6vw, 3.35rem);
+    line-height: 0.94;
     letter-spacing: -0.065em;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 
   .actions-hero-content p {
+    max-width: 100%;
     font-size: 0.98rem;
     line-height: 1.7;
   }
 
   .actions-hero-buttons,
   .actions-final-buttons {
+    width: 100%;
     flex-direction: column;
   }
 
@@ -715,6 +736,7 @@
   .actions-hero-card,
   .action-card,
   .actions-final-card {
+    width: 100%;
     padding: 28px 22px;
     border-radius: 26px;
   }
