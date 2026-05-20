@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollToTop from "./components/ScrollToTop";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -24,10 +25,12 @@ import DistribAlim from "./pages/DistribAlim";
 import Partenariat from "./pages/Partenariat";
 import MentionsLegales from "./pages/MentionsLegales";
 
+
 function App() {
   return (
     <BrowserRouter>
       <div className="app">
+        <ScrollToTop />
         <Header />
         <main>
           <Routes>
