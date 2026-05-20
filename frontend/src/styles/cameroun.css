@@ -1,0 +1,85 @@
+/* src/styles/cameroun.css */
+
+/* =========================
+   PAGE CAMEROUN
+   Complément spécifique à la base bangladesh.css
+========================= */
+
+.cameroun-page .country-hero-image::after {
+  content: "Cameroun 🇨🇲";
+}
+
+/* Petite personnalisation du hero Cameroun */
+.cameroun-page .country-hero-section {
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.34), transparent 24%),
+    radial-gradient(circle at 10% 20%, rgba(225, 0, 109, 0.12), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #fff7fb 100%);
+}
+
+/* Image hero */
+.cameroun-page .country-hero-image-cameroun img {
+  object-position: center;
+}
+
+/* Cards résumé */
+.cameroun-page .summary-card:nth-child(1) .summary-card-icon {
+  background: #fff7fb;
+}
+
+.cameroun-page .summary-card:nth-child(2) .summary-card-icon {
+  background: rgba(255, 204, 0, 0.18);
+}
+
+.cameroun-page .summary-card:nth-child(3) .summary-card-icon {
+  background: #fff7fb;
+}
+
+/* Variante décorative des cards */
+.cameroun-page .summary-card:nth-child(1)::after {
+  background: rgba(225, 0, 109, 0.08);
+}
+
+.cameroun-page .summary-card:nth-child(2)::after {
+  background: rgba(255, 204, 0, 0.24);
+}
+
+.cameroun-page .summary-card:nth-child(3)::after {
+  background: rgba(225, 0, 109, 0.08);
+}
+
+/* Blocs actions */
+.cameroun-page .country-block {
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.16), transparent 26%),
+    #fff7fb;
+}
+
+/* Images dans les blocs */
+.cameroun-page .country-block-image img {
+  object-position: center;
+}
+
+/* CTA final */
+.cameroun-page .country-final-card span {
+  color: #e1006d;
+}
+
+/* =========================
+   RESPONSIVE CAMEROUN
+========================= */
+
+@media (max-width: 980px) {
+  .cameroun-page .country-hero-image-cameroun img {
+    object-position: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .cameroun-page .country-hero-image::after {
+    left: 18px;
+    bottom: 18px;
+    padding: 10px 14px;
+    font-size: 0.78rem;
+  }
+}

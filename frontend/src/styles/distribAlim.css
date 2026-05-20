@@ -1,227 +1,624 @@
 /* src/styles/distribAlim.css */
-/* styles spécifiques Distribution Alimentaire (avec vidéo + texte à côté) */
 
-.distrib-page .country-title {
-  letter-spacing: 0.2px;
+:root {
+  --distrib-white: #ffffff;
+  --distrib-bg: #fff7fb;
+  --distrib-pink: #e1006d;
+  --distrib-pink-dark: #b80058;
+  --distrib-pink-soft: #ffe3f0;
+  --distrib-yellow: #ffcc00;
+  --distrib-orange: #f59e0b;
+  --distrib-dark: #1f1f1f;
+  --distrib-text: #333333;
+  --distrib-muted: #6b7280;
+  --distrib-border: rgba(225, 0, 109, 0.14);
+  --distrib-shadow: 0 24px 60px rgba(225, 0, 109, 0.16);
+  --distrib-card-shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
+  --distrib-radius-lg: 34px;
+  --distrib-radius-md: 22px;
+  --distrib-radius-pill: 999px;
 }
 
-/* ✅ Section texte */
-.distrib-text-section {
-  margin: 2.2rem 0 2.8rem;
+.distrib-page {
+  overflow: hidden;
+  background: var(--distrib-bg);
+  color: var(--distrib-dark);
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.distrib-hero {
+  position: relative;
+  padding: 110px 0 90px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.32), transparent 24%),
+    radial-gradient(circle at 10% 20%, rgba(225, 0, 109, 0.11), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, var(--distrib-bg) 100%);
+}
+
+.distrib-hero::before {
+  content: "";
+  position: absolute;
+  top: 110px;
+  right: -140px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(225, 0, 109, 0.08);
+  pointer-events: none;
+}
+
+.distrib-hero-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.distrib-hero-content {
+  max-width: 640px;
+}
+
+.distrib-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 18px;
+  border-radius: var(--distrib-radius-pill);
+  background: var(--distrib-yellow);
+  color: var(--distrib-dark);
+  font-size: 0.82rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.distrib-hero-content h1 {
+  margin: 24px 0 0;
+  color: var(--distrib-dark);
+  font-size: clamp(2.7rem, 5.7vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.distrib-hero-content p {
+  margin: 28px 0 0;
+  color: var(--distrib-text);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.distrib-hero-actions,
+.distrib-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.distrib-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 28px;
+  border-radius: var(--distrib-radius-pill);
+  font-size: 0.98rem;
+  font-weight: 950;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.distrib-btn:hover {
+  transform: translateY(-3px);
+}
+
+.distrib-btn-primary {
+  background: linear-gradient(135deg, var(--distrib-pink), #ff4fa3);
+  color: var(--distrib-white);
+  box-shadow: 0 16px 35px rgba(225, 0, 109, 0.32);
+}
+
+.distrib-btn-secondary {
+  background: var(--distrib-yellow);
+  color: var(--distrib-dark);
+}
+
+.distrib-hero-image {
+  position: relative;
+  min-height: 520px;
+  border-radius: 42px;
+  overflow: hidden;
+  box-shadow: var(--distrib-shadow);
+  background: var(--distrib-pink-soft);
+}
+
+.distrib-hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.distrib-hero-image::after {
+  content: "France";
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 3;
+  padding: 12px 18px;
+  border-radius: var(--distrib-radius-pill);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--distrib-pink);
+  font-size: 0.9rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.distrib-hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  object-fit: cover;
+}
+
+/* SUMMARY */
+
+.distrib-summary-section {
+  padding: 40px 0 95px;
+  background: var(--distrib-bg);
+}
+
+.distrib-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.distrib-summary-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  padding: 34px;
+  border-radius: var(--distrib-radius-lg);
+  background: var(--distrib-white);
+  border: 1px solid var(--distrib-border);
+  box-shadow: var(--distrib-card-shadow);
+}
+
+.distrib-summary-card::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(225, 0, 109, 0.08);
+}
+
+.distrib-summary-card:nth-child(2)::after {
+  background: rgba(255, 204, 0, 0.22);
+}
+
+.distrib-summary-card div {
+  position: relative;
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--distrib-bg);
+  font-size: 2rem;
+  box-shadow: 0 12px 28px rgba(225, 0, 109, 0.12);
+}
+
+.distrib-summary-card h2 {
+  position: relative;
+  z-index: 1;
+  margin: 28px 0 0;
+  color: var(--distrib-dark);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+.distrib-summary-card p {
+  position: relative;
+  z-index: 1;
+  margin: 16px 0 0;
+  color: var(--distrib-text);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* STORY */
+
+.distrib-story-section {
+  padding: 95px 0;
+  background: var(--distrib-white);
+}
+
+.distrib-story-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 42px;
+  align-items: start;
+}
+
+.distrib-story-sticky {
+  position: sticky;
+  top: 110px;
+  padding: 42px;
+  border-radius: var(--distrib-radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.28), transparent 28%),
+    var(--distrib-bg);
+  border: 1px solid var(--distrib-border);
+  box-shadow: var(--distrib-card-shadow);
+}
+
+.distrib-story-sticky h2,
+.distrib-section-heading h2,
+.distrib-final-card h2 {
+  margin: 22px 0 0;
+  color: var(--distrib-dark);
+  font-size: clamp(2.1rem, 4.5vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  font-weight: 950;
+}
+
+.distrib-story-sticky p,
+.distrib-final-card p {
+  margin: 24px 0 0;
+  color: var(--distrib-text);
+  font-size: 1.04rem;
+  line-height: 1.8;
 }
 
 .distrib-text-body {
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 14px;
-  padding: 1.6rem 1.7rem;
+  padding: 48px;
+  border-radius: var(--distrib-radius-lg);
+  background: var(--distrib-bg);
+  border: 1px solid var(--distrib-border);
 }
 
 .distrib-text-body p {
-  line-height: 1.7;
-  color: #0f172a;
-  font-size: 0.98rem;
+  margin: 0;
+  color: var(--distrib-text);
+  font-size: 1.04rem;
+  line-height: 1.9;
 }
 
 .distrib-text-body p + p {
-  margin-top: 1rem;
+  margin-top: 24px;
 }
 
-/* ✅ Sous-titres dans le texte */
-.distrib-subtitle {
-  margin-top: 1.4rem;
-  margin-bottom: 0.6rem;
-  font-size: 1.05rem;
-  color: #0f172a;
+.distrib-text-body strong {
+  color: var(--distrib-pink);
+  font-weight: 950;
 }
 
-/* ✅ Listes (si jamais tu en ajoutes) */
-.distrib-list {
-  margin: 0.6rem 0 1rem 1.1rem;
-  padding: 0;
-  list-style: disc;
+.distrib-text-body blockquote {
+  margin: 34px 0;
+  padding: 34px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, var(--distrib-pink), #ff4fa3);
+  color: var(--distrib-white);
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  font-weight: 950;
+  box-shadow: var(--distrib-shadow);
 }
 
-.distrib-list li {
-  margin-bottom: 0.35rem;
-  line-height: 1.55;
-  color: #0f172a;
-  font-size: 0.98rem;
+.distrib-highlight-box {
+  margin: 34px 0;
+  padding: 30px;
+  border-radius: 28px;
+  background: var(--distrib-white);
+  border: 1px solid var(--distrib-border);
+  box-shadow: 0 14px 35px rgba(31, 31, 31, 0.06);
 }
 
-/* =======================================================
-   ✅ SECTION VIDÉO
-   ======================================================= */
-
-.video-section {
-  margin: 2.4rem 0 3rem;
+.distrib-highlight-pink {
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.2), transparent 28%),
+    linear-gradient(135deg, var(--distrib-pink), var(--distrib-pink-dark));
+  color: var(--distrib-white);
 }
 
-.video-eyebrow {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #92400e;
-  margin-bottom: 0.35rem;
-  opacity: 0.85;
+.distrib-highlight-box h3 {
+  margin: 0 0 16px;
+  color: var(--distrib-dark);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  font-weight: 950;
 }
 
-.video-title {
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
-  color: #0f172a;
+.distrib-highlight-pink h3,
+.distrib-highlight-pink p {
+  color: var(--distrib-white);
 }
 
-.video-intro {
-  max-width: 760px;
-  line-height: 1.6;
-  color: #0f172a;
-  opacity: 0.9;
-  margin-bottom: 1.2rem;
+.distrib-highlight-box p {
+  margin: 0;
 }
 
-/* ✅ Layout vidéo + texte à côté */
-.video-split {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 1.2rem;
-  align-items: stretch;
+/* GALLERY */
+
+.distrib-gallery-section {
+  padding: 95px 0;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255, 204, 0, 0.3), transparent 24%),
+    var(--distrib-bg);
 }
 
-/* ✅ Player responsive */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #0f172a;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-}
-
-.video-native {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* ✅ Carte texte à côté */
-.video-side-card {
-  background: #0f172a;
-  color: #f8fafc;
-  border-radius: 16px;
-  padding: 1.4rem 1.4rem 1.2rem;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.video-side-eyebrow {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.75;
-  margin-bottom: 0.5rem;
-}
-
-.video-side-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: #ffffff;
-}
-
-.video-side-text {
-  line-height: 1.6;
-  font-size: 0.95rem;
-  color: rgba(248, 250, 252, 0.9);
-}
-
-.video-side-text + .video-side-text {
-  margin-top: 0.8rem;
-}
-
-/* =======================================================
-   ✅ FLOATING IMAGES
-   ======================================================= */
-
-.distrib-floating-section {
-  margin: 2.4rem 0 3rem;
+.distrib-section-heading {
+  max-width: 820px;
+  margin-bottom: 40px;
 }
 
 .distrib-floating-grid {
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 1.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: stretch;
 }
 
 .distrib-float-card {
-  border-radius: 16px;
+  position: relative;
   overflow: hidden;
-  background: #0f172a;
-  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.22);
+  min-height: 360px;
+  margin: 0;
+  border-radius: 34px;
+  background: var(--distrib-pink-soft);
+  box-shadow: var(--distrib-card-shadow);
   transform: translateY(0);
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  animation: distribFloat 4.5s ease-in-out infinite;
+}
+
+.float-2 {
+  margin-top: 46px;
+  animation-delay: 0.4s;
+}
+
+.float-3 {
+  margin-top: 16px;
+  animation-delay: 0.8s;
+}
+
+.float-4 {
+  margin-top: 64px;
+  animation-delay: 1.2s;
+}
+
+.distrib-float-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(31, 31, 31, 0.28));
+  pointer-events: none;
 }
 
 .distrib-float-card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 100%;
+  min-height: 360px;
   display: block;
-  opacity: 0.98;
+  object-fit: cover;
 }
 
-.distrib-float-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.28);
+@keyframes distribFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-/* Petits décalages subtils */
-.distrib-floating-grid .float-1 { transform: translateY(0px); }
-.distrib-floating-grid .float-2 { transform: translateY(10px); }
-.distrib-floating-grid .float-3 { transform: translateY(-6px); }
-.distrib-floating-grid .float-4 { transform: translateY(8px); }
+/* CTA */
 
-/* =======================================================
-   ✅ RESPONSIVE
-   ======================================================= */
+.distrib-final-cta {
+  padding: 95px 0;
+  background:
+    radial-gradient(circle at top right, rgba(225, 0, 109, 0.12), transparent 28%),
+    var(--distrib-bg);
+}
+
+.distrib-final-card {
+  position: relative;
+  overflow: hidden;
+  padding: 62px;
+  border-radius: 40px;
+  background: var(--distrib-white);
+  border: 1px solid var(--distrib-border);
+  box-shadow: var(--distrib-card-shadow);
+  text-align: center;
+}
+
+.distrib-final-card::before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: -120px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(225, 0, 109, 0.1);
+}
+
+.distrib-final-card span,
+.distrib-final-card h2,
+.distrib-final-card p,
+.distrib-final-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.distrib-final-card span {
+  color: var(--distrib-pink);
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.distrib-final-card h2 {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.distrib-final-card p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.distrib-final-actions {
+  justify-content: center;
+}
+
+/* RESPONSIVE */
 
 @media (max-width: 980px) {
-  .video-split {
+  .distrib-hero {
+    padding: 86px 0 70px;
+  }
+
+  .distrib-hero-layout,
+  .distrib-story-layout,
+  .distrib-summary-grid {
     grid-template-columns: 1fr;
   }
 
-  .distrib-floating-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .distrib-hero-content {
+    max-width: 100%;
   }
 
-  .distrib-float-card img {
-    height: 200px;
+  .distrib-hero-image,
+  .distrib-hero-image img {
+    min-height: 440px;
+  }
+
+  .distrib-story-sticky {
+    position: relative;
+    top: auto;
+  }
+
+  .distrib-floating-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .float-2,
+  .float-3,
+  .float-4 {
+    margin-top: 0;
   }
 }
 
-@media (max-width: 560px) {
-  .video-title {
-    font-size: 1.2rem;
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .distrib-hero {
+    padding: 64px 0 54px;
+  }
+
+  .distrib-hero-content h1 {
+    font-size: clamp(2.45rem, 12vw, 3.8rem);
+    letter-spacing: -0.065em;
+  }
+
+  .distrib-hero-content p,
+  .distrib-text-body p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .distrib-hero-actions,
+  .distrib-final-actions {
+    flex-direction: column;
+  }
+
+  .distrib-btn {
+    width: 100%;
+  }
+
+  .distrib-hero-image,
+  .distrib-hero-image img {
+    min-height: 340px;
+  }
+
+  .distrib-hero-image,
+  .distrib-summary-card,
+  .distrib-story-sticky,
+  .distrib-text-body,
+  .distrib-final-card {
+    border-radius: 26px;
+  }
+
+  .distrib-summary-section,
+  .distrib-story-section,
+  .distrib-gallery-section,
+  .distrib-final-cta {
+    padding: 68px 0;
+  }
+
+  .distrib-summary-card,
+  .distrib-story-sticky,
+  .distrib-text-body,
+  .distrib-final-card {
+    padding: 28px 22px;
+  }
+
+  .distrib-story-sticky h2,
+  .distrib-section-heading h2,
+  .distrib-final-card h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .distrib-text-body blockquote {
+    padding: 26px 22px;
+    border-radius: 24px;
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .distrib-highlight-box {
+    padding: 24px 20px;
+    border-radius: 22px;
   }
 
   .distrib-floating-grid {
     grid-template-columns: 1fr;
   }
 
+  .distrib-float-card,
   .distrib-float-card img {
-    height: 220px;
-  }
-
-  .distrib-text-body {
-    padding: 1.25rem 1.2rem;
+    min-height: 320px;
   }
 }
-

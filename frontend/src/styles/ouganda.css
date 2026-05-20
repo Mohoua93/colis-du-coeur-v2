@@ -1,28 +1,28 @@
-/* src/styles/bangladesh.css */
+/* src/styles/ouganda.css */
 
 :root {
-  --country-white: #ffffff;
-  --country-bg: #fff7fb;
-  --country-pink: #e1006d;
-  --country-pink-dark: #b80058;
-  --country-pink-soft: #ffe3f0;
-  --country-yellow: #ffcc00;
-  --country-orange: #f59e0b;
-  --country-dark: #1f1f1f;
-  --country-text: #333333;
-  --country-muted: #6b7280;
-  --country-border: rgba(225, 0, 109, 0.14);
-  --country-shadow: 0 24px 60px rgba(225, 0, 109, 0.16);
-  --country-card-shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
-  --country-radius-lg: 34px;
-  --country-radius-md: 22px;
-  --country-radius-pill: 999px;
+  --ouganda-white: #ffffff;
+  --ouganda-bg: #fff7fb;
+  --ouganda-pink: #e1006d;
+  --ouganda-pink-dark: #b80058;
+  --ouganda-pink-soft: #ffe3f0;
+  --ouganda-yellow: #ffcc00;
+  --ouganda-orange: #f59e0b;
+  --ouganda-dark: #1f1f1f;
+  --ouganda-text: #333333;
+  --ouganda-muted: #6b7280;
+  --ouganda-border: rgba(225, 0, 109, 0.14);
+  --ouganda-shadow: 0 24px 60px rgba(225, 0, 109, 0.16);
+  --ouganda-card-shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
+  --ouganda-radius-lg: 34px;
+  --ouganda-radius-md: 22px;
+  --ouganda-radius-pill: 999px;
 }
 
-.country-page {
+.ouganda-page {
   overflow: hidden;
-  background: var(--country-bg);
-  color: var(--country-dark);
+  background: var(--ouganda-bg);
+  color: var(--ouganda-dark);
 }
 
 .container {
@@ -30,20 +30,18 @@
   margin: 0 auto;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
-.country-hero-section {
+.ouganda-hero {
   position: relative;
   padding: 110px 0 90px;
   background:
     radial-gradient(circle at top right, rgba(255, 204, 0, 0.32), transparent 24%),
     radial-gradient(circle at 10% 20%, rgba(225, 0, 109, 0.11), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, var(--country-bg) 100%);
+    linear-gradient(180deg, #ffffff 0%, var(--ouganda-bg) 100%);
 }
 
-.country-hero-section::before {
+.ouganda-hero::before {
   content: "";
   position: absolute;
   top: 110px;
@@ -55,7 +53,7 @@
   pointer-events: none;
 }
 
-.country-hero-layout {
+.ouganda-hero-layout {
   position: relative;
   z-index: 1;
   display: grid;
@@ -64,27 +62,27 @@
   align-items: center;
 }
 
-.country-hero-content {
+.ouganda-hero-content {
   max-width: 640px;
 }
 
-.country-label {
+.ouganda-label {
   display: inline-flex;
   align-items: center;
   width: fit-content;
   padding: 10px 18px;
-  border-radius: var(--country-radius-pill);
-  background: var(--country-yellow);
-  color: var(--country-dark);
+  border-radius: var(--ouganda-radius-pill);
+  background: var(--ouganda-yellow);
+  color: var(--ouganda-dark);
   font-size: 0.82rem;
   font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.country-hero-content h1 {
+.ouganda-hero-content h1 {
   margin: 24px 0 0;
-  color: var(--country-dark);
+  color: var(--ouganda-dark);
   font-size: clamp(3rem, 7vw, 6.8rem);
   line-height: 0.9;
   letter-spacing: -0.08em;
@@ -92,29 +90,29 @@
   text-transform: uppercase;
 }
 
-.country-hero-content p {
+.ouganda-hero-content p {
   margin: 28px 0 0;
-  color: var(--country-text);
+  color: var(--ouganda-text);
   font-size: clamp(1.02rem, 1.5vw, 1.18rem);
   line-height: 1.8;
   font-weight: 500;
 }
 
-.country-hero-actions,
-.country-final-actions {
+.ouganda-hero-actions,
+.ouganda-final-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 34px;
 }
 
-.country-btn {
+.ouganda-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 54px;
   padding: 14px 28px;
-  border-radius: var(--country-radius-pill);
+  border-radius: var(--ouganda-radius-pill);
   font-size: 0.98rem;
   font-weight: 950;
   text-decoration: none;
@@ -124,57 +122,57 @@
     background 0.25s ease;
 }
 
-.country-btn:hover {
+.ouganda-btn:hover {
   transform: translateY(-3px);
 }
 
-.country-btn-primary {
-  background: linear-gradient(135deg, var(--country-pink), #ff4fa3);
-  color: var(--country-white);
+.ouganda-btn-primary {
+  background: linear-gradient(135deg, var(--ouganda-pink), #ff4fa3);
+  color: var(--ouganda-white);
   box-shadow: 0 16px 35px rgba(225, 0, 109, 0.32);
 }
 
-.country-btn-secondary {
-  background: var(--country-yellow);
-  color: var(--country-dark);
+.ouganda-btn-secondary {
+  background: var(--ouganda-yellow);
+  color: var(--ouganda-dark);
 }
 
-.country-hero-image {
+.ouganda-hero-image {
   position: relative;
   min-height: 520px;
   border-radius: 42px;
   overflow: hidden;
-  box-shadow: var(--country-shadow);
-  background: var(--country-pink-soft);
+  box-shadow: var(--ouganda-shadow);
+  background: var(--ouganda-pink-soft);
 }
 
-.country-hero-image::before {
+.ouganda-hero-image::before {
   content: "";
   position: absolute;
   inset: 18px;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   pointer-events: none;
 }
 
-.country-hero-image::after {
-  content: "Bangladesh 🇧🇩";
+.ouganda-hero-image::after {
+  content: "Ouganda 🇺🇬";
   position: absolute;
   left: 24px;
   bottom: 24px;
   z-index: 3;
   padding: 12px 18px;
-  border-radius: var(--country-radius-pill);
+  border-radius: var(--ouganda-radius-pill);
   background: rgba(255, 255, 255, 0.92);
-  color: var(--country-pink);
+  color: var(--ouganda-pink);
   font-size: 0.9rem;
   font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.country-hero-image img {
+.ouganda-hero-image img {
   width: 100%;
   height: 100%;
   min-height: 520px;
@@ -182,49 +180,47 @@
   object-fit: cover;
 }
 
-/* =========================
-   SUMMARY
-========================= */
+/* SUMMARY */
 
-.country-summary-section {
+.ouganda-summary-section {
   padding: 40px 0 95px;
-  background: var(--country-bg);
+  background: var(--ouganda-bg);
 }
 
-.country-section-heading {
+.ouganda-section-heading {
   max-width: 860px;
   margin-bottom: 40px;
 }
 
-.country-section-heading h2,
-.country-block-text h2,
-.country-final-card h2 {
+.ouganda-section-heading h2,
+.ouganda-block-text h2,
+.ouganda-final-card h2 {
   margin: 22px 0 0;
-  color: var(--country-dark);
+  color: var(--ouganda-dark);
   font-size: clamp(2.1rem, 4.5vw, 4.2rem);
   line-height: 0.98;
   letter-spacing: -0.06em;
   font-weight: 950;
 }
 
-.country-summary-grid {
+.ouganda-summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 22px;
 }
 
-.summary-card {
+.ouganda-summary-card {
   position: relative;
   overflow: hidden;
   min-height: 300px;
-  padding: 34px;
-  border-radius: var(--country-radius-lg);
-  background: var(--country-white);
-  border: 1px solid var(--country-border);
-  box-shadow: var(--country-card-shadow);
+  padding: 30px;
+  border-radius: var(--ouganda-radius-lg);
+  background: var(--ouganda-white);
+  border: 1px solid var(--ouganda-border);
+  box-shadow: var(--ouganda-card-shadow);
 }
 
-.summary-card::after {
+.ouganda-summary-card::after {
   content: "";
   position: absolute;
   right: -80px;
@@ -235,11 +231,11 @@
   background: rgba(225, 0, 109, 0.08);
 }
 
-.summary-card:nth-child(2)::after {
+.ouganda-summary-card:nth-child(2)::after {
   background: rgba(255, 204, 0, 0.22);
 }
 
-.summary-card-icon {
+.ouganda-summary-card div {
   position: relative;
   z-index: 1;
   width: 64px;
@@ -247,94 +243,92 @@
   display: grid;
   place-items: center;
   border-radius: 20px;
-  background: var(--country-bg);
+  background: var(--ouganda-bg);
   font-size: 2rem;
   box-shadow: 0 12px 28px rgba(225, 0, 109, 0.12);
 }
 
-.summary-card h3 {
+.ouganda-summary-card h3 {
   position: relative;
   z-index: 1;
   margin: 28px 0 0;
-  color: var(--country-dark);
-  font-size: 1.55rem;
-  line-height: 1.1;
+  color: var(--ouganda-dark);
+  font-size: 1.35rem;
+  line-height: 1.12;
   font-weight: 950;
 }
 
-.summary-card p {
+.ouganda-summary-card p {
   position: relative;
   z-index: 1;
   margin: 16px 0 0;
-  color: var(--country-text);
-  font-size: 1rem;
-  line-height: 1.75;
+  color: var(--ouganda-text);
+  font-size: 0.96rem;
+  line-height: 1.72;
 }
 
-/* =========================
-   ACTION BLOCKS
-========================= */
+/* ACTION BLOCKS */
 
-.country-actions-section {
+.ouganda-actions-section {
   padding: 95px 0;
-  background: var(--country-white);
+  background: var(--ouganda-white);
 }
 
-.country-actions-list {
+.ouganda-actions-list {
   display: grid;
   gap: 42px;
 }
 
-.country-block {
+.ouganda-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 34px;
   align-items: center;
   padding: 34px;
   border-radius: 42px;
-  background: var(--country-bg);
-  border: 1px solid var(--country-border);
-  box-shadow: var(--country-card-shadow);
+  background: var(--ouganda-bg);
+  border: 1px solid var(--ouganda-border);
+  box-shadow: var(--ouganda-card-shadow);
 }
 
-.country-block-reverse .country-block-text {
+.ouganda-block-reverse .ouganda-block-text {
   order: 2;
 }
 
-.country-block-reverse .country-block-image {
+.ouganda-block-reverse .ouganda-block-image {
   order: 1;
 }
 
-.country-block-text {
+.ouganda-block-text {
   padding: 20px;
 }
 
-.country-block-text h2 {
+.ouganda-block-text h2 {
   max-width: 560px;
 }
 
-.country-block-text p {
+.ouganda-block-text p {
   margin: 24px 0 0;
-  color: var(--country-text);
+  color: var(--ouganda-text);
   font-size: 1.04rem;
   line-height: 1.85;
 }
 
-.country-block-text strong {
-  color: var(--country-pink);
+.ouganda-block-text strong {
+  color: var(--ouganda-pink);
   font-weight: 950;
 }
 
-.country-block-image {
+.ouganda-block-image {
   position: relative;
   overflow: hidden;
   min-height: 430px;
   border-radius: 34px;
-  background: var(--country-pink-soft);
+  background: var(--ouganda-pink-soft);
   box-shadow: 0 16px 35px rgba(31, 31, 31, 0.1);
 }
 
-.country-block-image::after {
+.ouganda-block-image::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -342,7 +336,7 @@
   pointer-events: none;
 }
 
-.country-block-image img {
+.ouganda-block-image img {
   width: 100%;
   height: 100%;
   min-height: 430px;
@@ -350,29 +344,27 @@
   object-fit: cover;
 }
 
-/* =========================
-   FINAL CTA
-========================= */
+/* CTA */
 
-.country-final-cta {
+.ouganda-final-cta {
   padding: 95px 0;
   background:
     radial-gradient(circle at top right, rgba(225, 0, 109, 0.12), transparent 28%),
-    var(--country-bg);
+    var(--ouganda-bg);
 }
 
-.country-final-card {
+.ouganda-final-card {
   position: relative;
   overflow: hidden;
   padding: 62px;
   border-radius: 40px;
-  background: var(--country-white);
-  border: 1px solid var(--country-border);
-  box-shadow: var(--country-card-shadow);
+  background: var(--ouganda-white);
+  border: 1px solid var(--ouganda-border);
+  box-shadow: var(--ouganda-card-shadow);
   text-align: center;
 }
 
-.country-final-card::before {
+.ouganda-final-card::before {
   content: "";
   position: absolute;
   left: -120px;
@@ -383,70 +375,73 @@
   background: rgba(225, 0, 109, 0.1);
 }
 
-.country-final-card span,
-.country-final-card h2,
-.country-final-card p,
-.country-final-actions {
+.ouganda-final-card span,
+.ouganda-final-card h2,
+.ouganda-final-card p,
+.ouganda-final-actions {
   position: relative;
   z-index: 1;
 }
 
-.country-final-card span {
-  color: var(--country-pink);
+.ouganda-final-card span {
+  color: var(--ouganda-pink);
   font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.country-final-card h2 {
+.ouganda-final-card h2 {
   max-width: 840px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.country-final-card p {
+.ouganda-final-card p {
   max-width: 720px;
   margin: 24px auto 0;
-  color: var(--country-text);
+  color: var(--ouganda-text);
   font-size: 1.04rem;
   line-height: 1.8;
 }
 
-.country-final-actions {
+.ouganda-final-actions {
   justify-content: center;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .ouganda-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 980px) {
-  .country-hero-section {
+  .ouganda-hero {
     padding: 86px 0 70px;
   }
 
-  .country-hero-layout,
-  .country-summary-grid,
-  .country-block {
+  .ouganda-hero-layout,
+  .ouganda-block {
     grid-template-columns: 1fr;
   }
 
-  .country-hero-content {
+  .ouganda-hero-content {
     max-width: 100%;
   }
 
-  .country-hero-image,
-  .country-hero-image img {
+  .ouganda-hero-image,
+  .ouganda-hero-image img {
     min-height: 440px;
   }
 
-  .country-block-reverse .country-block-text,
-  .country-block-reverse .country-block-image {
+  .ouganda-block-reverse .ouganda-block-text,
+  .ouganda-block-reverse .ouganda-block-image {
     order: initial;
   }
 
-  .country-block-image,
-  .country-block-image img {
+  .ouganda-block-image,
+  .ouganda-block-image img {
     min-height: 390px;
   }
 }
@@ -456,68 +451,72 @@
     width: min(100% - 28px, 1180px);
   }
 
-  .country-hero-section {
+  .ouganda-hero {
     padding: 64px 0 54px;
   }
 
-  .country-hero-content h1 {
+  .ouganda-hero-content h1 {
     font-size: clamp(2.8rem, 15vw, 4.3rem);
     letter-spacing: -0.065em;
   }
 
-  .country-hero-content p,
-  .country-block-text p,
-  .country-final-card p {
+  .ouganda-hero-content p,
+  .ouganda-block-text p,
+  .ouganda-final-card p {
     font-size: 0.98rem;
     line-height: 1.75;
   }
 
-  .country-hero-actions,
-  .country-final-actions {
+  .ouganda-hero-actions,
+  .ouganda-final-actions {
     flex-direction: column;
   }
 
-  .country-btn {
+  .ouganda-btn {
     width: 100%;
   }
 
-  .country-hero-image,
-  .country-hero-image img {
+  .ouganda-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ouganda-hero-image,
+  .ouganda-hero-image img {
     min-height: 340px;
   }
 
-  .country-hero-image,
-  .country-block,
-  .country-block-image,
-  .summary-card,
-  .country-final-card {
+  .ouganda-hero-image,
+  .ouganda-summary-card,
+  .ouganda-block,
+  .ouganda-block-image,
+  .ouganda-final-card {
     border-radius: 26px;
   }
 
-  .country-summary-section,
-  .country-actions-section,
-  .country-final-cta {
+  .ouganda-summary-section,
+  .ouganda-actions-section,
+  .ouganda-final-cta {
     padding: 68px 0;
   }
 
-  .summary-card,
-  .country-block,
-  .country-final-card {
+  .ouganda-summary-card,
+  .ouganda-block,
+  .ouganda-final-card {
     padding: 28px 22px;
   }
 
-  .country-block-text {
+  .ouganda-block-text {
     padding: 0;
   }
 
-  .country-section-heading h2,
-  .country-block-text h2,
-  .country-final-card h2 {
+  .ouganda-section-heading h2,
+  .ouganda-block-text h2,
+  .ouganda-final-card h2 {
     font-size: clamp(2rem, 10vw, 3rem);
   }
 
-  .country-block-image,
-  .country-block-image img {
+  .ouganda-block-image,
+  .ouganda-block-image img {
     min-height: 320px;
   }
 }

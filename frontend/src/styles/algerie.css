@@ -1,148 +1,626 @@
-/* ========= Spécifique Algérie ========= */
+/* src/styles/algerie.css */
 
-/* ✅ Section Flyer */
+:root {
+  --algerie-white: #ffffff;
+  --algerie-bg: #fff7fb;
+  --algerie-pink: #e1006d;
+  --algerie-pink-dark: #b80058;
+  --algerie-pink-soft: #ffe3f0;
+  --algerie-yellow: #ffcc00;
+  --algerie-orange: #f59e0b;
+  --algerie-dark: #1f1f1f;
+  --algerie-text: #333333;
+  --algerie-muted: #6b7280;
+  --algerie-border: rgba(225, 0, 109, 0.14);
+  --algerie-shadow: 0 24px 60px rgba(225, 0, 109, 0.16);
+  --algerie-card-shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
+  --algerie-radius-lg: 34px;
+  --algerie-radius-md: 22px;
+  --algerie-radius-pill: 999px;
+}
+
+.algerie-page {
+  overflow: hidden;
+  background: var(--algerie-bg);
+  color: var(--algerie-dark);
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.algerie-hero {
+  position: relative;
+  padding: 110px 0 90px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.32), transparent 24%),
+    radial-gradient(circle at 10% 20%, rgba(225, 0, 109, 0.11), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, var(--algerie-bg) 100%);
+}
+
+.algerie-hero::before {
+  content: "";
+  position: absolute;
+  top: 110px;
+  right: -140px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(225, 0, 109, 0.08);
+  pointer-events: none;
+}
+
+.algerie-hero-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.algerie-hero-content {
+  max-width: 640px;
+}
+
+.algerie-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 18px;
+  border-radius: var(--algerie-radius-pill);
+  background: var(--algerie-yellow);
+  color: var(--algerie-dark);
+  font-size: 0.82rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.algerie-hero-content h1 {
+  margin: 24px 0 0;
+  color: var(--algerie-dark);
+  font-size: clamp(2.7rem, 5.7vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.algerie-hero-content p {
+  margin: 28px 0 0;
+  color: var(--algerie-text);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.algerie-hero-actions,
+.algerie-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.algerie-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 28px;
+  border-radius: var(--algerie-radius-pill);
+  font-size: 0.98rem;
+  font-weight: 950;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.algerie-btn:hover {
+  transform: translateY(-3px);
+}
+
+.algerie-btn-primary {
+  background: linear-gradient(135deg, var(--algerie-pink), #ff4fa3);
+  color: var(--algerie-white);
+  box-shadow: 0 16px 35px rgba(225, 0, 109, 0.32);
+}
+
+.algerie-btn-secondary {
+  background: var(--algerie-yellow);
+  color: var(--algerie-dark);
+}
+
+.algerie-hero-image {
+  position: relative;
+  min-height: 520px;
+  border-radius: 42px;
+  overflow: hidden;
+  box-shadow: var(--algerie-shadow);
+  background: var(--algerie-pink-soft);
+}
+
+.algerie-hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.algerie-hero-image::after {
+  content: "Algérie 🇩🇿";
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 3;
+  padding: 12px 18px;
+  border-radius: var(--algerie-radius-pill);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--algerie-pink);
+  font-size: 0.9rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.algerie-hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  display: block;
+  object-fit: fill;
+}
+
+/* FLYER */
 
 .algerie-flyer-section {
-  margin: 2.5rem 0 3rem;
+  padding: 40px 0 95px;
+  background: var(--algerie-bg);
 }
 
 .algerie-flyer-card {
   display: grid;
-  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
-  gap: 1.8rem;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 16px;
-  padding: 1.4rem;
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 42px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 42px;
+  background: var(--algerie-white);
+  border: 1px solid var(--algerie-border);
+  box-shadow: var(--algerie-card-shadow);
 }
 
 .algerie-flyer-image {
-  border-radius: 12px;
   overflow: hidden;
-  background: #111827;
+  border-radius: 30px;
+  background: var(--algerie-pink-soft);
+  box-shadow: 0 16px 35px rgba(31, 31, 31, 0.1);
 }
 
 .algerie-flyer-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
+  object-fit: cover;
 }
 
-.algerie-flyer-text {
+.algerie-flyer-text h2,
+.algerie-project-sticky h2,
+.algerie-section-heading h2,
+.algerie-final-card h2 {
+  margin: 22px 0 0;
+  color: var(--algerie-dark);
+  font-size: clamp(2.1rem, 4.5vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  font-weight: 950;
+}
+
+.algerie-flyer-text p,
+.algerie-project-sticky p,
+.algerie-final-card p {
+  margin: 24px 0 0;
+  color: var(--algerie-text);
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.algerie-price-card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 30px;
+  padding: 22px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--algerie-pink), #ff4fa3);
+  color: var(--algerie-white);
 }
 
-.algerie-flyer-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  color: #9ca3af;
-  margin-bottom: 0.35rem;
+.algerie-price-card strong {
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  line-height: 0.9;
+  font-weight: 950;
+  letter-spacing: -0.07em;
 }
 
-.algerie-flyer-title {
-  font-size: 1.35rem;
-  margin-bottom: 0.6rem;
-  color: #c6362c;
+.algerie-price-card span {
+  max-width: 320px;
+  font-weight: 850;
+  line-height: 1.45;
 }
 
-.algerie-flyer-text p {
-  font-size: 0.98rem;
-  line-height: 1.7;
-  color: #374151;
+/* PROJECT TEXT */
+
+.algerie-project-section {
+  padding: 95px 0;
+  background: var(--algerie-white);
 }
 
-/* ✅ Section texte */
+.algerie-project-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 42px;
+  align-items: start;
+}
 
-.algerie-text-section {
-  margin-bottom: 3rem;
+.algerie-project-sticky {
+  position: sticky;
+  top: 110px;
+  padding: 42px;
+  border-radius: var(--algerie-radius-lg);
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.28), transparent 28%),
+    var(--algerie-bg);
+  border: 1px solid var(--algerie-border);
+  box-shadow: var(--algerie-card-shadow);
+}
+
+.algerie-text-body {
+  padding: 48px;
+  border-radius: var(--algerie-radius-lg);
+  background: var(--algerie-bg);
+  border: 1px solid var(--algerie-border);
 }
 
 .algerie-text-body p {
-  font-size: 0.98rem;
-  line-height: 1.8;
-  color: #374151;
-  margin-bottom: 0.9rem;
+  margin: 0;
+  color: var(--algerie-text);
+  font-size: 1.04rem;
+  line-height: 1.9;
 }
 
-/* Liste du texte */
-
-.algerie-text-list {
-  margin: 0.8rem 0 1.1rem;
-  padding-left: 1.2rem;
-  color: #374151;
-  line-height: 1.7;
-  font-size: 0.98rem;
+.algerie-text-body p + p {
+  margin-top: 24px;
 }
 
-.algerie-text-list li {
-  margin-bottom: 0.25rem;
+.algerie-text-body strong {
+  color: var(--algerie-pink);
+  font-weight: 950;
 }
 
-/* ✅ 4 images en apesanteur */
+.algerie-text-body a {
+  color: var(--algerie-pink);
+  font-weight: 900;
+  text-decoration: none;
+}
 
-.algerie-floating-section {
-  margin-bottom: 3rem;
+.algerie-text-body a:hover {
+  text-decoration: underline;
+}
+
+.algerie-support-box,
+.algerie-contact-card {
+  margin: 34px 0;
+  padding: 30px;
+  border-radius: 28px;
+  background: var(--algerie-white);
+  border: 1px solid var(--algerie-border);
+  box-shadow: 0 14px 35px rgba(31, 31, 31, 0.06);
+}
+
+.algerie-support-box h3,
+.algerie-contact-card h3 {
+  margin: 0 0 20px;
+  color: var(--algerie-dark);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+.algerie-support-box ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.algerie-support-box li {
+  position: relative;
+  padding-left: 22px;
+  color: var(--algerie-text);
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.algerie-support-box li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--algerie-yellow);
+}
+
+.algerie-contact-card p {
+  margin: 0;
+}
+
+.algerie-contact-card p + p {
+  margin-top: 10px;
+}
+
+/* GALLERY */
+
+.algerie-gallery-section {
+  padding: 95px 0;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255, 204, 0, 0.3), transparent 24%),
+    var(--algerie-bg);
+}
+
+.algerie-section-heading {
+  max-width: 820px;
+  margin-bottom: 40px;
 }
 
 .algerie-floating-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: stretch;
 }
 
 .algerie-float-card {
-  border-radius: 16px;
+  position: relative;
   overflow: hidden;
-  background: #111827;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
-  transform: translateZ(0);
-  animation: floatSoft 6s ease-in-out infinite;
+  min-height: 360px;
+  margin: 0;
+  border-radius: 34px;
+  background: var(--algerie-pink-soft);
+  box-shadow: var(--algerie-card-shadow);
+  transform: translateY(0);
+  animation: algerieFloat 4.5s ease-in-out infinite;
+}
+
+.float-2 {
+  margin-top: 46px;
+  animation-delay: 0.4s;
+}
+
+.float-3 {
+  margin-top: 16px;
+  animation-delay: 0.8s;
+}
+
+.float-4 {
+  margin-top: 64px;
+  animation-delay: 1.2s;
+}
+
+.algerie-float-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(31, 31, 31, 0.28));
+  pointer-events: none;
 }
 
 .algerie-float-card img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 100%;
+  min-height: 360px;
   display: block;
+  object-fit: cover;
 }
 
-/* Variations pour un effet naturel */
-.float-1 { animation-delay: 0s; }
-.float-2 { animation-delay: 0.6s; }
-.float-3 { animation-delay: 1.2s; }
-.float-4 { animation-delay: 1.8s; }
-
-/* Animation d'apesanteur légère */
-@keyframes floatSoft {
-  0%, 100% {
+@keyframes algerieFloat {
+  0%,
+  100% {
     transform: translateY(0);
   }
+
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
   }
 }
 
-/* Petit effet hover */
-.algerie-float-card:hover {
-  transform: translateY(-4px);
-  transition: transform 0.15s ease;
+/* CTA */
+
+.algerie-final-cta {
+  padding: 95px 0;
+  background:
+    radial-gradient(circle at top right, rgba(225, 0, 109, 0.12), transparent 28%),
+    var(--algerie-bg);
 }
 
-/* Responsive */
+.algerie-final-card {
+  position: relative;
+  overflow: hidden;
+  padding: 62px;
+  border-radius: 40px;
+  background: var(--algerie-white);
+  border: 1px solid var(--algerie-border);
+  box-shadow: var(--algerie-card-shadow);
+  text-align: center;
+}
 
-@media (max-width: 1100px) {
+.algerie-final-card::before {
+  content: "";
+  position: absolute;
+  left: -120px;
+  top: -120px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(225, 0, 109, 0.1);
+}
+
+.algerie-final-card span,
+.algerie-final-card h2,
+.algerie-final-card p,
+.algerie-final-actions {
+  position: relative;
+  z-index: 1;
+}
+
+.algerie-final-card span {
+  color: var(--algerie-pink);
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.algerie-final-card h2 {
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.algerie-final-card p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.algerie-final-actions {
+  justify-content: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .algerie-hero {
+    padding: 86px 0 70px;
+  }
+
+  .algerie-hero-layout,
+  .algerie-flyer-card,
+  .algerie-project-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .algerie-hero-content {
+    max-width: 100%;
+  }
+
+  .algerie-hero-image,
+  .algerie-hero-image img {
+    min-height: 440px;
+  }
+
+  .algerie-project-sticky {
+    position: relative;
+    top: auto;
+  }
+
   .algerie-floating-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .float-2,
+  .float-3,
+  .float-4 {
+    margin-top: 0;
   }
 }
 
-@media (max-width: 900px) {
-  .algerie-flyer-card {
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .algerie-hero {
+    padding: 64px 0 54px;
+  }
+
+  .algerie-hero-content h1 {
+    font-size: clamp(2.45rem, 12vw, 3.8rem);
+    letter-spacing: -0.065em;
+  }
+
+  .algerie-hero-content p,
+  .algerie-text-body p {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .algerie-hero-actions,
+  .algerie-final-actions {
+    flex-direction: column;
+  }
+
+  .algerie-btn {
+    width: 100%;
+  }
+
+  .algerie-hero-image,
+  .algerie-hero-image img {
+    min-height: 340px;
+  }
+
+  .algerie-hero-image,
+  .algerie-flyer-card,
+  .algerie-project-sticky,
+  .algerie-text-body,
+  .algerie-final-card {
+    border-radius: 26px;
+  }
+
+  .algerie-flyer-section,
+  .algerie-project-section,
+  .algerie-gallery-section,
+  .algerie-final-cta {
+    padding: 68px 0;
+  }
+
+  .algerie-flyer-card,
+  .algerie-project-sticky,
+  .algerie-text-body,
+  .algerie-final-card {
+    padding: 28px 22px;
+  }
+
+  .algerie-flyer-text h2,
+  .algerie-project-sticky h2,
+  .algerie-section-heading h2,
+  .algerie-final-card h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .algerie-price-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .algerie-support-box,
+  .algerie-contact-card {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+
+  .algerie-support-box ul {
     grid-template-columns: 1fr;
   }
 
@@ -150,7 +628,8 @@
     grid-template-columns: 1fr;
   }
 
+  .algerie-float-card,
   .algerie-float-card img {
-    height: 240px;
+    min-height: 320px;
   }
 }

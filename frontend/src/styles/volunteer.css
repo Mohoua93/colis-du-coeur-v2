@@ -1,175 +1,596 @@
-/* ========= Page Volunteer ========= */
+/* src/styles/volunteer.css */
 
-.volunteer-page {
-  padding: 3rem 1.25rem;
+:root {
+  --volunteer-white: #ffffff;
+  --volunteer-bg: #fff7fb;
+  --volunteer-pink: #e1006d;
+  --volunteer-pink-dark: #b80058;
+  --volunteer-pink-soft: #ffe3f0;
+  --volunteer-yellow: #ffcc00;
+  --volunteer-orange: #f59e0b;
+  --volunteer-dark: #1f1f1f;
+  --volunteer-text: #333333;
+  --volunteer-muted: #6b7280;
+  --volunteer-border: rgba(225, 0, 109, 0.14);
+  --volunteer-shadow: 0 24px 60px rgba(225, 0, 109, 0.16);
+  --volunteer-card-shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
+  --volunteer-radius-lg: 34px;
+  --volunteer-radius-md: 22px;
+  --volunteer-radius-pill: 999px;
 }
 
+.volunteer-page {
+  overflow: hidden;
+  background: var(--volunteer-bg);
+  color: var(--volunteer-dark);
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
 .volunteer-hero {
+  position: relative;
+  padding: 110px 0 90px;
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.32), transparent 24%),
+    radial-gradient(circle at 10% 20%, rgba(225, 0, 109, 0.11), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, var(--volunteer-bg) 100%);
+}
+
+.volunteer-hero::before {
+  content: "";
+  position: absolute;
+  top: 110px;
+  right: -140px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(225, 0, 109, 0.08);
+  pointer-events: none;
+}
+
+.volunteer-hero-layout {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 54px;
   align-items: center;
-  gap: 2.5rem;
-  max-width: 1200px;
-  margin: 0 auto 3rem auto;
+}
+
+.volunteer-hero-content {
+  max-width: 690px;
+}
+
+.volunteer-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 10px 18px;
+  border-radius: var(--volunteer-radius-pill);
+  background: var(--volunteer-yellow);
+  color: var(--volunteer-dark);
+  font-size: 0.82rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.volunteer-hero-content h1 {
+  margin: 24px 0 0;
+  color: var(--volunteer-dark);
+  font-size: clamp(2.7rem, 5.7vw, 5.8rem);
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.volunteer-hero-content p {
+  margin: 28px 0 0;
+  color: var(--volunteer-text);
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.volunteer-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.volunteer-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 14px 28px;
+  border-radius: var(--volunteer-radius-pill);
+  font-size: 0.98rem;
+  font-weight: 950;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.volunteer-btn:hover {
+  transform: translateY(-3px);
+}
+
+.volunteer-btn-primary {
+  background: linear-gradient(135deg, var(--volunteer-pink), #ff4fa3);
+  color: var(--volunteer-white);
+  box-shadow: 0 16px 35px rgba(225, 0, 109, 0.32);
+}
+
+.volunteer-btn-secondary {
+  background: var(--volunteer-yellow);
+  color: var(--volunteer-dark);
+}
+
+.volunteer-hero-image {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  border-radius: 42px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(255, 204, 0, 0.24), transparent 30%),
+    var(--volunteer-white);
+  border: 1px solid var(--volunteer-border);
+  box-shadow: var(--volunteer-shadow);
+}
+
+.volunteer-hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  z-index: 2;
+  border: 1px solid rgba(225, 0, 109, 0.12);
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.volunteer-hero-image::after {
+  content: "Bénévolat";
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 3;
+  padding: 12px 18px;
+  border-radius: var(--volunteer-radius-pill);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--volunteer-pink);
+  font-size: 0.9rem;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .volunteer-hero-image img {
   width: 100%;
-  height: 730px;
-  object-fit: cover;
+  max-height: 500px;
   display: block;
-  border-radius: 14px;
+  object-fit: contain;
+  border-radius: 26px;
 }
 
-.volunteer-hero-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* MISSIONS */
+
+.volunteer-missions-section {
+  padding: 40px 0 95px;
+  background: var(--volunteer-bg);
 }
 
-.about-title {
-  font-size: 2.2rem;
-  color: #c6362c;
-  margin-bottom: 1.2rem;
+.volunteer-section-heading {
+  max-width: 860px;
+  margin-bottom: 40px;
 }
 
-.about-body p {
+.volunteer-section-heading h2,
+.volunteer-info-card h2,
+.volunteer-form-heading h2 {
+  margin: 22px 0 0;
+  color: var(--volunteer-dark);
+  font-size: clamp(2.1rem, 4.5vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+  font-weight: 950;
+}
+
+.volunteer-missions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.volunteer-mission-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+  padding: 34px;
+  border-radius: var(--volunteer-radius-lg);
+  background: var(--volunteer-white);
+  border: 1px solid var(--volunteer-border);
+  box-shadow: var(--volunteer-card-shadow);
+}
+
+.volunteer-mission-card::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(225, 0, 109, 0.08);
+}
+
+.volunteer-mission-card:nth-child(2)::after {
+  background: rgba(255, 204, 0, 0.22);
+}
+
+.volunteer-mission-card div {
+  position: relative;
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: var(--volunteer-bg);
+  font-size: 2rem;
+  box-shadow: 0 12px 28px rgba(225, 0, 109, 0.12);
+}
+
+.volunteer-mission-card h3 {
+  position: relative;
+  z-index: 1;
+  margin: 28px 0 0;
+  color: var(--volunteer-dark);
+  font-size: 1.55rem;
+  line-height: 1.1;
+  font-weight: 950;
+}
+
+.volunteer-mission-card p {
+  position: relative;
+  z-index: 1;
+  margin: 16px 0 0;
+  color: var(--volunteer-text);
   font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* FORM SECTION */
+
+.volunteer-form-section {
+  padding: 95px 0;
+  background: var(--volunteer-white);
+}
+
+.volunteer-form-layout {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.volunteer-info-card,
+.volunteer-form-card {
+  border-radius: var(--volunteer-radius-lg);
+  background: var(--volunteer-bg);
+  border: 1px solid var(--volunteer-border);
+  box-shadow: var(--volunteer-card-shadow);
+}
+
+.volunteer-info-card {
+  position: sticky;
+  top: 110px;
+  padding: 38px;
+}
+
+.volunteer-info-card p,
+.volunteer-form-heading p {
+  margin: 22px 0 0;
+  color: var(--volunteer-text);
+  font-size: 1.02rem;
   line-height: 1.8;
-  margin-bottom: 1rem;
-  color: #222;
 }
 
-/* ========= Section Devenir bénévole ========= */
-
-.volunteer-section {
-  margin-top: 3rem;
-  padding: 2rem;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  max-width: 720px;
-  margin-left: auto;
-  margin-right: auto;
+.volunteer-info-list {
+  display: grid;
+  gap: 16px;
+  margin-top: 30px;
 }
 
-.volunteer-title {
-  font-size: 1.6rem;
-  margin-bottom: 0.8rem;
-  color: #c6362c;
-  text-align: center;
+.volunteer-info-list div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 24px;
+  background: var(--volunteer-white);
+  border: 1px solid rgba(225, 0, 109, 0.12);
 }
 
-.volunteer-intro {
-  font-size: 0.98rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  text-align: center;
+.volunteer-info-list strong {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  border-radius: 18px;
+  background: var(--volunteer-yellow);
+  color: var(--volunteer-dark);
+  font-weight: 950;
+}
+
+.volunteer-info-list span {
+  color: var(--volunteer-dark);
+  font-size: 1rem;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+.volunteer-form-card {
+  padding: 42px;
 }
 
 .volunteer-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  max-width: 650px;
-  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+  margin-top: 34px;
 }
+
+/* FORM */
 
 .form-two-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 18px;
+}
+
+.form-group {
+  display: grid;
+  gap: 9px;
 }
 
 .form-group label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 0.35rem;
-  font-size: 0.95rem;
+  color: var(--volunteer-dark);
+  font-size: 0.92rem;
+  font-weight: 950;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.55rem 0.75rem;
-  border-radius: 6px;
-  border: 1px solid #d0d0d0;
-  font-size: 0.95rem;
+  border: 1px solid rgba(225, 0, 109, 0.16);
+  border-radius: 20px;
+  background: #fffafd;
+  color: var(--volunteer-dark);
+  font: inherit;
+  font-size: 1rem;
   outline: none;
-  box-sizing: border-box;
+  transition:
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.form-group input,
+.form-group select {
+  min-height: 56px;
+  padding: 0 18px;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+  padding: 18px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(107, 114, 128, 0.75);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: #c6362c;
-  box-shadow: 0 0 0 1px rgba(198, 54, 44, 0.15);
+  border-color: rgba(225, 0, 109, 0.5);
+  background: var(--volunteer-white);
+  box-shadow: 0 0 0 4px rgba(225, 0, 109, 0.1);
 }
 
 .form-consent {
-  font-size: 0.9rem;
-  line-height: 1.5;
+  padding: 18px;
+  border-radius: 22px;
+  background: var(--volunteer-white);
+  border: 1px solid rgba(225, 0, 109, 0.12);
 }
 
 .form-consent label {
   display: flex;
   align-items: flex-start;
-  gap: 0.45rem;
+  gap: 12px;
+  cursor: pointer;
 }
 
-.form-consent input[type="checkbox"] {
-  margin-top: 0.15rem;
+.form-consent input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--volunteer-pink);
+  flex: 0 0 auto;
+}
+
+.form-consent span {
+  color: var(--volunteer-text);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  font-weight: 650;
 }
 
 .volunteer-submit {
-  align-self: center;
-  padding: 0.6rem 1.6rem;
-  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  width: fit-content;
+  padding: 14px 30px;
   border: none;
-  background-color: #c6362c;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 0.95rem;
+  border-radius: var(--volunteer-radius-pill);
+  background: linear-gradient(135deg, var(--volunteer-pink), #ff4fa3);
+  color: var(--volunteer-white);
+  font-size: 0.98rem;
+  font-weight: 950;
   cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+  box-shadow: 0 16px 35px rgba(225, 0, 109, 0.32);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
 }
 
 .volunteer-submit:hover {
-  background-color: #aa2f27;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 42px rgba(225, 0, 109, 0.42);
 }
 
-.volunteer-submit:active {
-  transform: translateY(0);
-  box-shadow: none;
+.volunteer-submit:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  transform: none;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+.volunteer-status-error,
+.volunteer-status-success {
+  margin: 0;
+  padding: 16px 18px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.volunteer-status-error {
+  color: #991b1b;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+.volunteer-status-success {
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
   .volunteer-hero {
+    padding: 86px 0 70px;
+  }
+
+  .volunteer-hero-layout,
+  .volunteer-missions-grid,
+  .volunteer-form-layout {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
   }
 
-  .volunteer-hero-image img {
-    height: 320px;
+  .volunteer-hero-content {
+    max-width: 100%;
   }
 
-  .volunteer-hero-text {
-    text-align: left;
+  .volunteer-info-card {
+    position: relative;
+    top: auto;
   }
 
-  .about-title {
-    font-size: 1.8rem;
+  .volunteer-hero-image {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 28px, 1180px);
   }
 
-  .volunteer-section {
-    padding: 1.5rem 1.25rem;
-    margin-top: 2.5rem;
+  .volunteer-hero {
+    padding: 64px 0 54px;
+  }
+
+  .volunteer-hero-content h1 {
+    font-size: clamp(2.45rem, 12vw, 3.8rem);
+    letter-spacing: -0.065em;
+  }
+
+  .volunteer-hero-content p,
+  .volunteer-info-card p,
+  .volunteer-form-heading p {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .volunteer-hero-actions {
+    flex-direction: column;
+  }
+
+  .volunteer-btn {
+    width: 100%;
+  }
+
+  .volunteer-hero-image,
+  .volunteer-mission-card,
+  .volunteer-info-card,
+  .volunteer-form-card {
+    padding: 28px 22px;
+    border-radius: 26px;
+  }
+
+  .volunteer-missions-section,
+  .volunteer-form-section {
+    padding: 68px 0;
+  }
+
+  .volunteer-section-heading h2,
+  .volunteer-info-card h2,
+  .volunteer-form-heading h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
   }
 
   .form-two-columns {
     grid-template-columns: 1fr;
+  }
+
+  .volunteer-submit {
+    width: 100%;
+  }
+
+  .volunteer-info-list div {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .volunteer-info-list strong {
+    width: 48px;
+    height: 48px;
+  }
+
+  .volunteer-hero-image img {
+    max-height: 420px;
   }
 }

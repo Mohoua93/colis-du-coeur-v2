@@ -1,5 +1,5 @@
 // src/components/Header.jsx
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/header.css";
 
@@ -10,13 +10,10 @@ function Header() {
   const closeMenu = () => setIsOpen(false);
   const toggleMenu = () => setIsOpen((v) => !v);
 
-  // Ferme le menu à chaque changement de route
   useEffect(() => {
     closeMenu();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname]);
 
-  // Bloque le scroll du body quand le menu est ouvert
   useEffect(() => {
     if (isOpen) document.body.classList.add("no-scroll");
     else document.body.classList.remove("no-scroll");
@@ -24,7 +21,6 @@ function Header() {
     return () => document.body.classList.remove("no-scroll");
   }, [isOpen]);
 
-  // Ferme au clavier (Esc)
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === "Escape") closeMenu();
@@ -34,31 +30,43 @@ function Header() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [isOpen]);
 
-  const handleLinkClick = () => closeMenu();
+  const navLinks = [
+    { to: "/", label: "Accueil" },
+    { to: "/qui-sommes-nous", label: "Qui sommes-nous" },
+    { to: "/nos-actions", label: "Nos actions" },
+    { to: "/partenariat", label: "Partenariat" },
+    { to: "/devenir-benevole", label: "Devenir bénévole" },
+    { to: "/contact", label: "Contact" },
+  ];
 
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <div className="site-logo">
-          <Link to="/" className="site-logo-link">
-            Les Colis du Cœur
-          </Link>
-        </div>
+        <Link to="/" className="site-logo-link" aria-label="Accueil">
+          <span className="site-logo-main">Les Colis du</span>
+          <span className="site-logo-heart">Cœur</span>
+        </Link>
 
         {/* NAV DESKTOP */}
-        <nav className="site-nav desktop-nav">
-          <Link to="/">Accueil</Link>
-          <Link to="/qui-sommes-nous">Qui sommes-nous</Link>
-          <Link to="/nos-actions">Nos actions</Link>
-          <Link to="/partenariat">Partenariat</Link>
-          <Link to="/devenir-benevole">Devenir bénévole</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/faire-un-don" className="nav-donate">
+        <nav className="site-nav desktop-nav" aria-label="Navigation principale">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                isActive ? "site-nav-link active" : "site-nav-link"
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
+
+          <NavLink to="/faire-un-don" className="nav-donate">
             Faire un don
-          </Link>
+          </NavLink>
         </nav>
 
-        {/* BOUTON MOBILE TEXTE UNIQUEMENT */}
+        {/* BOUTON MOBILE */}
         <button
           className={`menu-btn ${isOpen ? "is-open" : ""}`}
           type="button"
@@ -67,11 +75,13 @@ function Header() {
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
         >
-          {isOpen ? "Fermer" : "Menu"}
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
 
-      {/* MENU MOBILE FULLSCREEN */}
+      {/* MENU MOBILE */}
       <div
         className={`mobile-menu ${isOpen ? "open" : ""}`}
         role="dialog"
@@ -79,7 +89,10 @@ function Header() {
         id="mobile-menu"
       >
         <div className="mobile-menu-header">
-          <span className="mobile-menu-logo">Les Colis du Cœur</span>
+          <Link to="/" className="mobile-menu-logo" onClick={closeMenu}>
+            <span>Les Colis du</span>
+            <strong>Cœur</strong>
+          </Link>
 
           <button
             className="mobile-close-btn"
@@ -91,37 +104,31 @@ function Header() {
           </button>
         </div>
 
-        <nav className="mobile-menu-nav">
-          <Link to="/" onClick={handleLinkClick}>
-            Accueil
-          </Link>
-          <Link to="/qui-sommes-nous" onClick={handleLinkClick}>
-            Qui sommes-nous
-          </Link>
-          <Link to="/nos-actions" onClick={handleLinkClick}>
-            Nos actions
-          </Link>
-          {/* ✅ Nouveau lien Partenariat (mobile) */}
-          <Link to="/partenariat" onClick={handleLinkClick}>
-            Partenariat
-          </Link>
-          <Link to="/devenir-benevole" onClick={handleLinkClick}>
-            Devenir bénévole
-          </Link>
-          <Link to="/contact" onClick={handleLinkClick}>
-            Contact
-          </Link>
-          <Link
+        <nav className="mobile-menu-nav" aria-label="Navigation mobile">
+          {navLinks.map((link, index) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              onClick={closeMenu}
+              className={({ isActive }) =>
+                isActive ? "mobile-link active" : "mobile-link"
+              }
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              {link.label}
+            </NavLink>
+          ))}
+
+          <NavLink
             to="/faire-un-don"
-            className="nav-donate"
-            onClick={handleLinkClick}
+            className="mobile-donate-btn"
+            onClick={closeMenu}
           >
             Faire un don
-          </Link>
+          </NavLink>
         </nav>
       </div>
 
-      {/* Backdrop */}
       <div
         className={`mobile-backdrop ${isOpen ? "show" : ""}`}
         onClick={closeMenu}
@@ -132,8 +139,3 @@ function Header() {
 }
 
 export default Header;
-
-
-
-
-

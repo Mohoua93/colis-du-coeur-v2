@@ -1,136 +1,158 @@
 // src/pages/Cameroun.js
-import "../styles/bangladesh.css"; // on réutilise les styles country-*
+import { Link } from "react-router-dom";
+import "../styles/bangladesh.css";
+import "../styles/cameroun.css";
+
 import camerounHero from "../assets/images/cameroun-hero.jpg";
 import camerounColis from "../assets/images/cameroun-food.jpg";
 import camerounCoran from "../assets/images/cameroun-coran.jpg";
 
+const summaryCards = [
+  {
+    title: "Colis alimentaires",
+    text: "Nous organisons des distributions de colis alimentaires pour apporter un soutien concret aux familles confrontées à la précarité.",
+    icon: "📦",
+  },
+  {
+    title: "Ramadan & Aïd",
+    text: "Nous préparons des colis spéciaux pour permettre aux familles de vivre ces périodes importantes avec plus de sérénité et de dignité.",
+    icon: "🌙",
+  },
+  {
+    title: "Distribution de Corans",
+    text: "En coordination avec des relais locaux, nous réalisons des dons de Corans dans les mosquées, écoles et familles qui en expriment le besoin.",
+    icon: "📖",
+  },
+];
+
+const actionBlocks = [
+  {
+    title: "Des colis alimentaires pour soulager le quotidien",
+    image: camerounColis,
+    alt: "Distribution de colis alimentaires au Cameroun",
+    reverse: false,
+    paragraphs: [
+      "Au Cameroun, de nombreuses familles vivent dans une grande précarité. Les colis alimentaires que nous distribuons contiennent des produits de base adaptés aux habitudes locales : riz, huile, farine, légumineuses et autres produits essentiels.",
+      "Ces distributions sont organisées avec l’aide de bénévoles et de partenaires locaux qui identifient les foyers les plus fragiles, afin que l’aide parvienne là où elle est réellement nécessaire.",
+    ],
+  },
+  {
+    title: "Distribution de Corans encadrée",
+    image: camerounCoran,
+    alt: "Distribution de Corans au Cameroun",
+    reverse: true,
+    paragraphs: [
+      "Les dons de Corans au Cameroun se font en lien avec des acteurs de confiance sur place : responsables de mosquées, enseignants et associations locales.",
+      "L’objectif est de répondre à une demande existante, dans un cadre respectueux, en veillant à ce que chaque exemplaire soit remis là où il sera utilisé, transmis et préservé.",
+    ],
+  },
+];
+
 function Cameroun() {
   return (
-    <section className="country-page">
-      <div className="container">
-        {/* Hero */}
-        <header className="country-hero">
-          <div className="country-hero-text">
-            <p className="country-eyebrow">Nos actions à l&apos;international</p>
-            <h1 className="country-title">Cameroun</h1>
-            <p className="country-intro">
-              Au Cameroun, Les Colis du Cœur soutiennent les familles les plus
-              vulnérables à travers des{" "}
-              <strong>distributions de colis alimentaires</strong>, des{" "}
-              <strong>colis spéciaux pour le Ramadan et l&apos;Aïd</strong> et,
-              lorsque cela est demandé, la{" "}
-              <strong>distribution de Corans</strong> dans un cadre encadré.
+    <main className="country-page cameroun-page">
+      {/* HERO */}
+      <section className="country-hero-section">
+        <div className="container country-hero-layout">
+          <div className="country-hero-content">
+            <span className="country-label">Nos actions à l’international</span>
+
+            <h1>Cameroun</h1>
+
+            <p>
+              Au Cameroun, Les Colis du Cœur soutient les familles les plus
+              vulnérables à travers des distributions de colis alimentaires, des
+              colis spéciaux pour le Ramadan et l’Aïd, ainsi que la distribution
+              de Corans lorsque le besoin est exprimé localement.
             </p>
-            <a href="/nos-actions" className="country-back-link">
-              ← Retour à la carte de nos actions
-            </a>
+
+            <div className="country-hero-actions">
+              <Link to="/nos-actions" className="country-btn country-btn-secondary">
+                ← Retour aux actions
+              </Link>
+
+              <Link to="/faire-un-don" className="country-btn country-btn-primary">
+                Soutenir cette action
+              </Link>
+            </div>
           </div>
 
-          <div className="country-hero-image">
-            <img
-              src={camerounHero}
-              alt="Quartier et familles au Cameroun"
-            />
+          <div className="country-hero-image country-hero-image-cameroun">
+            <img src={camerounHero} alt="Quartier et familles au Cameroun" />
           </div>
-        </header>
+        </div>
+      </section>
 
-        {/* Résumé des actions */}
-        <section className="country-summary">
-          <h2 className="country-section-title">Ce que nous y faisons</h2>
+      {/* SUMMARY */}
+      <section className="country-summary-section">
+        <div className="container">
+          <div className="country-section-heading">
+            <span className="country-label">Ce que nous faisons</span>
+            <h2>Des actions solidaires pour accompagner les familles.</h2>
+          </div>
+
           <div className="country-summary-grid">
-            <article className="summary-card">
-              <h3>Colis alimentaires</h3>
-              <p>
-                Nous organisons des distributions de{" "}
-                <strong>colis alimentaires</strong> pour apporter un soutien
-                concret aux familles confrontées à la précarité.
-              </p>
+            {summaryCards.map((card) => (
+              <article className="summary-card" key={card.title}>
+                <div className="summary-card-icon">{card.icon}</div>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ACTION BLOCKS */}
+      <section className="country-actions-section">
+        <div className="container country-actions-list">
+          {actionBlocks.map((block) => (
+            <article
+              className={`country-block ${block.reverse ? "country-block-reverse" : ""}`}
+              key={block.title}
+            >
+              <div className="country-block-text">
+                <span className="country-label">Action terrain</span>
+                <h2>{block.title}</h2>
+
+                {block.paragraphs.map((paragraph, index) => (
+                  <p key={`${block.title}-${index}`}>{paragraph}</p>
+                ))}
+              </div>
+
+              <div className="country-block-image">
+                <img src={block.image} alt={block.alt} />
+              </div>
             </article>
+          ))}
+        </div>
+      </section>
 
-            <article className="summary-card">
-              <h3>Distribution de Coran</h3>
-              <p>
-                En coordination avec des relais locaux, nous réalisons des{" "}
-                <strong>dons de Corans</strong> dans les mosquées, écoles et
-                familles qui en expriment le besoin.
-              </p>
-            </article>
-          </div>
-        </section>
+      {/* CTA */}
+      <section className="country-final-cta">
+        <div className="container country-final-card">
+          <span>Envie de soutenir nos actions au Cameroun ?</span>
 
-        {/* Colis alimentaires */}
-        <section className="country-block">
-          <div className="country-block-text">
-            <h2 className="country-section-title">
-              Des colis alimentaires pour soulager le quotidien
-            </h2>
-            <p>
-              Au Cameroun, de nombreuses familles vivent dans une grande
-              précarité. Les <strong>colis alimentaires</strong> que nous
-              distribuons contiennent des produits de base adaptés aux
-              habitudes locales (riz, huile, farine, légumineuses, etc.).
-            </p>
-            <p>
-              Ces distributions sont organisées avec l&apos;aide de{" "}
-              <strong>bénévoles et de partenaires locaux</strong> qui
-              identifient les foyers les plus fragiles, afin que l&apos;aide
-              parvienne là où elle est réellement nécessaire.
-            </p>
-          </div>
+          <h2>Votre soutien permet d’aider davantage de familles.</h2>
 
-          <div className="country-hero-image">
-            <img
-              src={camerounColis}
-              alt="Distribution de colis alimentaires au Cameroun"
-            />
-          </div>
-        </section>
-
-
-        {/* Distribution de Coran */}
-        <section className="country-block">
-          <div className="country-block-text">
-            <h2 className="country-section-title">
-              Distribution de Corans encadrée
-            </h2>
-            <p>
-              Les <strong>dons de Corans</strong> au Cameroun se font en lien
-              avec des <strong>acteurs de confiance sur place</strong> :
-              responsables de mosquées, enseignants, associations locales.
-            </p>
-            <p>
-              L&apos;objectif est de répondre à une demande existante, sans
-              excès, en veillant à ce que chaque exemplaire soit remis dans un
-              cadre où il sera utilisé, transmis et respecté.
-            </p>
-          </div>
-
-          <div className="country-hero-image">
-            <img
-              src={camerounCoran}
-              alt="Distribution de Corans au Cameroun"
-            />
-          </div>
-        </section>
-
-        {/* Appel à l'action */}
-        <section className="country-cta">
-          <h2>Envie de soutenir nos actions au Cameroun&nbsp;?</h2>
           <p>
-            Grâce à votre soutien, nous pouvons continuer à accompagner les
-            familles et à développer des actions solidaires sur le terrain.
+            Grâce à votre aide, nous pouvons continuer à accompagner les familles
+            vulnérables et développer des actions solidaires utiles sur le
+            terrain.
           </p>
-          <div className="country-cta-buttons">
-            <a href="/contact" className="country-cta-btn primary">
-              Nous contacter
-            </a>
-            <a href="/devenir-benevole" className="country-cta-btn ghost">
+
+          <div className="country-final-actions">
+            <Link to="/faire-un-don" className="country-btn country-btn-primary">
+              Faire un don
+            </Link>
+
+            <Link to="/devenir-benevole" className="country-btn country-btn-secondary">
               Devenir bénévole
-            </a>
+            </Link>
           </div>
-        </section>
-      </div>
-    </section>
+        </div>
+      </section>
+    </main>
   );
 }
 

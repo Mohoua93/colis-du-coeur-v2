@@ -1,3 +1,4 @@
+// src/pages/Actions.jsx
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/actions.css";
@@ -40,7 +41,7 @@ const locations = [
     actions: [
       "Colis alimentaires",
       "Distribution de Coran",
-      "Repas en Orphelinat",
+      "Repas en orphelinat",
       "Repas spécial Ramadan & Aïd",
     ],
     link: "/actions/ouganda",
@@ -87,11 +88,56 @@ const locations = [
   },
 ];
 
+const actionCards = [
+  {
+    title: "Maraudes en région parisienne",
+    text: "En Île-de-France, nos bénévoles vont à la rencontre des personnes sans-abri ou en grande précarité : distribution de repas, boissons chaudes, kits d’hygiène et écoute bienveillante.",
+    link: "/actions/maraudes",
+    icon: "🤝",
+  },
+  {
+    title: "Récoltes alimentaires",
+    text: "Nous organisons des récoltes alimentaires pour collecter des denrées essentielles destinées aux familles en difficulté et renforcer nos distributions sur le terrain.",
+    link: "/actions/recolte-alimentaire",
+    icon: "🛒",
+  },
+  {
+    title: "Distribution alimentaire",
+    text: "Grâce aux dons et aux récoltes, nous organisons des distributions régulières pour soutenir les familles, étudiants et personnes isolées en situation de précarité.",
+    link: "/actions/distribution-alimentaire",
+    icon: "🍽️",
+  },
+  {
+    title: "Colis alimentaires",
+    text: "Au Sénégal, au Cameroun, en Ouganda et au Bangladesh, nous distribuons des colis alimentaires aux familles vulnérables : riz, huile, denrées de base et produits essentiels.",
+    icon: "📦",
+  },
+  {
+    title: "Colis Ramadan & Aïd",
+    text: "Pendant le Ramadan et à l’occasion de l’Aïd, nous renforçons les distributions avec des colis adaptés pour permettre aux familles de vivre ces moments dans la dignité.",
+    icon: "🌙",
+  },
+  {
+    title: "Construction de puits d’eau",
+    text: "Au Sénégal et au Bangladesh, nous finançons la construction de puits pour garantir un accès durable à une eau potable et sûre, à proximité des villages.",
+    icon: "💧",
+  },
+  {
+    title: "Fournitures scolaires",
+    text: "En Afrique, nous distribuons des kits scolaires pour aider les enfants à poursuivre leur scolarité dans de meilleures conditions : cahiers, stylos, sacs et matériel de base.",
+    icon: "🎒",
+  },
+  {
+    title: "Distribution de Corans",
+    text: "Au Cameroun et au Sénégal, nous offrons des exemplaires du Coran aux mosquées, écoles et familles, dans le respect des demandes locales et des besoins constatés.",
+    icon: "📖",
+  },
+];
+
 function Actions() {
   const [activeLocationId, setActiveLocationId] = useState("senegal");
   const activeLocation = locations.find((loc) => loc.id === activeLocationId);
 
-  // ✅ gestion fade dynamique + détection overflow
   const flagsScrollRef = useRef(null);
   const [fadeState, setFadeState] = useState({
     atStart: true,
@@ -105,7 +151,6 @@ function Actions() {
 
     const update = () => {
       const { scrollLeft, scrollWidth, clientWidth } = el;
-
       const hasOverflow = scrollWidth > clientWidth + 2;
 
       if (!hasOverflow) {
@@ -120,6 +165,7 @@ function Actions() {
     };
 
     update();
+
     el.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
 
@@ -139,26 +185,61 @@ function Actions() {
     .join(" ");
 
   return (
-    <section className="actions-page">
-      <div className="container">
-        <h1 className="actions-title">Nos actions</h1>
-        <p className="actions-intro">
-          Les Colis du Cœur agissent à la fois en{" "}
-          <strong>région parisienne</strong> et dans plusieurs pays du monde
-          pour lutter contre la précarité, l&apos;insécurité alimentaire et
-          l&apos;accès limité à l&apos;eau.
-        </p>
+    <main className="actions-page">
+      {/* HERO */}
+      <section className="actions-hero">
+        <div className="container actions-hero-layout">
+          <div className="actions-hero-content">
+            <span className="actions-label">Nos actions</span>
 
-        <div className="actions-layout">
-          <div className="actions-map-wrapper">
-            {/* ✅ CARTE */}
+            <h1>Une solidarité active, en France et à l’international.</h1>
+
+            <p>
+              Les Colis du Cœur agit en région parisienne et dans plusieurs pays
+              du monde pour lutter contre la précarité, l’insécurité alimentaire
+              et l’accès limité à l’eau potable.
+            </p>
+
+            <div className="actions-hero-buttons">
+              <Link to="/faire-un-don" className="actions-btn actions-btn-primary">
+                Soutenir nos actions
+              </Link>
+
+              <Link
+                to="/devenir-benevole"
+                className="actions-btn actions-btn-secondary"
+              >
+                Devenir bénévole
+              </Link>
+            </div>
+          </div>
+
+          <div className="actions-hero-card">
+            <span>Impact terrain</span>
+            <strong>7 pays</strong>
+            <p>
+              Des actions solidaires adaptées aux besoins locaux : colis,
+              maraudes, puits, fournitures scolaires et campagnes spécifiques.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* MAP */}
+      <section className="actions-map-section">
+        <div className="container">
+          <div className="actions-section-heading">
+            <span className="actions-label">Carte des actions</span>
+            <h2>Choisissez un pays pour découvrir nos interventions.</h2>
+          </div>
+
+          <div className="actions-map-card">
             <div className="world-map">
               <img
                 src={worldMap}
-                alt="Carte du monde des actions de l'association"
+                alt="Carte du monde des actions de l'association Les Colis du Cœur"
               />
 
-              {/* 📝 Post-it */}
               {activeLocation && (
                 <div
                   key={activeLocation.id}
@@ -166,14 +247,14 @@ function Actions() {
                 >
                   <p className="map-postit-eyebrow">Nos actions sur place</p>
 
-                  <h2 className="map-postit-title">
-                    <span className="postit-flag">{activeLocation.flag}</span>
+                  <h3 className="map-postit-title">
+                    <span>{activeLocation.flag}</span>
                     {activeLocation.country}
-                  </h2>
+                  </h3>
 
                   <ul className="map-postit-list">
                     {activeLocation.actions.map((act, index) => (
-                      <li key={index}>{act}</li>
+                      <li key={`${activeLocation.id}-${index}`}>{act}</li>
                     ))}
                   </ul>
 
@@ -184,7 +265,6 @@ function Actions() {
               )}
             </div>
 
-            {/* ✅ DRAPEAUX SOUS LA CARTE */}
             <div className="map-flags-overlay">
               <p className="map-flags-label">Choisir un pays</p>
 
@@ -192,134 +272,79 @@ function Actions() {
                 <div className="map-flags-list">
                   {locations.map((loc) => (
                     <button
-                      key={`below-${loc.id}`}
+                      key={loc.id}
                       type="button"
                       className={`map-flag-btn ${
                         loc.id === activeLocationId ? "active" : ""
                       }`}
                       onClick={() => setActiveLocationId(loc.id)}
-                      aria-label={loc.country}
+                      aria-label={`Voir les actions au ${loc.country}`}
                       title={loc.country}
                     >
-                      {loc.flag}
+                      <span>{loc.flag}</span>
+                      <small>{loc.country}</small>
                     </button>
                   ))}
                 </div>
               </div>
             </div>
-            {/* fin drapeaux */}
           </div>
         </div>
+      </section>
 
-        {/* Cartes texte en bas */}
-<section className="actions-grid">
-  {/* 1) Maraudes */}
-  <article className="action-card">
-    <h3>Maraudes en région parisienne</h3>
-    <p>
-      En Île-de-France, nos bénévoles vont à la rencontre des personnes
-      sans-abri ou en grande précarité&nbsp;: distribution de repas,
-      boissons chaudes, kits d&apos;hygiène et écoute bienveillante.
-    </p>
+      {/* ACTIONS CARDS */}
+      <section className="actions-cards-section">
+        <div className="container">
+          <div className="actions-section-heading">
+            <span className="actions-label">Domaines d’intervention</span>
+            <h2>Des actions concrètes pour répondre aux besoins essentiels.</h2>
+          </div>
 
-    <Link to="/actions/maraudes" className="action-card-link">
-      Découvrir nos actions en détail →
-    </Link>
-  </article>
+          <div className="actions-grid">
+            {actionCards.map((card) => (
+              <article className="action-card" key={card.title}>
+                <div className="action-card-icon">{card.icon}</div>
 
-  {/* 2) Récoltes alimentaires */}
-  <article className="action-card">
-    <h3>Récoltes alimentaires</h3>
-    <p>
-      Nous organisons des récoltes alimentaires pour collecter des
-      denrées essentielles destinées aux familles en difficulté. Ces
-      actions solidaires permettent de renforcer nos distributions et
-      de répondre aux besoins urgents sur le terrain.
-    </p>
+                <h3>{card.title}</h3>
 
-    <Link to="/actions/recolte-alimentaire" className="action-card-link">
-      Découvrir nos actions en détail →
-    </Link>
-  </article>
+                <p>{card.text}</p>
 
-  {/* 3) ✅ Distribution alimentaire */}
-  <article className="action-card">
-    <h3>Distribution alimentaire</h3>
-    <p>
-      Grâce aux dons et aux récoltes, nous organisons des distributions
-      alimentaires régulières afin d’apporter une aide concrète aux
-      familles, étudiants et personnes isolées en situation de précarité.
-      Chaque distribution est un moment de solidarité, de respect et de
-      soutien humain.
-    </p>
+                {card.link && (
+                  <Link to={card.link} className="action-card-link">
+                    Découvrir en détail →
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
-    <Link
-      to="/actions/distribution-alimentaire"
-      className="action-card-link"
-    >
-      Découvrir nos actions en détail →
-    </Link>
-  </article>
+      {/* CTA */}
+      <section className="actions-final-cta">
+        <div className="container actions-final-card">
+          <span>Chaque geste compte</span>
 
-  {/* 4) Colis alimentaires */}
-  <article className="action-card">
-    <h3>Colis alimentaires</h3>
-    <p>
-      Au Sénégal, au Cameroun, en Ouganda et au Bangladesh, nous
-      distribuons des colis alimentaires aux familles
-      vulnérables&nbsp;: riz, huile, denrées de base et produits
-      essentiels du quotidien.
-    </p>
-  </article>
+          <h2>Votre soutien nous permet d’aller plus loin.</h2>
 
-  <article className="action-card">
-    <h3>Colis alimentaires spéciaux Ramadan &amp; Aïd</h3>
-    <p>
-      Pendant le mois de Ramadan et à l&apos;occasion de
-      l&apos;Aïd, nous renforçons les distributions avec des colis
-      adaptés pour permettre aux familles de vivre ces moments dans la
-      dignité.
-    </p>
-  </article>
+          <p>
+            Un don, du temps, un partage ou un partenariat peut transformer une
+            action locale en aide concrète pour des familles entières.
+          </p>
 
-  <article className="action-card">
-    <h3>Construction de puits d&apos;eau</h3>
-    <p>
-      Au Sénégal et au Bangladesh, nous finançons la construction de
-      puits pour garantir un accès durable à une eau potable et sûre, à
-      proximité des villages.
-    </p>
-  </article>
+          <div className="actions-final-buttons">
+            <Link to="/faire-un-don" className="actions-btn actions-btn-primary">
+              Faire un don
+            </Link>
 
-  <article className="action-card">
-    <h3>Fournitures scolaires</h3>
-    <p>
-      En Afrique, nous distribuons des kits scolaires pour aider les
-      enfants à poursuivre leur scolarité dans de meilleures
-      conditions&nbsp;: cahiers, stylos, sacs et matériel de base.
-    </p>
-  </article>
-
-  <article className="action-card">
-    <h3>Distribution de Coran</h3>
-    <p>
-      Au Cameroun et au Sénégal, nous offrons des exemplaires du Coran
-      aux mosquées, écoles et familles, dans le respect des demandes
-      locales et des besoins constatés sur le terrain.
-    </p>
-  </article>
-</section>
-
-      </div>
-    </section>
+            <Link to="/contact" className="actions-btn actions-btn-secondary">
+              Nous contacter
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 
 export default Actions;
-
-
-
-
-
-
-

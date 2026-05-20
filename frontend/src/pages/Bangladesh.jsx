@@ -1,234 +1,189 @@
 // src/pages/Bangladesh.js
+import { Link } from "react-router-dom";
 import "../styles/bangladesh.css";
+
 import bangladeshHero from "../assets/images/bangladesh-hero.jpg";
 import bangladeshPuits from "../assets/images/bangladesh-puits.jpg";
 import bangladeshColisAlimentaires from "../assets/images/bangladesh-food.jpg";
 import bangladeshRamadan from "../assets/images/bangladesh-ramadan.jpg";
 import bangladeshAid from "../assets/images/bangladesh-aid.jpg";
-import bangladeshCoran from "../assets/images/bangladesh-coran.jpg"; // 📖 nouvelle image
+import bangladeshCoran from "../assets/images/bangladesh-coran.jpg";
+
+const summaryCards = [
+  {
+    title: "Construction de puits d’eau",
+    text: "Dans plusieurs villages, nous finançons la construction de puits afin de garantir un accès durable à une eau potable, à proximité des habitations.",
+    icon: "💧",
+  },
+  {
+    title: "Colis alimentaires",
+    text: "Nous distribuons des colis composés de denrées de base pour soulager les familles en situation de précarité alimentaire.",
+    icon: "📦",
+  },
+  {
+    title: "Ramadan & Aïd",
+    text: "Pendant le Ramadan et à l’occasion de l’Aïd, nous renforçons les distributions avec des colis spéciaux adaptés aux besoins des familles.",
+    icon: "🌙",
+  },
+];
+
+const actionBlocks = [
+  {
+    title: "Des puits pour changer le quotidien",
+    image: bangladeshPuits,
+    alt: "Puits d'eau construit au Bangladesh",
+    reverse: false,
+    paragraphs: [
+      "Dans certaines zones rurales du Bangladesh, l’accès à l’eau potable reste un défi quotidien. Les puits construits grâce à vos dons permettent de réduire les trajets, d’éviter les contaminations liées à une eau insalubre et de sécuriser l’hygiène des familles.",
+      "Chaque puits est implanté en concertation avec les habitants et les relais locaux, pour répondre à un besoin réel et durable.",
+    ],
+  },
+  {
+    title: "Des colis alimentaires pour les familles",
+    image: bangladeshColisAlimentaires,
+    alt: "Distribution de colis alimentaires au Bangladesh",
+    reverse: true,
+    paragraphs: [
+      "Les colis alimentaires distribués au Bangladesh donnent un coup de pouce concret aux familles en difficulté : ils contiennent des produits adaptés aux habitudes locales et permettent de tenir plusieurs jours.",
+      "Nos distributions se font avec l’aide de partenaires et de bénévoles sur place, dans le respect de la dignité de chaque bénéficiaire.",
+    ],
+  },
+  {
+    title: "Un élan de solidarité pendant le Ramadan",
+    image: bangladeshRamadan,
+    alt: "Distribution de colis spéciaux Ramadan au Bangladesh",
+    reverse: false,
+    paragraphs: [
+      "Le mois de Ramadan est une période clé pour la solidarité. Au Bangladesh, de nombreuses familles n’ont pas les moyens de préparer des repas complets pour l’iftar et le suhoor.",
+      "Grâce à vos dons, nous distribuons des colis spéciaux Ramadan contenant des denrées adaptées aux repas de rupture du jeûne, afin que chaque famille puisse vivre ce mois béni avec plus de sérénité et de dignité.",
+    ],
+  },
+  {
+    title: "Fête de l’Aïd : partager la joie",
+    image: bangladeshAid,
+    alt: "Familles célébrant l'Aïd au Bangladesh",
+    reverse: true,
+    paragraphs: [
+      "À l’occasion de l’Aïd, nous intensifions nos actions pour que la fête soit un moment de joie partagée, même pour les familles les plus fragiles.",
+      "Selon les projets et les besoins locaux, cela peut passer par des colis alimentaires renforcés, des distributions spécifiques ou des gestes symboliques qui permettent à chacun de célébrer l’Aïd dans le respect et la dignité.",
+    ],
+  },
+  {
+    title: "Distribution de Corans",
+    image: bangladeshCoran,
+    alt: "Distribution de Corans au Bangladesh",
+    reverse: false,
+    paragraphs: [
+      "Au Bangladesh, nous répondons également à des demandes spirituelles locales en participant à la distribution de Corans, en priorité dans les mosquées, les écoles et auprès de familles qui n’ont pas les moyens d’en acquérir.",
+      "Ces distributions se font toujours en lien avec des partenaires de confiance sur place, afin de respecter les besoins réels et de s’assurer que chaque exemplaire est remis dans un cadre approprié et bienveillant.",
+    ],
+  },
+];
 
 function Bangladesh() {
   return (
-    <section className="country-page">
-      <div className="container">
-        {/* Hero */}
-        <header className="country-hero">
-          <div className="country-hero-text">
-            <p className="country-eyebrow">Nos actions à l&apos;international</p>
-            <h1 className="country-title">Bangladesh</h1>
-            <p className="country-intro">
-              Au Bangladesh, Les Colis du Cœur agissent aux côtés des familles
-              les plus vulnérables pour répondre à des besoins essentiels&nbsp;:
-              <strong> accès à l&apos;eau potable</strong>,{" "}
-              <strong>sécurité alimentaire</strong> et{" "}
-              <strong>solidarité pendant le Ramadan et l&apos;Aïd</strong>.
+    <main className="country-page bangladesh-page">
+      {/* HERO */}
+      <section className="country-hero-section">
+        <div className="container country-hero-layout">
+          <div className="country-hero-content">
+            <span className="country-label">Nos actions à l’international</span>
+
+            <h1>Bangladesh</h1>
+
+            <p>
+              Au Bangladesh, Les Colis du Cœur agit aux côtés des familles les
+              plus vulnérables pour répondre à des besoins essentiels : accès à
+              l’eau potable, sécurité alimentaire et solidarité pendant le
+              Ramadan et l’Aïd.
             </p>
-            <a href="/nos-actions" className="country-back-link">
-              ← Retour à la carte de nos actions
-            </a>
+
+            <div className="country-hero-actions">
+              <Link to="/nos-actions" className="country-btn country-btn-secondary">
+                ← Retour aux actions
+              </Link>
+
+              <Link to="/faire-un-don" className="country-btn country-btn-primary">
+                Soutenir cette action
+              </Link>
+            </div>
           </div>
 
           <div className="country-hero-image">
-            <img
-              src={bangladeshHero}
-              alt="Paysage et village au Bangladesh"
-            />
+            <img src={bangladeshHero} alt="Paysage et village au Bangladesh" />
           </div>
-        </header>
+        </div>
+      </section>
 
-        {/* Résumé des actions */}
-        <section className="country-summary">
-          <h2 className="country-section-title">Ce que nous y faisons</h2>
+      {/* SUMMARY */}
+      <section className="country-summary-section">
+        <div className="container">
+          <div className="country-section-heading">
+            <span className="country-label">Ce que nous faisons</span>
+            <h2>Des actions essentielles pour améliorer le quotidien.</h2>
+          </div>
+
           <div className="country-summary-grid">
-            <article className="summary-card">
-              <h3>Construction de puits d&apos;eau</h3>
-              <p>
-                Dans plusieurs villages, nous finançons la construction de
-                puits afin de garantir un accès durable à une{" "}
-                <strong>eau potable</strong>, à proximité des habitations.
-                Chaque puits profite à de nombreuses familles au quotidien.
-              </p>
+            {summaryCards.map((card) => (
+              <article className="summary-card" key={card.title}>
+                <div className="summary-card-icon">{card.icon}</div>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ACTION BLOCKS */}
+      <section className="country-actions-section">
+        <div className="container country-actions-list">
+          {actionBlocks.map((block) => (
+            <article
+              className={`country-block ${block.reverse ? "country-block-reverse" : ""}`}
+              key={block.title}
+            >
+              <div className="country-block-text">
+                <span className="country-label">Action terrain</span>
+                <h2>{block.title}</h2>
+
+                {block.paragraphs.map((paragraph, index) => (
+                  <p key={`${block.title}-${index}`}>{paragraph}</p>
+                ))}
+              </div>
+
+              <div className="country-block-image">
+                <img src={block.image} alt={block.alt} />
+              </div>
             </article>
+          ))}
+        </div>
+      </section>
 
-            <article className="summary-card">
-              <h3>Colis alimentaires</h3>
-              <p>
-                Nous distribuons des colis composés de denrées de base
-                (riz, huile, lentilles, produits de première nécessité)
-                pour soulager les familles en situation de{" "}
-                <strong>précarité alimentaire</strong>.
-              </p>
-            </article>
+      {/* CTA */}
+      <section className="country-final-cta">
+        <div className="container country-final-card">
+          <span>Envie de soutenir nos actions au Bangladesh ?</span>
 
-            <article className="summary-card">
-              <h3>Ramadan &amp; Aïd</h3>
-              <p>
-                Pendant le <strong>Ramadan</strong> et à l&apos;occasion de
-                l&apos;<strong>Aïd</strong>, nous renforçons les distributions
-                avec des colis spéciaux afin de permettre aux familles de
-                vivre ces moments importants dans la dignité.
-              </p>
-            </article>
-          </div>
-        </section>
+          <h2>Chaque don permet d’agir concrètement sur le terrain.</h2>
 
-        {/* Focus puits d'eau */}
-        <section className="country-block">
-          <div className="country-block-text">
-            <h2 className="country-section-title">
-              Des puits pour changer le quotidien
-            </h2>
-            <p>
-              Dans certaines zones rurales du Bangladesh, l&apos;accès à l&apos;eau
-              potable reste un défi quotidien. Les puits construits grâce à vos
-              dons permettent de{" "}
-              <strong>réduire les trajets</strong>, d&apos;éviter les
-              contaminations liées à une eau insalubre et de{" "}
-              <strong>sécuriser l&apos;hygiène des familles</strong>.
-            </p>
-            <p>
-              Chaque puits est implanté en concertation avec les habitants
-              et les relais locaux, pour répondre à un besoin réel et durable.
-            </p>
-          </div>
-
-          <div className="country-hero-image">
-            <img
-              src={bangladeshPuits}
-              alt="Puits d&apos;eau construit au Bangladesh"
-            />
-          </div>
-        </section>
-
-        {/* Focus colis alimentaires */}
-        <section className="country-block country-block-reverse">
-          <div className="country-block-text">
-            <h2 className="country-section-title">
-              Des colis alimentaires pour les familles
-            </h2>
-            <p>
-              Les colis alimentaires distribués au Bangladesh donnent un coup de
-              pouce concret aux familles en difficulté&nbsp;: ils contiennent
-              des produits adaptés aux habitudes locales et permettent de tenir
-              plusieurs jours.
-            </p>
-            <p>
-              Nos distributions se font avec l&apos;aide de partenaires et de
-              bénévoles sur place, dans le respect de la dignité de chaque
-              bénéficiaire.
-            </p>
-          </div>
-
-          <div className="country-hero-image">
-            <img
-              src={bangladeshColisAlimentaires}
-              alt="Distribution de colis alimentaires au Bangladesh"
-            />
-          </div>
-        </section>
-
-        {/* 🕌 Focus Ramadan */}
-        <section className="country-block">
-          <div className="country-block-text">
-            <h2 className="country-section-title">
-              Un élan de solidarité pendant le Ramadan
-            </h2>
-            <p>
-              Le mois de <strong>Ramadan</strong> est une période clé pour la
-              solidarité. Au Bangladesh, de nombreuses familles n&apos;ont pas
-              les moyens de préparer des repas complets pour l&apos;iftar et le
-              suhoor.
-            </p>
-            <p>
-              Grâce à vos dons, nous distribuons des{" "}
-              <strong>colis spéciaux Ramadan</strong> contenant des denrées
-              adaptées aux repas de rupture du jeûne, afin que chaque famille
-              puisse vivre ce mois béni avec plus de sérénité et de dignité.
-            </p>
-          </div>
-
-          <div className="country-hero-image">
-            <img
-              src={bangladeshRamadan}
-              alt="Distribution de colis spéciaux Ramadan au Bangladesh"
-            />
-          </div>
-        </section>
-
-        {/* 🎉 Focus Fête de l'Aïd */}
-        <section className="country-block country-block-reverse">
-          <div className="country-block-text">
-            <h2 className="country-section-title">
-              Fête de l&apos;Aïd : partager la joie
-            </h2>
-            <p>
-              À l&apos;occasion de l&apos;<strong>Aïd</strong>, nous
-              intensifions nos actions pour que la fête soit un moment de joie
-              partagée, même pour les familles les plus fragiles.
-            </p>
-            <p>
-              Selon les projets et les besoins locaux, cela peut passer par des{" "}
-              <strong>colis alimentaires renforcés</strong>, des distributions
-              spécifiques ou des gestes symboliques qui permettent à chacun de
-              célébrer l&apos;Aïd dans le respect et la dignité.
-            </p>
-          </div>
-
-          <div className="country-hero-image">
-            <img
-              src={bangladeshAid}
-              alt="Familles célébrant l&apos;Aïd au Bangladesh"
-            />
-          </div>
-        </section>
-
-        {/* 📖 Focus distribution de Corans */}
-        <section className="country-block">
-          <div className="country-block-text">
-            <h2 className="country-section-title">
-              Distribution de Corans
-            </h2>
-            <p>
-              Au Bangladesh, nous répondons également à des demandes
-              spirituelles locales en participant à la{" "}
-              <strong>distribution de Corans</strong>, en priorité dans les
-              mosquées, les écoles et auprès de familles qui n&apos;ont pas les
-              moyens d&apos;en acquérir.
-            </p>
-            <p>
-              Ces distributions se font toujours en lien avec des{" "}
-              <strong>partenaires de confiance sur place</strong>, afin de
-              respecter les besoins réels et de s&apos;assurer que chaque
-              exemplaire est remis dans un cadre approprié et bienveillant.
-            </p>
-          </div>
-
-          <div className="country-hero-image">
-            <img
-              src={bangladeshCoran}
-              alt="Distribution de Corans au Bangladesh"
-            />
-          </div>
-        </section>
-
-        {/* Appel à l'action */}
-        <section className="country-cta">
-          <h2>Envie de soutenir nos actions au Bangladesh&nbsp;?</h2>
           <p>
-            Que ce soit par un don, un partage ou un engagement régulier,
-            chaque geste nous permet d&apos;aller plus loin sur le terrain.
+            Que ce soit par un don, un partage ou un engagement régulier, chaque
+            geste nous permet d’aller plus loin auprès des familles vulnérables.
           </p>
-          <div className="country-cta-buttons">
-            <a href="/contact" className="country-cta-btn primary">
-              Nous contacter
-            </a>
-            <a href="/devenir-benevole" className="country-cta-btn ghost">
+
+          <div className="country-final-actions">
+            <Link to="/faire-un-don" className="country-btn country-btn-primary">
+              Faire un don
+            </Link>
+
+            <Link to="/devenir-benevole" className="country-btn country-btn-secondary">
               Devenir bénévole
-            </a>
+            </Link>
           </div>
-        </section>
-      </div>
-    </section>
+        </div>
+      </section>
+    </main>
   );
 }
 

@@ -1,28 +1,28 @@
-/* src/styles/bangladesh.css */
+/* src/styles/senegal.css */
 
 :root {
-  --country-white: #ffffff;
-  --country-bg: #fff7fb;
-  --country-pink: #e1006d;
-  --country-pink-dark: #b80058;
-  --country-pink-soft: #ffe3f0;
-  --country-yellow: #ffcc00;
-  --country-orange: #f59e0b;
-  --country-dark: #1f1f1f;
-  --country-text: #333333;
-  --country-muted: #6b7280;
-  --country-border: rgba(225, 0, 109, 0.14);
-  --country-shadow: 0 24px 60px rgba(225, 0, 109, 0.16);
-  --country-card-shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
-  --country-radius-lg: 34px;
-  --country-radius-md: 22px;
-  --country-radius-pill: 999px;
+  --senegal-white: #ffffff;
+  --senegal-bg: #fff7fb;
+  --senegal-pink: #e1006d;
+  --senegal-pink-dark: #b80058;
+  --senegal-pink-soft: #ffe3f0;
+  --senegal-yellow: #ffcc00;
+  --senegal-orange: #f59e0b;
+  --senegal-dark: #1f1f1f;
+  --senegal-text: #333333;
+  --senegal-muted: #6b7280;
+  --senegal-border: rgba(225, 0, 109, 0.14);
+  --senegal-shadow: 0 24px 60px rgba(225, 0, 109, 0.16);
+  --senegal-card-shadow: 0 18px 45px rgba(31, 31, 31, 0.08);
+  --senegal-radius-lg: 34px;
+  --senegal-radius-md: 22px;
+  --senegal-radius-pill: 999px;
 }
 
-.country-page {
+.senegal-page {
   overflow: hidden;
-  background: var(--country-bg);
-  color: var(--country-dark);
+  background: var(--senegal-bg);
+  color: var(--senegal-dark);
 }
 
 .container {
@@ -30,20 +30,18 @@
   margin: 0 auto;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
-.country-hero-section {
+.senegal-hero {
   position: relative;
   padding: 110px 0 90px;
   background:
     radial-gradient(circle at top right, rgba(255, 204, 0, 0.32), transparent 24%),
     radial-gradient(circle at 10% 20%, rgba(225, 0, 109, 0.11), transparent 28%),
-    linear-gradient(180deg, #ffffff 0%, var(--country-bg) 100%);
+    linear-gradient(180deg, #ffffff 0%, var(--senegal-bg) 100%);
 }
 
-.country-hero-section::before {
+.senegal-hero::before {
   content: "";
   position: absolute;
   top: 110px;
@@ -55,7 +53,7 @@
   pointer-events: none;
 }
 
-.country-hero-layout {
+.senegal-hero-layout {
   position: relative;
   z-index: 1;
   display: grid;
@@ -64,27 +62,27 @@
   align-items: center;
 }
 
-.country-hero-content {
+.senegal-hero-content {
   max-width: 640px;
 }
 
-.country-label {
+.senegal-label {
   display: inline-flex;
   align-items: center;
   width: fit-content;
   padding: 10px 18px;
-  border-radius: var(--country-radius-pill);
-  background: var(--country-yellow);
-  color: var(--country-dark);
+  border-radius: var(--senegal-radius-pill);
+  background: var(--senegal-yellow);
+  color: var(--senegal-dark);
   font-size: 0.82rem;
   font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.country-hero-content h1 {
+.senegal-hero-content h1 {
   margin: 24px 0 0;
-  color: var(--country-dark);
+  color: var(--senegal-dark);
   font-size: clamp(3rem, 7vw, 6.8rem);
   line-height: 0.9;
   letter-spacing: -0.08em;
@@ -92,29 +90,29 @@
   text-transform: uppercase;
 }
 
-.country-hero-content p {
+.senegal-hero-content p {
   margin: 28px 0 0;
-  color: var(--country-text);
+  color: var(--senegal-text);
   font-size: clamp(1.02rem, 1.5vw, 1.18rem);
   line-height: 1.8;
   font-weight: 500;
 }
 
-.country-hero-actions,
-.country-final-actions {
+.senegal-hero-actions,
+.senegal-final-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 34px;
 }
 
-.country-btn {
+.senegal-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 54px;
   padding: 14px 28px;
-  border-radius: var(--country-radius-pill);
+  border-radius: var(--senegal-radius-pill);
   font-size: 0.98rem;
   font-weight: 950;
   text-decoration: none;
@@ -124,57 +122,57 @@
     background 0.25s ease;
 }
 
-.country-btn:hover {
+.senegal-btn:hover {
   transform: translateY(-3px);
 }
 
-.country-btn-primary {
-  background: linear-gradient(135deg, var(--country-pink), #ff4fa3);
-  color: var(--country-white);
+.senegal-btn-primary {
+  background: linear-gradient(135deg, var(--senegal-pink), #ff4fa3);
+  color: var(--senegal-white);
   box-shadow: 0 16px 35px rgba(225, 0, 109, 0.32);
 }
 
-.country-btn-secondary {
-  background: var(--country-yellow);
-  color: var(--country-dark);
+.senegal-btn-secondary {
+  background: var(--senegal-yellow);
+  color: var(--senegal-dark);
 }
 
-.country-hero-image {
+.senegal-hero-image {
   position: relative;
   min-height: 520px;
   border-radius: 42px;
   overflow: hidden;
-  box-shadow: var(--country-shadow);
-  background: var(--country-pink-soft);
+  box-shadow: var(--senegal-shadow);
+  background: var(--senegal-pink-soft);
 }
 
-.country-hero-image::before {
+.senegal-hero-image::before {
   content: "";
   position: absolute;
   inset: 18px;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 30px;
   pointer-events: none;
 }
 
-.country-hero-image::after {
-  content: "Bangladesh 🇧🇩";
+.senegal-hero-image::after {
+  content: "Sénégal 🇸🇳";
   position: absolute;
   left: 24px;
   bottom: 24px;
   z-index: 3;
   padding: 12px 18px;
-  border-radius: var(--country-radius-pill);
+  border-radius: var(--senegal-radius-pill);
   background: rgba(255, 255, 255, 0.92);
-  color: var(--country-pink);
+  color: var(--senegal-pink);
   font-size: 0.9rem;
   font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.country-hero-image img {
+.senegal-hero-image img {
   width: 100%;
   height: 100%;
   min-height: 520px;
@@ -182,49 +180,47 @@
   object-fit: cover;
 }
 
-/* =========================
-   SUMMARY
-========================= */
+/* SUMMARY */
 
-.country-summary-section {
+.senegal-summary-section {
   padding: 40px 0 95px;
-  background: var(--country-bg);
+  background: var(--senegal-bg);
 }
 
-.country-section-heading {
+.senegal-section-heading {
   max-width: 860px;
   margin-bottom: 40px;
 }
 
-.country-section-heading h2,
-.country-block-text h2,
-.country-final-card h2 {
+.senegal-section-heading h2,
+.senegal-block-text h2,
+.senegal-final-card h2 {
   margin: 22px 0 0;
-  color: var(--country-dark);
+  color: var(--senegal-dark);
   font-size: clamp(2.1rem, 4.5vw, 4.2rem);
   line-height: 0.98;
   letter-spacing: -0.06em;
   font-weight: 950;
 }
 
-.country-summary-grid {
+.senegal-summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 22px;
 }
 
-.summary-card {
+.senegal-summary-card {
   position: relative;
   overflow: hidden;
   min-height: 300px;
-  padding: 34px;
-  border-radius: var(--country-radius-lg);
-  background: var(--country-white);
-  border: 1px solid var(--country-border);
-  box-shadow: var(--country-card-shadow);
+  padding: 30px;
+  border-radius: var(--senegal-radius-lg);
+  background: var(--senegal-white);
+  border: 1px solid var(--senegal-border);
+  box-shadow: var(--senegal-card-shadow);
 }
 
-.summary-card::after {
+.senegal-summary-card::after {
   content: "";
   position: absolute;
   right: -80px;
@@ -235,11 +231,11 @@
   background: rgba(225, 0, 109, 0.08);
 }
 
-.summary-card:nth-child(2)::after {
+.senegal-summary-card:nth-child(2)::after {
   background: rgba(255, 204, 0, 0.22);
 }
 
-.summary-card-icon {
+.senegal-summary-card div {
   position: relative;
   z-index: 1;
   width: 64px;
@@ -247,94 +243,92 @@
   display: grid;
   place-items: center;
   border-radius: 20px;
-  background: var(--country-bg);
+  background: var(--senegal-bg);
   font-size: 2rem;
   box-shadow: 0 12px 28px rgba(225, 0, 109, 0.12);
 }
 
-.summary-card h3 {
+.senegal-summary-card h3 {
   position: relative;
   z-index: 1;
   margin: 28px 0 0;
-  color: var(--country-dark);
-  font-size: 1.55rem;
-  line-height: 1.1;
+  color: var(--senegal-dark);
+  font-size: 1.35rem;
+  line-height: 1.12;
   font-weight: 950;
 }
 
-.summary-card p {
+.senegal-summary-card p {
   position: relative;
   z-index: 1;
   margin: 16px 0 0;
-  color: var(--country-text);
-  font-size: 1rem;
-  line-height: 1.75;
+  color: var(--senegal-text);
+  font-size: 0.96rem;
+  line-height: 1.72;
 }
 
-/* =========================
-   ACTION BLOCKS
-========================= */
+/* ACTION BLOCKS */
 
-.country-actions-section {
+.senegal-actions-section {
   padding: 95px 0;
-  background: var(--country-white);
+  background: var(--senegal-white);
 }
 
-.country-actions-list {
+.senegal-actions-list {
   display: grid;
   gap: 42px;
 }
 
-.country-block {
+.senegal-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 34px;
   align-items: center;
   padding: 34px;
   border-radius: 42px;
-  background: var(--country-bg);
-  border: 1px solid var(--country-border);
-  box-shadow: var(--country-card-shadow);
+  background: var(--senegal-bg);
+  border: 1px solid var(--senegal-border);
+  box-shadow: var(--senegal-card-shadow);
 }
 
-.country-block-reverse .country-block-text {
+.senegal-block-reverse .senegal-block-text {
   order: 2;
 }
 
-.country-block-reverse .country-block-image {
+.senegal-block-reverse .senegal-block-image {
   order: 1;
 }
 
-.country-block-text {
+.senegal-block-text {
   padding: 20px;
 }
 
-.country-block-text h2 {
+.senegal-block-text h2 {
   max-width: 560px;
 }
 
-.country-block-text p {
+.senegal-block-text p {
   margin: 24px 0 0;
-  color: var(--country-text);
+  color: var(--senegal-text);
   font-size: 1.04rem;
   line-height: 1.85;
 }
 
-.country-block-text strong {
-  color: var(--country-pink);
+.senegal-block-text strong {
+  color: var(--senegal-pink);
   font-weight: 950;
 }
 
-.country-block-image {
+.senegal-block-image {
   position: relative;
   overflow: hidden;
   min-height: 430px;
   border-radius: 34px;
-  background: var(--country-pink-soft);
+  background: var(--senegal-pink-soft);
   box-shadow: 0 16px 35px rgba(31, 31, 31, 0.1);
 }
 
-.country-block-image::after {
+.senegal-block-image::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -342,7 +336,7 @@
   pointer-events: none;
 }
 
-.country-block-image img {
+.senegal-block-image img {
   width: 100%;
   height: 100%;
   min-height: 430px;
@@ -350,29 +344,27 @@
   object-fit: cover;
 }
 
-/* =========================
-   FINAL CTA
-========================= */
+/* CTA */
 
-.country-final-cta {
+.senegal-final-cta {
   padding: 95px 0;
   background:
     radial-gradient(circle at top right, rgba(225, 0, 109, 0.12), transparent 28%),
-    var(--country-bg);
+    var(--senegal-bg);
 }
 
-.country-final-card {
+.senegal-final-card {
   position: relative;
   overflow: hidden;
   padding: 62px;
   border-radius: 40px;
-  background: var(--country-white);
-  border: 1px solid var(--country-border);
-  box-shadow: var(--country-card-shadow);
+  background: var(--senegal-white);
+  border: 1px solid var(--senegal-border);
+  box-shadow: var(--senegal-card-shadow);
   text-align: center;
 }
 
-.country-final-card::before {
+.senegal-final-card::before {
   content: "";
   position: absolute;
   left: -120px;
@@ -383,70 +375,73 @@
   background: rgba(225, 0, 109, 0.1);
 }
 
-.country-final-card span,
-.country-final-card h2,
-.country-final-card p,
-.country-final-actions {
+.senegal-final-card span,
+.senegal-final-card h2,
+.senegal-final-card p,
+.senegal-final-actions {
   position: relative;
   z-index: 1;
 }
 
-.country-final-card span {
-  color: var(--country-pink);
+.senegal-final-card span {
+  color: var(--senegal-pink);
   font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.country-final-card h2 {
+.senegal-final-card h2 {
   max-width: 840px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.country-final-card p {
+.senegal-final-card p {
   max-width: 720px;
   margin: 24px auto 0;
-  color: var(--country-text);
+  color: var(--senegal-text);
   font-size: 1.04rem;
   line-height: 1.8;
 }
 
-.country-final-actions {
+.senegal-final-actions {
   justify-content: center;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .senegal-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 980px) {
-  .country-hero-section {
+  .senegal-hero {
     padding: 86px 0 70px;
   }
 
-  .country-hero-layout,
-  .country-summary-grid,
-  .country-block {
+  .senegal-hero-layout,
+  .senegal-block {
     grid-template-columns: 1fr;
   }
 
-  .country-hero-content {
+  .senegal-hero-content {
     max-width: 100%;
   }
 
-  .country-hero-image,
-  .country-hero-image img {
+  .senegal-hero-image,
+  .senegal-hero-image img {
     min-height: 440px;
   }
 
-  .country-block-reverse .country-block-text,
-  .country-block-reverse .country-block-image {
+  .senegal-block-reverse .senegal-block-text,
+  .senegal-block-reverse .senegal-block-image {
     order: initial;
   }
 
-  .country-block-image,
-  .country-block-image img {
+  .senegal-block-image,
+  .senegal-block-image img {
     min-height: 390px;
   }
 }
@@ -456,68 +451,72 @@
     width: min(100% - 28px, 1180px);
   }
 
-  .country-hero-section {
+  .senegal-hero {
     padding: 64px 0 54px;
   }
 
-  .country-hero-content h1 {
+  .senegal-hero-content h1 {
     font-size: clamp(2.8rem, 15vw, 4.3rem);
     letter-spacing: -0.065em;
   }
 
-  .country-hero-content p,
-  .country-block-text p,
-  .country-final-card p {
+  .senegal-hero-content p,
+  .senegal-block-text p,
+  .senegal-final-card p {
     font-size: 0.98rem;
     line-height: 1.75;
   }
 
-  .country-hero-actions,
-  .country-final-actions {
+  .senegal-hero-actions,
+  .senegal-final-actions {
     flex-direction: column;
   }
 
-  .country-btn {
+  .senegal-btn {
     width: 100%;
   }
 
-  .country-hero-image,
-  .country-hero-image img {
+  .senegal-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .senegal-hero-image,
+  .senegal-hero-image img {
     min-height: 340px;
   }
 
-  .country-hero-image,
-  .country-block,
-  .country-block-image,
-  .summary-card,
-  .country-final-card {
+  .senegal-hero-image,
+  .senegal-summary-card,
+  .senegal-block,
+  .senegal-block-image,
+  .senegal-final-card {
     border-radius: 26px;
   }
 
-  .country-summary-section,
-  .country-actions-section,
-  .country-final-cta {
+  .senegal-summary-section,
+  .senegal-actions-section,
+  .senegal-final-cta {
     padding: 68px 0;
   }
 
-  .summary-card,
-  .country-block,
-  .country-final-card {
+  .senegal-summary-card,
+  .senegal-block,
+  .senegal-final-card {
     padding: 28px 22px;
   }
 
-  .country-block-text {
+  .senegal-block-text {
     padding: 0;
   }
 
-  .country-section-heading h2,
-  .country-block-text h2,
-  .country-final-card h2 {
+  .senegal-section-heading h2,
+  .senegal-block-text h2,
+  .senegal-final-card h2 {
     font-size: clamp(2rem, 10vw, 3rem);
   }
 
-  .country-block-image,
-  .country-block-image img {
+  .senegal-block-image,
+  .senegal-block-image img {
     min-height: 320px;
   }
 }

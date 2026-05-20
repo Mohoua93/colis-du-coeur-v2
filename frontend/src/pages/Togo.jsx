@@ -1,6 +1,7 @@
 // src/pages/Togo.js
-import "../styles/bangladesh.css"; // base country-*
-import "../styles/togo.css";       // styles spécifiques Togo
+import { Link } from "react-router-dom";
+import "../styles/bangladesh.css";
+import "../styles/togo.css";
 
 import togoHero from "../assets/images/togo-hero.jpeg";
 import togoFlyer from "../assets/images/togo-flyer.jpeg";
@@ -12,35 +13,42 @@ import togoFloat4 from "../assets/images/togo-float-4.jpeg";
 
 function Togo() {
   return (
-    <section className="country-page togo-page">
-      <div className="container">
-        {/* Hero */}
-        <header className="country-hero">
-          <div className="country-hero-text">
-            <p className="country-eyebrow">Nos actions à l&apos;international</p>
-            <h1 className="country-title">Togo</h1>
-            <p className="country-intro">
-              🎒✨ En 2015, la ville de Lomé a vibré au rythme de la solidarité lors
-              de l’événement <strong>BACK TO SCHOOL</strong>, organisé par notre
-              association <strong>LES COLIS DU CŒUR</strong>. Une journée
-              empreinte d’émotion, de partage et d’espoir, dédiée à l’avenir des
-              enfants du Togo.
+    <main className="country-page togo-page">
+      {/* HERO */}
+      <section className="togo-hero">
+        <div className="container togo-hero-layout">
+          <div className="togo-hero-content">
+            <span className="togo-label">Nos actions à l’international</span>
+
+            <h1>Togo</h1>
+
+            <p>
+              En 2015, la ville de Lomé a vibré au rythme de la solidarité lors
+              de l’événement Back To School, organisé par Les Colis du Cœur.
+              Une journée d’émotion, de partage et d’espoir, dédiée à l’avenir
+              des enfants du Togo.
             </p>
-            <a href="/nos-actions" className="country-back-link">
-              ← Retour à la carte de nos actions
-            </a>
+
+            <div className="togo-hero-actions">
+              <Link to="/nos-actions" className="togo-btn togo-btn-secondary">
+                ← Retour aux actions
+              </Link>
+
+              <Link to="/faire-un-don" className="togo-btn togo-btn-primary">
+                Soutenir nos actions
+              </Link>
+            </div>
           </div>
 
-          <div className="country-hero-image">
-            <img
-              src={togoHero}
-              alt="Paysage ou ville au Togo"
-            />
+          <div className="togo-hero-image">
+            <img src={togoHero} alt="Action solidaire au Togo" />
           </div>
-        </header>
+        </div>
+      </section>
 
-        {/* ✅ Section Flyer */}
-        <section className="togo-flyer-section">
+      {/* FLYER */}
+      <section className="togo-flyer-section">
+        <div className="container">
           <div className="togo-flyer-card">
             <div className="togo-flyer-image">
               <img
@@ -50,50 +58,102 @@ function Togo() {
             </div>
 
             <div className="togo-flyer-text">
-              <p className="togo-flyer-eyebrow">Flyer de l&apos;action</p>
-              <h2 className="togo-flyer-title">
-                🎒 Back To School – Lomé, 2015 🇹🇬
-              </h2>
+              <span className="togo-label">Flyer de l’action</span>
+
+              <h2>Back To School – Lomé, 2015 🇹🇬</h2>
+
               <p>
-                Un flyer qui symbolise une action forte menée à Lomé.
-                Grâce à la générosité de nos partenaires et donateurs,
-                nous avons pu offrir des cartables scolaires complets
-                pour une rentrée plus sereine et motivante.
+                Un flyer qui symbolise une action forte menée à Lomé. Grâce à
+                la générosité de nos partenaires et donateurs, nous avons pu
+                offrir des cartables scolaires complets pour une rentrée plus
+                sereine, digne et motivante.
               </p>
+
+              <div className="togo-impact-card">
+                <strong>250</strong>
+                <span>cartables scolaires complets distribués aux enfants</span>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ✅ Section texte */}
-        <section className="togo-text-section">
-          <h2 className="country-section-title">
-            🎒✨ Événement BACK TO SCHOOL – Lomé, 2015 ✨🇹🇬
-          </h2>
+      {/* RÉSUMÉ */}
+      <section className="togo-summary-section">
+        <div className="container togo-summary-grid">
+          <article className="togo-summary-card">
+            <div>🎒</div>
+            <h2>Cartables scolaires</h2>
+            <p>
+              Une distribution de cartables complets pour aider les enfants à
+              commencer l’année scolaire avec confiance.
+            </p>
+          </article>
+
+          <article className="togo-summary-card">
+            <div>✨</div>
+            <h2>Égalité des chances</h2>
+            <p>
+              Chaque cartable représente un encouragement à poursuivre les
+              études et à croire en son avenir.
+            </p>
+          </article>
+
+          <article className="togo-summary-card">
+            <div>❤️</div>
+            <h2>Espoir & partage</h2>
+            <p>
+              Une journée humaine, remplie de sourires, de gratitude et de
+              moments forts avec les enfants et les familles.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* TEXTE PRINCIPAL */}
+      <section className="togo-story-section">
+        <div className="container togo-story-layout">
+          <aside className="togo-story-sticky">
+            <span className="togo-label">Notre mission</span>
+
+            <h2>Offrir les outils d’une rentrée plus digne.</h2>
+
+            <p>
+              Un cartable scolaire complet, ce n’est pas seulement du matériel :
+              c’est une chance, un encouragement et un message d’espoir.
+            </p>
+          </aside>
 
           <div className="togo-text-body">
             <p>
               En 2015, la ville de Lomé a vibré au rythme de la solidarité lors
-              de l’événement BACK TO SCHOOL, organisé par notre association
-              LES COLIS DU CŒUR. Une journée empreinte d’émotion, de partage et
+              de l’événement <strong>Back To School</strong>, organisé par Les
+              Colis du Cœur. Une journée empreinte d’émotion, de partage et
               d’espoir, dédiée à l’avenir des enfants du Togo.
             </p>
 
             <p>
               Avec détermination et amour, notre équipe s’est engagée à soutenir
               la scolarité des plus jeunes. Grâce à la générosité de nos
-              partenaires et donateurs, nous avons pu distribuer
-              <strong> 250 cartables scolaires complets</strong>, soigneusement
+              partenaires et donateurs, nous avons pu distribuer{" "}
+              <strong>250 cartables scolaires complets</strong>, soigneusement
               préparés pour offrir à chaque enfant les outils nécessaires à une
               rentrée sereine et motivante.
             </p>
 
-            <p>Chaque cartable remis représentait bien plus que du matériel :</p>
+            <blockquote>
+              Chaque cartable remis représentait bien plus que du matériel.
+            </blockquote>
 
-            <ul className="togo-bullets">
-              <li>✨ Un symbole d’égalité des chances</li>
-              <li>✨ Un encouragement pour poursuivre les études</li>
-              <li>✨ Un geste d’espoir pour un avenir meilleur</li>
-            </ul>
+            <div className="togo-highlight-box">
+              <h3>Chaque cartable représentait :</h3>
+
+              <ul>
+                <li>un symbole d’égalité des chances,</li>
+                <li>un encouragement pour poursuivre les études,</li>
+                <li>un geste d’espoir pour un avenir meilleur.</li>
+              </ul>
+            </div>
 
             <p>
               La joie dans le regard des enfants, les sourires éclatants des
@@ -104,8 +164,8 @@ function Togo() {
             </p>
 
             <p>
-              LES COLIS DU CŒUR continue, depuis cet instant, à mener des actions
-              humanitaires pour soutenir l’éducation et le bien-être des
+              Les Colis du Cœur continue, depuis cet instant, à mener des
+              actions humanitaires pour soutenir l’éducation et le bien-être des
               familles togolaises.
             </p>
 
@@ -114,13 +174,16 @@ function Togo() {
               départ vers de nombreux projets solidaires.
             </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ✅ 4 images en apesanteur */}
-        <section className="togo-floating-section">
-          <h2 className="country-section-title">
-            Quelques images de nos actions
-          </h2>
+      {/* GALERIE */}
+      <section className="togo-gallery-section">
+        <div className="container">
+          <div className="togo-section-heading">
+            <span className="togo-label">En images</span>
+            <h2>Quelques images de nos actions.</h2>
+          </div>
 
           <div className="togo-floating-grid">
             <figure className="togo-float-card float-1">
@@ -139,30 +202,35 @@ function Togo() {
               <img src={togoFloat4} alt="Action au Togo 4" />
             </figure>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA */}
-        <section className="country-cta">
-          <h2>Envie de soutenir nos actions au Togo&nbsp;?</h2>
+      {/* CTA */}
+      <section className="togo-final-cta">
+        <div className="container togo-final-card">
+          <span>Envie de soutenir nos actions au Togo ?</span>
+
+          <h2>Votre soutien aide à faire vivre de nouveaux projets éducatifs.</h2>
+
           <p>
-            Vos dons et partages nous aideront à faire vivre des initiatives
+            Vos dons et partages nous aident à faire vivre des initiatives
             éducatives et solidaires au plus près des enfants et des familles
             qui en ont besoin.
           </p>
-          <div className="country-cta-buttons">
-            <a href="/contact" className="country-cta-btn primary">
-              Nous contacter
-            </a>
-            <a href="/faire-un-don" className="country-cta-btn ghost">
+
+          <div className="togo-final-actions">
+            <Link to="/faire-un-don" className="togo-btn togo-btn-primary">
               Faire un don
-            </a>
+            </Link>
+
+            <Link to="/contact" className="togo-btn togo-btn-secondary">
+              Nous contacter
+            </Link>
           </div>
-        </section>
-      </div>
-    </section>
+        </div>
+      </section>
+    </main>
   );
 }
 
 export default Togo;
-
-

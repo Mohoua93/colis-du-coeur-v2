@@ -1,7 +1,7 @@
 // src/pages/Partenariat.jsx
+import { Link } from "react-router-dom";
 import "../styles/partenariat.css";
 
-// ✅ Tu pourras remplacer ces imports par les vrais logos de tes partenaires
 import partner1Logo from "../assets/images/partner1-logo.jpeg";
 import partner2Logo from "../assets/images/partner2-logo.jpeg";
 import partner3Logo from "../assets/images/partner3-logo.jpeg";
@@ -11,7 +11,6 @@ import partner6Logo from "../assets/images/partner6-logo.jpeg";
 import partner7Logo from "../assets/images/partner7-logo.png";
 import partner8Logo from "../assets/images/partner8-logo.jpg";
 import partner9Logo from "../assets/images/partner9-logo.png";
-
 
 const partners = [
   {
@@ -36,7 +35,7 @@ const partners = [
     name: "BEAUTY BY SAB",
     logo: partner4Logo,
     website: "https://www.instagram.com/beautybysab_paris/",
-    tag: "E-commerce Esthétique",
+    tag: "E-commerce esthétique",
   },
   {
     name: "LISSAGE CAVIAR",
@@ -45,10 +44,10 @@ const partners = [
     tag: "Salon de coiffure",
   },
   {
-    name: "MAIRIE D'AULNAY SOUS BOIS",
+    name: "MAIRIE D'AULNAY-SOUS-BOIS",
     logo: partner6Logo,
     website: "https://www.aulnay-sous-bois.fr/",
-    tag: "Hôtel de ville",
+    tag: "Institution publique",
   },
   {
     name: "EASY JACUZZI",
@@ -60,52 +59,116 @@ const partners = [
     name: "ADSIS ACADEMY",
     logo: partner8Logo,
     website: "https://www.adsisacademy.fr/",
-    tag: "Agence de communication digitale",
+    tag: "Communication digitale",
   },
   {
     name: "DEVOM",
     logo: partner9Logo,
     website: "https://www.devom.fr/",
-    tag: "Créateur de site web",
+    tag: "Création de site web",
   },
-
-  
 ];
 
 function Partenariat() {
   return (
-    <section className="partners-page">
-      <div className="container">
-        <header className="partners-hero">
-          <p className="partners-eyebrow">Ils marchent à nos côtés</p>
-          <h1 className="partners-title">Nos partenaires</h1>
-          <p className="partners-intro">
-            Les Colis du Cœur peuvent agir grâce au soutien de partenaires
-            engagés&nbsp;: commerçants, associations, institutions et entreprises
-            qui choisissent de mettre leurs moyens au service de la solidarité.
-          </p>
-        </header>
+    <main className="partners-page">
+      {/* HERO */}
+      <section className="partners-hero">
+        <div className="container partners-hero-layout">
+          <div className="partners-hero-content">
+            <span className="partners-label">Ils marchent à nos côtés</span>
 
-        <section className="partners-grid-section">
-          <h2 className="partners-section-title">
-            Une chaîne de solidarité construite ensemble
-          </h2>
+            <h1>Nos partenaires solidaires</h1>
+
+            <p>
+              Les Colis du Cœur peuvent agir grâce au soutien de partenaires
+              engagés : commerçants, associations, institutions et entreprises
+              qui choisissent de mettre leurs moyens au service de la solidarité.
+            </p>
+
+            <div className="partners-hero-actions">
+              <Link to="/contact" className="partners-btn partners-btn-primary">
+                Devenir partenaire
+              </Link>
+
+              <Link to="/faire-un-don" className="partners-btn partners-btn-secondary">
+                Faire un don
+              </Link>
+            </div>
+          </div>
+
+          <aside className="partners-hero-card">
+            <span>Une chaîne humaine</span>
+            <strong>{partners.length}</strong>
+            <p>
+              partenaires engagés qui contribuent, chacun à leur manière, à
+              renforcer nos actions solidaires.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <section className="partners-intro-section">
+        <div className="container partners-intro-grid">
+          <article className="partners-intro-card">
+            <div>🤝</div>
+            <h2>Agir ensemble</h2>
+            <p>
+              Chaque partenariat permet de renforcer nos actions et d’apporter
+              une aide plus concrète aux personnes accompagnées.
+            </p>
+          </article>
+
+          <article className="partners-intro-card">
+            <div>🏢</div>
+            <h2>Entreprises & commerces</h2>
+            <p>
+              Les structures locales peuvent contribuer par des dons, services,
+              collectes, relais ou mises à disposition de moyens.
+            </p>
+          </article>
+
+          <article className="partners-intro-card">
+            <div>❤️</div>
+            <h2>Impact solidaire</h2>
+            <p>
+              Un partenariat, c’est une action utile, visible et porteuse de
+              sens pour les familles et personnes en difficulté.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      {/* PARTNERS GRID */}
+      <section className="partners-grid-section">
+        <div className="container">
+          <div className="partners-section-heading">
+            <span className="partners-label">Notre réseau</span>
+            <h2>Une chaîne de solidarité construite ensemble.</h2>
+          </div>
 
           <div className="partners-grid">
             {partners.map((partner) => (
               <article key={partner.name} className="partner-card">
-                <div className="partner-logo-wrapper">
+                <a
+                  href={partner.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="partner-logo-wrapper"
+                  aria-label={`Visiter ${partner.name}`}
+                >
                   <img
                     src={partner.logo}
                     alt={`Logo de ${partner.name}`}
                     className="partner-logo"
                   />
-                </div>
+                </a>
+
                 <div className="partner-content">
-                  <p className="partner-name">{partner.name}</p>
-                  {partner.tag && (
-                    <p className="partner-tag">{partner.tag}</p>
-                  )}
+                  <span className="partner-tag">{partner.tag}</span>
+                  <h3 className="partner-name">{partner.name}</h3>
+
                   {partner.website && (
                     <a
                       href={partner.website}
@@ -120,27 +183,35 @@ function Partenariat() {
               </article>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="partners-cta">
-          <h2>Devenir partenaire des Colis du Cœur</h2>
+      {/* CTA */}
+      <section className="partners-final-cta">
+        <div className="container partners-final-card">
+          <span>Devenir partenaire des Colis du Cœur</span>
+
+          <h2>Construisons ensemble des actions solidaires utiles.</h2>
+
           <p>
             Vous êtes une entreprise, un commerce, une association ou une
-            institution et vous souhaitez soutenir nos actions&nbsp;? Ensemble,
-            nous pouvons construire des projets sur-mesure, adaptés à vos
-            valeurs et à vos capacités.
+            institution et vous souhaitez soutenir nos actions ? Ensemble, nous
+            pouvons créer des projets sur-mesure, adaptés à vos valeurs et à vos
+            capacités.
           </p>
-          <div className="partners-cta-buttons">
-            <a href="/contact" className="partners-cta-btn primary">
+
+          <div className="partners-final-actions">
+            <Link to="/contact" className="partners-btn partners-btn-primary">
               Nous contacter
-            </a>
-            <a href="/faire-un-don" className="partners-cta-btn ghost">
+            </Link>
+
+            <Link to="/faire-un-don" className="partners-btn partners-btn-secondary">
               Faire un don
-            </a>
+            </Link>
           </div>
-        </section>
-      </div>
-    </section>
+        </div>
+      </section>
+    </main>
   );
 }
 
